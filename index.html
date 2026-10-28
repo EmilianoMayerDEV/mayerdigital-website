@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Páginas web claras y profesionales para pequeños negocios de Madrid. Diseño adaptable a móviles, contacto directo y precios transparentes.">
+  <meta name="theme-color" content="#101828">
+  <title>Tu negocio, también en internet | Diseño web para pequeños negocios</title>
+  <style>
+    :root{--ink:#101828;--muted:#667085;--paper:#f7f8fc;--white:#fff;--accent:#7657ff;--accent2:#a997ff;--line:#e6e8ef;--green:#087f5b}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
+    a{color:inherit}
+    .wrap{width:min(1120px,92%);margin:auto}
+    header{padding:22px 0;background:rgba(255,255,255,.9);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-weight:850;letter-spacing:-.04em;font-size:1.1rem}.brand span{color:var(--accent)}
+    .nav a{text-decoration:none;font-size:.94rem;font-weight:650}
+    .navlinks{display:flex;gap:22px;align-items:center}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;background:var(--accent);color:white;text-decoration:none;font-weight:750;border:0;box-shadow:0 8px 20px rgba(118,87,255,.18)}
+    .btn.secondary{background:white;color:var(--ink);border:1px solid var(--line);box-shadow:none}
+    .hero{padding:76px 0 66px;background:radial-gradient(circle at 80% 20%,#e7e1ff 0,transparent 34%),linear-gradient(135deg,#fff 0%,#f7f8fc 75%)}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+    .eyebrow{display:inline-flex;gap:8px;align-items:center;border:1px solid #ded7ff;background:#f2efff;color:#5637d5;padding:7px 11px;border-radius:99px;font-weight:750;font-size:.82rem}
+    h1{font-size:clamp(2.5rem,5vw,4.5rem);line-height:1.04;letter-spacing:-.06em;margin:18px 0}
+    h1 em{font-style:normal;color:var(--accent)}
+    .lead{font-size:1.15rem;color:#475467;max-width:620px}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 18px}
+    .small{font-size:.88rem;color:var(--muted)}
+    .mockup{background:#fff;border:1px solid var(--line);border-radius:24px;padding:17px;box-shadow:0 25px 70px rgba(16,24,40,.12);transform:rotate(1deg)}
+    .browser{border:1px solid var(--line);border-radius:16px;overflow:hidden}
+    .browserbar{padding:10px 13px;background:#f8f9fc;border-bottom:1px solid var(--line);display:flex;gap:5px}
+    .dot{width:8px;height:8px;border-radius:50%;background:#d0d5dd}
+    .preview{padding:25px;background:linear-gradient(145deg,#191533,#44318b);color:#fff;min-height:280px}
+    .preview .mini{font-size:.75rem;opacity:.75}.preview h3{font-size:2rem;line-height:1.1;margin:20px 0 12px;letter-spacing:-.04em}
+    .preview p{color:#e3defe;font-size:.9rem}.preview .pill{display:inline-block;background:#b7ffdc;color:#114b37;border-radius:8px;padding:8px 11px;font-weight:800;font-size:.8rem;margin-top:10px}
+    section{padding:70px 0}
+    .section-head{text-align:center;max-width:700px;margin:0 auto 35px}
+    h2{font-size:clamp(1.9rem,3vw,2.8rem);letter-spacing:-.045em;line-height:1.12;margin:0 0 12px}
+    .section-head p{color:var(--muted);margin:0}
+    .benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .benefit,.price-card,.step{background:white;border:1px solid var(--line);border-radius:18px;padding:24px}
+    .symbol{display:grid;place-items:center;width:42px;height:42px;border-radius:13px;background:#f0edff;color:#5d42d6;font-weight:900;font-size:1.2rem}
+    .benefit h3{margin:15px 0 6px}.benefit p{margin:0;color:var(--muted);font-size:.95rem}
+    #precios{background:#fff}
+    .prices{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+    .price-card{display:flex;flex-direction:column;position:relative}
+    .price-card.featured{border:2px solid var(--accent);box-shadow:0 16px 45px rgba(118,87,255,.12)}
+    .tag{font-size:.76rem;font-weight:850;text-transform:uppercase;letter-spacing:.08em;color:var(--accent)}
+    .price-card h3{font-size:1.35rem;margin:9px 0 2px}
+    .price{font-size:2.5rem;font-weight:900;letter-spacing:-.06em;margin:10px 0 0}
+    .price small{font-size:.85rem;letter-spacing:0;color:var(--muted);font-weight:600}
+    .desc{color:var(--muted);font-size:.93rem;min-height:48px}
+    ul.features{padding:0;list-style:none;margin:17px 0 25px;flex:1}
+    .features li{padding:8px 0;border-bottom:1px solid #f0f1f5;font-size:.92rem}
+    .features li:before{content:"✓";color:var(--green);font-weight:900;margin-right:9px}
+    .price-card .btn{width:100%}
+    .fineprint{font-size:.82rem;color:var(--muted);text-align:center;max-width:850px;margin:24px auto 0}
+    .process{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .step .num{font-size:.8rem;font-weight:900;color:var(--accent)}
+    .step h3{margin:8px 0}.step p{color:var(--muted);font-size:.94rem;margin:0}
+    .cta{background:var(--ink);color:white;border-radius:26px;padding:44px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+    .cta p{color:#cbd0dc;max-width:620px;margin-bottom:0}
+    footer{padding:28px 0;color:var(--muted);font-size:.85rem}
+    footer .foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:22px}
+    @media(max-width:800px){.hero-grid{grid-template-columns:1fr;gap:28px}.mockup{max-width:520px}.benefits,.prices,.process{grid-template-columns:1fr}.price-card.featured{order:-1}.navlinks a:not(.btn){display:none}.hero{padding-top:54px}.cta{padding:30px;align-items:flex-start;flex-direction:column}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#" aria-label="Inicio">web<span>cerca</span></a>
+    <nav class="navlinks" aria-label="Navegación principal">
+      <a href="#servicios">Servicios</a><a href="#precios">Precios</a><a href="#proceso">Cómo funciona</a>
+      <a class="btn" href="#contacto">Pedir presupuesto</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Diseño web para pequeños negocios</span>
+        <h1>Tu negocio merece estar <em>bien online.</em></h1>
+        <p class="lead">Creamos páginas web claras, modernas y adaptadas al móvil para que tus clientes encuentren tus servicios, conozcan tus precios y sepan cómo contactar contigo.</p>
+        <div class="actions">
+          <a class="btn" href="#precios">Ver planes y precios</a>
+          <a class="btn secondary" href="#contacto">Cuéntame tu idea</a>
+        </div>
+        <p class="small">Trato directo · Presupuesto claro · Sin complicaciones técnicas</p>
+      </div>
+      <div class="mockup" aria-label="Ejemplo ilustrativo de diseño web">
+        <div class="browser"><div class="browserbar"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
+          <div class="preview"><div class="mini">TU NEGOCIO · MADRID</div><h3>Un buen servicio<br>merece una buena web.</h3><p>Servicios, fotos, ubicación y contacto en un solo lugar.</p><span class="pill">Solicitar cita ↗</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="servicios">
+    <div class="wrap">
+      <div class="section-head"><h2>Una web útil, no solo bonita</h2><p>Lo esencial para que tu negocio tenga una presencia digital profesional desde el primer día.</p></div>
+      <div class="benefits">
+        <article class="benefit"><div class="symbol">↗</div><h3>Diseño adaptable</h3><p>Una experiencia cómoda en móviles, tablets y ordenadores.</p></article>
+        <article class="benefit"><div class="symbol">⌕</div><h3>Preparada para Google</h3><p>Estructura técnica y textos básicos para ayudar a los buscadores a entender tu negocio. No se garantizan posiciones.</p></article>
+        <article class="benefit"><div class="symbol">✆</div><h3>Contacto sencillo</h3><p>Botones de llamada, WhatsApp, mapa y formulario según el plan elegido.</p></article>
+      </div>
+    </div>
+  </section>
+  <section id="precios">
+    <div class="wrap">
+      <div class="section-head"><h2>Precios claros para empezar</h2><p>Elige el tamaño que necesita tu negocio. Si necesitas algo diferente, preparo un presupuesto a medida.</p></div>
+      <div class="prices">
+        <article class="price-card">
+          <span class="tag">Para empezar</span><h3>Web Esencial</h3><div class="price">249 € <small>/ pago único</small></div>
+          <p class="desc">Una presencia online sencilla para explicar qué haces y cómo encontrarte.</p>
+          <ul class="features"><li>Web de una página con hasta 5 secciones</li><li>Adaptación a móviles</li><li>Servicios y datos de contacto</li><li>Botón de llamada o WhatsApp</li><li>Configuración SEO básica</li><li>1 ronda de cambios</li></ul>
+          <a class="btn secondary" href="#contacto">Consultar este plan</a>
+        </article>
+        <article class="price-card featured">
+          <span class="tag">Más elegido</span><h3>Web Negocio</h3><div class="price">449 € <small>/ pago único</small></div>
+          <p class="desc">Para negocios que quieren presentar mejor sus servicios y generar consultas.</p>
+          <ul class="features"><li>Hasta 5 páginas o secciones principales</li><li>Diseño adaptado a tu marca</li><li>Servicios, galería y contacto</li><li>WhatsApp, mapa y formulario</li><li>SEO básico y metadatos</li><li>2 rondas de cambios</li></ul>
+          <a class="btn" href="#contacto">Consultar este plan</a>
+        </article>
+        <article class="price-card">
+          <span class="tag">Más completo</span><h3>Web Plus</h3><div class="price">699 € <small>/ pago único</small></div>
+          <p class="desc">Para una presentación más completa, con contenido adicional y más personalización.</p>
+          <ul class="features"><li>Hasta 8 páginas</li><li>Diseño visual más personalizado</li><li>Galería, preguntas frecuentes y blog básico</li><li>Formulario de contacto</li><li>SEO técnico básico</li><li>2 rondas de cambios y entrega guiada</li></ul>
+          <a class="btn secondary" href="#contacto">Consultar este plan</a>
+        </article>
+      </div>
+      <p class="fineprint">Precios iniciales orientativos para proyectos sencillos; se confirma el alcance por escrito antes de empezar. Dominio, alojamiento, correo profesional, licencias de pago, textos legales y funciones avanzadas no están incluidos salvo que se indiquen en el presupuesto. Impuestos aplicables, si corresponden, se detallan en la oferta.</p>
+    </div>
+  </section>
+  <section id="proceso">
+    <div class="wrap">
+      <div class="section-head"><h2>Así de sencillo</h2><p>Un proceso claro para que sepas qué vas a recibir y cuánto te va a costar.</p></div>
+      <div class="process">
+        <article class="step"><span class="num">PASO 01</span><h3>Me cuentas tu negocio</h3><p>Hablamos de tus servicios, clientes, estilo y objetivo principal.</p></article>
+        <article class="step"><span class="num">PASO 02</span><h3>Recibes una propuesta</h3><p>Definimos secciones, plazo, precio y qué materiales hacen falta.</p></article>
+        <article class="step"><span class="num">PASO 03</span><h3>Revisamos y publicamos</h3><p>Validas el resultado y coordinamos la publicación en tu dominio.</p></article>
+      </div>
+    </div>
+  </section>
+  <section id="contacto">
+    <div class="wrap">
+      <div class="cta">
+        <div><h2>¿Hablamos de tu página web?</h2><p>Cuéntame qué hace tu negocio y te recomendaré la opción más sencilla que cubra tus necesidades.</p></div>
+        <!-- Sustituye el enlace de ejemplo por tu número real en formato internacional, sin +, espacios ni guiones. -->
+        <a class="btn" href="https://wa.me/34612282153?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20una%20p%C3%A1gina%20web" target="_blank" rel="noopener">Solicitar información por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap foot"><span>© <span id="year">2026</span> webcerca · Diseño web para pequeños negocios</span><span>Madrid · Atención directa</span></div></footer>
+</body>
+</html>
