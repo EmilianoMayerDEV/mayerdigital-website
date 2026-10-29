@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="mayerdigital turnos: tus clientes reservan cita por WhatsApp a cualquier hora. Agenda por profesional, recordatorios automáticos, clientes, cobros y estadísticas.">
+  <meta name="theme-color" content="#0c0e10">
+  <title>mayerdigital turnos · Reservas por WhatsApp para tu negocio</title>
+  <link rel="icon" type="image/svg+xml" href="logo/mayer-digital-icono.svg">
+  <link rel="icon" type="image/png" href="logo/mayer-digital-icono.png">
+  <link rel="apple-touch-icon" href="logo/mayer-digital-icono.png">
+  <meta property="og:title" content="mayerdigital turnos · Reservas por WhatsApp">
+  <meta property="og:description" content="Tus clientes reservan solos por WhatsApp. Tú lo gestionas todo desde un panel.">
+  <meta property="og:image" content="https://mayerdigital.website/logo/mayer-digital-icono.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0c0e10;--bg2:#111417;--panel:#15191d;--line:#252b31;--line2:#323a42;--text:#e6e9ec;--muted:#8a949e;--dim:#5c666f;--accent:#c8f169;--accent-ink:#0c0e10;--cyan:#6fd3e8;--mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;--sans:"IBM Plex Sans",ui-sans-serif,system-ui,"Segoe UI",sans-serif}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:var(--sans);color:var(--text);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    ::selection{background:var(--accent);color:var(--accent-ink)}
+    .wrap{width:min(1140px,100% - 32px);margin:auto}
+
+    header{position:sticky;top:0;z-index:10;background:rgba(12,14,16,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;height:60px}
+    .brand{font-family:var(--mono);font-weight:600;font-size:1rem;text-decoration:none;display:flex;align-items:center;gap:8px}
+    .brand b{color:var(--accent);font-weight:600}
+    .brand small{color:var(--muted);font-weight:400;font-size:.85rem}
+    .brand img{display:block;height:32px;width:auto}
+    .brand small{padding-left:4px}
+    .navlinks{display:flex;gap:26px;align-items:center;font-family:var(--mono);font-size:.82rem}
+    .navlinks a{text-decoration:none;color:var(--muted)}
+    .navlinks a:hover{color:var(--text)}
+    .navlinks a span{color:var(--dim)}
+
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:11px 16px;border-radius:3px;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-family:var(--mono);font-weight:600;font-size:.85rem;border:1px solid var(--accent);transition:background .15s,color .15s}
+    .btn:hover{background:transparent;color:var(--accent)}
+    .btn.ghost{background:transparent;color:var(--text);border-color:var(--line2)}
+    .btn.ghost:hover{border-color:var(--text)}
+    .navlinks .btn{padding:7px 12px;color:var(--accent-ink)}
+    .navlinks .btn:hover{color:var(--accent)}
+
+    .hero{position:relative;padding:80px 0 76px;border-bottom:1px solid var(--line);background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;background-position:-1px -1px}
+    .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,14,16,.55),var(--bg) 92%);pointer-events:none}
+    .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+    .kicker{font-family:var(--mono);font-size:.8rem;color:var(--muted);display:flex;gap:10px;align-items:center}
+    .kicker .ok{color:var(--accent)}
+    h1{font-size:clamp(2.3rem,5vw,4rem);line-height:1.03;letter-spacing:-.035em;font-weight:700;margin:20px 0 22px}
+    h1 .hl{color:var(--accent)}
+    .lead{font-size:1.1rem;color:var(--muted);max-width:560px;margin:0}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin:32px 0 26px}
+    .specs{display:flex;flex-wrap:wrap;font-family:var(--mono);font-size:.78rem;color:var(--muted);border:1px solid var(--line);width:fit-content;max-width:100%}
+    .specs span{padding:8px 14px;border-right:1px solid var(--line)}
+    .specs span:last-child{border-right:0}
+    .specs b{color:var(--text);font-weight:500}
+
+    /* chat */
+    .chat{background:var(--bg2);border:1px solid var(--line2);border-radius:6px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.45);max-width:420px;justify-self:end;width:100%}
+    .chat-bar{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--line);font-size:.85rem}
+    .chat-bar .av{width:28px;height:28px;border-radius:50%;background:var(--line2);display:grid;place-items:center;font-family:var(--mono);font-size:.75rem;color:var(--accent)}
+    .chat-bar small{display:block;color:var(--dim);font-family:var(--mono);font-size:.7rem}
+    .chat-body{padding:16px;display:flex;flex-direction:column;gap:8px;font-size:.86rem}
+    .m{max-width:84%;padding:8px 11px;border-radius:6px;white-space:pre-line;line-height:1.45;opacity:0;transform:translateY(4px);animation:pop .3s forwards}
+    .m.in{background:var(--panel);border:1px solid var(--line);align-self:flex-start}
+    .m.out{background:#22301a;border:1px solid #33461f;align-self:flex-end;font-family:var(--mono)}
+    .m b{color:var(--accent);font-weight:600}
+    @keyframes pop{to{opacity:1;transform:none}}
+
+    section{padding:96px 0;border-bottom:1px solid var(--line)}
+    .sec-head{display:grid;grid-template-columns:200px 1fr;gap:32px;margin-bottom:48px;align-items:start}
+    .sec-label{font-family:var(--mono);font-size:.8rem;color:var(--accent);padding-top:10px}
+    .sec-label span{color:var(--dim)}
+    h2{font-size:clamp(1.8rem,3.2vw,2.6rem);letter-spacing:-.03em;line-height:1.1;margin:0 0 12px;font-weight:700}
+    .sec-head p{color:var(--muted);margin:0;max-width:600px}
+
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line)}
+    .cell{padding:28px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg)}
+    .cell:nth-child(3n){border-right:0}
+    .cell:nth-last-child(-n+3){border-bottom:0}
+    .cell .id{font-family:var(--mono);font-size:.75rem;color:var(--dim)}
+    .cell h3{margin:18px 0 8px;font-size:1.12rem;font-weight:600}
+    .cell p{margin:0;color:var(--muted);font-size:.94rem}
+
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+    .step{padding:28px 28px 0 0;position:relative}
+    .step:before{content:"";position:absolute;top:-4px;left:0;width:7px;height:7px;background:var(--accent)}
+    .step .num{font-family:var(--mono);font-size:.78rem;color:var(--muted)}
+    .step h3{margin:10px 0 8px;font-size:1.1rem;font-weight:600}
+    .step p{color:var(--muted);font-size:.94rem;margin:0;max-width:300px}
+
+    .fit{display:flex;flex-wrap:wrap;gap:10px}
+    .fit span{font-family:var(--mono);font-size:.85rem;padding:8px 14px;border:1px solid var(--line2);border-radius:3px;color:var(--text)}
+
+    .faq{border-top:1px solid var(--line)}
+    .faq details{border-bottom:1px solid var(--line)}
+    .faq summary{cursor:pointer;list-style:none;padding:20px 0;font-weight:600;display:flex;justify-content:space-between;gap:16px}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq summary:after{content:"+";font-family:var(--mono);color:var(--accent)}
+    .faq details[open] summary:after{content:"−"}
+    .faq p{margin:0 0 20px;color:var(--muted);max-width:720px}
+
+    #contacto{border-bottom:0}
+    .contact{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line2);border-radius:4px;overflow:hidden}
+    .contact-copy{padding:44px;background:var(--panel)}
+    .contact-copy p{color:var(--muted);margin:0 0 28px;max-width:440px}
+    .channels{display:flex;flex-direction:column}
+    .channel{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:28px 32px;text-decoration:none;border-left:1px solid var(--line2);border-bottom:1px solid var(--line2);flex:1;transition:background .15s}
+    .channel:last-child{border-bottom:0}
+    .channel:hover{background:var(--bg2)}
+    .channel .k{font-family:var(--mono);font-size:.75rem;color:var(--dim);display:block;margin-bottom:4px}
+    .channel .v{font-family:var(--mono);font-size:1.02rem;color:var(--text);word-break:break-all}
+    .channel .arrow{font-family:var(--mono);color:var(--accent);font-size:1.1rem}
+
+    footer{padding:28px 0 36px;color:var(--dim);font-size:.78rem;font-family:var(--mono);border-top:1px solid var(--line)}
+    footer .foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    footer a{text-decoration:none;color:var(--muted)}
+    footer a:hover{color:var(--accent)}
+
+    @media(max-width:880px){
+      .hero{padding:56px 0 60px}
+      .hero-grid{grid-template-columns:1fr;gap:40px}
+      .chat{justify-self:start}
+      .sec-head{grid-template-columns:1fr;gap:8px}
+      .sec-label{padding-top:0}
+      .grid3,.steps,.contact{grid-template-columns:1fr}
+      .cell{border-right:0}.cell:nth-last-child(-n+3){border-bottom:1px solid var(--line)}.cell:last-child{border-bottom:0}
+      .steps{border-top:0;gap:28px}.step{border-top:1px solid var(--line)}
+      .navlinks a:not(.btn){display:none}
+      .contact-copy{padding:30px 24px}
+      .channel{border-left:0;border-top:1px solid var(--line2);padding:22px 24px}
+      section{padding:72px 0}
+    }
+    @media(prefers-reduced-motion:reduce){.m{animation:none;opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="mayerdigital, inicio"><img src="logo/mayer-digital-logo-oscuro.svg" alt="mayer digital" height="32"><small>/ turnos</small></a>
+    <nav class="navlinks" aria-label="Navegación">
+      <a href="#funciones"><span>01/</span>funciones</a>
+      <a href="#como"><span>02/</span>cómo funciona</a>
+      <a href="#preguntas"><span>03/</span>preguntas</a>
+      <a class="btn" href="#contacto">pedir demo</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="kicker"><span class="ok">●</span> mayerdigital turnos · citas por WhatsApp</div>
+        <h1>Tus clientes reservan solos. <span class="hl">Tú solo atiendes.</span></h1>
+        <p class="lead">Un bot de WhatsApp que enseña tus huecos libres, confirma las citas y envía recordatorios. Y un panel sencillo para ver la agenda, a tus clientes y lo que has facturado.</p>
+        <div class="actions">
+          <a class="btn" href="#contacto">Pedir una demo →</a>
+          <a class="btn ghost" href="#como">Cómo funciona</a>
+        </div>
+        <div class="specs"><span><b>24/7</b> reservas</span><span><b>auto</b> recordatorios</span><span><b>RGPD</b> incluido</span></div>
+      </div>
+
+      <div class="chat" aria-label="Ejemplo de conversación con el bot">
+        <div class="chat-bar"><span class="av">BS</span><div>Barbería Sol<small>asistente de reservas</small></div></div>
+        <div class="chat-body">
+          <div class="m out" style="animation-delay:.2s">hola</div>
+          <div class="m in" style="animation-delay:.6s">Hola, Laura. ¿Qué quieres hacer?
+1. Reservar cita
+2. Mis citas
+3. Servicios y precios</div>
+          <div class="m out" style="animation-delay:1.3s">1</div>
+          <div class="m in" style="animation-delay:1.7s">Horas libres el viernes 14:
+1. 10:00   2. 10:30
+3. 11:15   4. 12:00</div>
+          <div class="m out" style="animation-delay:2.4s">2</div>
+          <div class="m in" style="animation-delay:2.8s"><b>¡Listo!</b> Corte con Ana
+Viernes 14 a las 10:30
+Te avisamos el día antes.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="funciones">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-label"><span>01 /</span> funciones</div>
+        <div><h2>Todo lo que necesita tu agenda.</h2><p>Pensado para negocios con cita previa: sin aplicaciones que instalar ni para ti ni para tus clientes.</p></div>
+      </div>
+      <div class="grid3">
+        <article class="cell"><span class="id">[ bot ]</span><h3>Reservas por WhatsApp</h3><p>El cliente elige servicio, profesional, día y hora con un menú numerado. Puede cancelar o cambiar su cita sin llamarte.</p></article>
+        <article class="cell"><span class="id">[ avisos ]</span><h3>Recordatorios automáticos</h3><p>Mensaje el día antes para confirmar la cita y otro el mismo día. Menos huecos vacíos por olvidos.</p></article>
+        <article class="cell"><span class="id">[ agenda ]</span><h3>Agenda por profesional</h3><p>Cada profesional con su horario, sus servicios y sus vacaciones. Ves el día de un vistazo y marcas quién ha venido.</p></article>
+        <article class="cell"><span class="id">[ clientes ]</span><h3>Ficha de cada cliente</h3><p>Historial de visitas, gasto total y notas. También registras a quien llega sin cita.</p></article>
+        <article class="cell"><span class="id">[ cobros ]</span><h3>Ingresos y estadísticas</h3><p>Lo cobrado por día, por servicio y por profesional, forma de pago y porcentaje de clientes que no se presentan.</p></article>
+        <article class="cell"><span class="id">[ rgpd ]</span><h3>Datos en regla</h3><p>El bot pide el consentimiento antes de guardar nada y puedes borrar los datos de un cliente cuando te lo pida.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="como">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-label"><span>02 /</span> cómo funciona</div>
+        <div><h2>En marcha en una tarde.</h2><p>Nosotros lo preparamos contigo; tú solo tienes que escanear un código QR.</p></div>
+      </div>
+      <div class="steps">
+        <article class="step"><span class="num">01 — alta</span><h3>Configuramos tu negocio</h3><p>Servicios con su duración y precio, profesionales y horarios.</p></article>
+        <article class="step"><span class="num">02 — conexión</span><h3>Vinculas tu WhatsApp</h3><p>Escaneas un QR desde el móvil del negocio, igual que con WhatsApp Web.</p></article>
+        <article class="step"><span class="num">03 — reservas</span><h3>Tus clientes escriben</h3><p>El bot responde al momento y tú recibes un aviso con cada reserva nueva.</p></article>
+      </div>
+      <div style="margin-top:56px">
+        <div class="sec-label" style="padding:0 0 14px"><span>//</span> ideal para</div>
+        <div class="fit"><span>peluquerías y barberías</span><span>centros de estética</span><span>fisioterapia</span><span>consultas</span><span>talleres</span><span>academias</span><span>entrenadores personales</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="preguntas">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-label"><span>03 /</span> preguntas</div>
+        <div><h2>Preguntas frecuentes.</h2></div>
+      </div>
+      <div class="faq">
+        <details><summary>¿Tengo que instalar algo?</summary><p>No. El panel funciona en el navegador del ordenador o del móvil, y tus clientes usan su WhatsApp de siempre.</p></details>
+        <details><summary>¿Qué número de WhatsApp se usa?</summary><p>Recomendamos un número dedicado al negocio, no tu número personal. El bot responde desde ese número y a ti te llegan los avisos en tu móvil.</p></details>
+        <details><summary>¿Funciona si tengo varios profesionales?</summary><p>Sí. Cada uno tiene su propio horario, sus servicios y sus ausencias, y el cliente puede elegir con quién reservar o coger el primer hueco libre.</p></details>
+        <details><summary>¿Quién ve los datos de mis clientes?</summary><p>Solo tú. Los datos de cada negocio están separados y el bot pide el consentimiento del cliente antes de guardar su nombre y su teléfono.</p></details>
+        <details><summary>¿Cuánto cuesta?</summary><p>Hay planes según el número de profesionales. Escríbenos y te preparamos un presupuesto cerrado para tu negocio.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <div class="wrap">
+      <div class="contact">
+        <div class="contact-copy">
+          <div class="sec-label" style="padding:0 0 14px"><span>04 /</span> demo</div>
+          <h2>¿Lo vemos funcionando?</h2>
+          <p>Cuéntanos a qué se dedica tu negocio y te enseñamos el bot y el panel con tus propios servicios.</p>
+          <a class="btn" href="mailto:contacto@mayerdigital.website?subject=Demo%20de%20mayerdigital%20turnos">Pedir demo por email →</a>
+        </div>
+        <div class="channels">
+          <a class="channel" href="mailto:contacto@mayerdigital.website?subject=Demo%20de%20mayerdigital%20turnos">
+            <div><span class="k">email</span><span class="v">contacto@mayerdigital.website</span></div><span class="arrow">↗</span>
+          </a>
+          <a class="channel" href="https://wa.me/34612282153?text=Hola%2C%20quiero%20una%20demo%20de%20mayerdigital%20turnos" target="_blank" rel="noopener">
+            <div><span class="k">whatsapp</span><span class="v">+34 612 282 153</span></div><span class="arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 mayerdigital — <a href="index.html">desarrollo web</a> · turnos</span>
+    <a href="mailto:contacto@mayerdigital.website">contacto@mayerdigital.website</a>
+  </div>
+</footer>
+</body>
+</html>

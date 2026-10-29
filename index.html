@@ -105,6 +105,13 @@
     .step h3{margin:10px 0 8px;font-size:1.1rem;font-weight:600}
     .step p{color:var(--muted);font-size:.94rem;margin:0;max-width:300px}
 
+    /* producto */
+    .teaser{display:grid;grid-template-columns:1.2fr .8fr;border:1px solid var(--line2);border-radius:4px;overflow:hidden}
+    .teaser-copy{padding:40px;background:var(--panel)}
+    .teaser-copy p{color:var(--muted);margin:0 0 24px;max-width:520px}
+    .teaser ul{list-style:none;margin:0;padding:32px;border-left:1px solid var(--line2);font-family:var(--mono);font-size:.85rem;color:var(--muted);display:flex;flex-direction:column;justify-content:center;gap:12px}
+    .teaser li:before{content:"+ ";color:var(--accent)}
+
     /* contact */
     #contacto{border-bottom:0}
     .contact{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line2);border-radius:4px;overflow:hidden}
@@ -128,7 +135,8 @@
       .hero-grid{grid-template-columns:1fr;gap:40px}
       .sec-head{grid-template-columns:1fr;gap:8px}
       .sec-label{padding-top:0}
-      .grid3,.prices,.steps,.contact{grid-template-columns:1fr}
+      .grid3,.prices,.steps,.contact,.teaser{grid-template-columns:1fr}
+      .teaser-copy{padding:30px 24px}.teaser ul{border-left:0;border-top:1px solid var(--line2);padding:24px}
       .cell{border-right:0;border-bottom:1px solid var(--line)}.cell:last-child{border-bottom:0}
       .steps{border-top:0;gap:28px}.step{border-top:1px solid var(--line)}
       .plan.featured{order:-1}
@@ -149,6 +157,7 @@
       <a href="#servicios"><span>01/</span>servicios</a>
       <a href="#precios"><span>02/</span>precios</a>
       <a href="#proceso"><span>03/</span>proceso</a>
+      <a href="turnos.html"><span>04/</span>turnos</a>
       <a class="btn" href="#contacto">contacto</a>
     </nav>
   </div>
@@ -241,11 +250,33 @@
     </div>
   </section>
 
+  <section id="turnos">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-label"><span>04 /</span> producto</div>
+        <div><h2>Reservas por WhatsApp para tu negocio.</h2><p>Además de webs, desarrollamos <b>mayerdigital turnos</b>: un sistema de citas con bot de WhatsApp y panel de gestión.</p></div>
+      </div>
+      <div class="teaser">
+        <div class="teaser-copy">
+          <h3 style="margin:0 0 10px;font-size:1.25rem">Tus clientes reservan solos, a cualquier hora.</h3>
+          <p>El bot muestra los huecos libres, confirma la cita y envía recordatorios. Tú lo ves todo en una agenda por profesional, con clientes, cobros y estadísticas.</p>
+          <a class="btn" href="turnos.html">Ver cómo funciona →</a>
+        </div>
+        <ul>
+          <li>Bot de WhatsApp 24/7</li>
+          <li>Recordatorios automáticos</li>
+          <li>Agenda por profesional</li>
+          <li>Clientes, cobros y estadísticas</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <section id="contacto">
     <div class="wrap">
       <div class="contact">
         <div class="contact-copy">
-          <div class="sec-label" style="padding:0 0 14px"><span>04 /</span> contacto</div>
+          <div class="sec-label" style="padding:0 0 14px"><span>05 /</span> contacto</div>
           <h2>¿Hablamos de tu web?</h2>
           <p>Cuéntame qué hace tu negocio y te recomendaré la opción más sencilla que cubra lo que necesitas. Respondo en menos de 24 h.</p>
           <a class="btn" href="mailto:contacto@mayerdigital.website?subject=Informaci%C3%B3n%20sobre%20una%20p%C3%A1gina%20web">Enviar email →</a>
