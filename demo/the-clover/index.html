@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Clover Irish Tavern · Pub irlandés en Mirasierra</title>
+<meta name="description" content="Pub irlandés en Mirasierra (Madrid) desde 2010: Guinness y cervezas de grifo, más de 20 cervezas de botella, ibéricos, nachos y terraza. C. del Valle de Pinares Llanos, 8.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0E2219">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--verde:#0E2219;--verde2:#163126;--verde3:#1F4434;--trebol:#3FA35B;--oro:#D4AF6A;--crema:#F4ECDC;--texto:#EDE6D6;--suave:#B5AE9E;--linea:#2C4A3B}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--verde);color:var(--texto);font-family:Lato,system-ui,sans-serif;font-size:17px;line-height:1.6}
+a{color:inherit}img{display:block;max-width:100%}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:Cinzel,Georgia,serif;font-weight:700;line-height:1.1;margin:0;letter-spacing:.02em}
+h4{margin:0;font-size:17px}
+.cinta{background:var(--oro);color:var(--verde);font-size:13.5px;text-align:center;padding:8px 16px;font-weight:700}
+.cinta a{color:inherit}
+header{position:sticky;top:0;z-index:20;background:rgba(14,34,25,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--linea)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:66px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:Cinzel,serif;font-weight:700;font-size:21px;color:var(--crema)}
+.logo svg{color:var(--trebol)}.logo small{display:block;font-family:Lato,sans-serif;font-size:11px;letter-spacing:.3em;color:var(--oro);font-weight:700;margin-top:-2px}
+.menu{display:flex;gap:26px;font-size:15px}.menu a{text-decoration:none;color:var(--suave)}.menu a:hover{color:var(--crema)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--trebol);color:#fff;text-decoration:none;font-weight:900;font-size:15px;padding:13px 22px;border-radius:999px;border:2px solid var(--trebol);transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}.btn.sec{background:transparent;border-color:rgba(244,236,220,.5);color:var(--crema)}.btn.peq{padding:9px 16px;font-size:14px}
+.hero{position:relative;min-height:min(86vh,760px);display:grid;align-items:end;background:#000}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;opacity:.55}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,34,25,.15) 30%,var(--verde) 98%)}
+.hero .wrap{width:100%;position:relative;z-index:1;padding-bottom:64px;padding-top:120px}
+.sobre-t{color:var(--oro);font-weight:900;letter-spacing:.3em;font-size:13px;text-transform:uppercase}
+.hero h1{font-size:clamp(46px,8vw,96px);color:var(--crema);margin:10px 0 8px}
+.hero p{font-size:20px;max-width:560px;color:var(--texto);margin:0 0 28px}
+.acciones{display:flex;flex-wrap:wrap;gap:12px}
+.sellos{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.sello{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--linea);background:rgba(14,34,25,.7);padding:8px 14px;border-radius:999px;font-size:14px;font-weight:700}
+.sello svg{color:var(--oro)}
+section.b{padding:90px 0}
+.cab{text-align:center;max-width:720px;margin:0 auto 44px}
+.cab .pre{color:var(--oro);font-weight:900;letter-spacing:.25em;font-size:13px;text-transform:uppercase;margin-bottom:12px}
+.cab h2{font-size:clamp(32px,4.6vw,50px);color:var(--crema)}.cab p{color:var(--suave);margin:14px 0 0}
+.trebol-sep{display:flex;justify-content:center;color:var(--trebol);margin:0 0 18px}
+.cifras{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea);background:var(--verde2)}
+.cifra{padding:30px 18px;text-align:center}.cifra+.cifra{border-left:1px solid var(--linea)}
+.cifra b{display:block;font-family:Cinzel,serif;font-size:38px;color:var(--oro);line-height:1}.cifra span{color:var(--suave);font-size:14px}
+.tabs{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:30px}
+.tab{background:transparent;color:var(--suave);border:1px solid var(--linea);border-radius:999px;padding:10px 18px;font:inherit;font-weight:700;font-size:15px;cursor:pointer;display:inline-flex;gap:8px;align-items:center}
+.tab.activo{background:var(--crema);color:var(--verde);border-color:var(--crema)}
+.panel{display:none;background:var(--verde2);border:1px solid var(--linea);border-radius:18px;padding:12px 32px 24px}.panel.activo{display:block}
+.lista{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;column-gap:48px}
+.item{display:flex;justify-content:space-between;gap:18px;padding:18px 0;border-bottom:1px dashed var(--linea)}
+.item h4{color:var(--crema)}.item p{margin:2px 0 0;color:var(--suave);font-size:14.5px;line-height:1.45}.item small{color:var(--oro);font-size:13px;font-weight:700}
+.precio{font-weight:900;color:var(--oro);white-space:nowrap;font-size:17px}
+.precios{display:flex;gap:14px;white-space:nowrap}.precios span{display:flex;flex-direction:column;align-items:flex-end;font-weight:900;color:var(--oro)}
+.precios em{font-style:normal;font-size:11px;color:var(--suave);font-weight:700}
+.nota{text-align:center;color:var(--suave);font-size:14px;margin:18px 0 0}
+.filtros{display:flex;flex-wrap:wrap;gap:6px;padding:16px 0 4px}
+.f{background:transparent;border:1px solid var(--linea);color:var(--suave);border-radius:999px;padding:6px 12px;font:inherit;font-size:13.5px;cursor:pointer}.f.activo{border-color:var(--oro);color:var(--oro)}
+.picoteo-fotos{display:grid;grid-template-columns:1.6fr 1fr;gap:12px;margin:18px 0 6px}
+.picoteo-fotos img{width:100%;height:220px;object-fit:cover;border-radius:12px}
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.foto-terraza{border-radius:22px;overflow:hidden;aspect-ratio:4/5;border:1px solid var(--linea)}.foto-terraza img{width:100%;height:100%;object-fit:cover;object-position:center 60%}
+.texto h2{font-size:clamp(32px,4.4vw,48px);color:var(--crema);margin:10px 0 18px}.texto p{color:var(--suave);font-size:18px}
+.checks{list-style:none;padding:0;margin:22px 0 30px;display:grid;gap:10px}.checks li{display:flex;gap:10px;align-items:center}.checks svg{color:var(--trebol);flex:none}
+.cumple{background:radial-gradient(120% 140% at 0% 0%,var(--verde3),var(--verde2));border:1px solid var(--linea);border-radius:26px;padding:56px;display:grid;grid-template-columns:1.3fr 1fr;gap:36px;align-items:center}
+.cumple h2{font-size:clamp(30px,4vw,44px);color:var(--crema)}.cumple p{color:var(--suave);font-size:18px}
+.cumple .tags{display:flex;flex-wrap:wrap;gap:10px}.cumple .tags span{background:var(--verde);border:1px solid var(--linea);border-radius:12px;padding:16px 18px;font-weight:900;display:flex;gap:10px;align-items:center;flex:1 1 140px}.cumple .tags svg{color:var(--oro)}
+.eventos{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.evento{background:var(--verde2);border:1px solid var(--linea);border-radius:18px;padding:30px}.evento .i{width:50px;height:50px;border-radius:14px;background:var(--verde3);color:var(--oro);display:grid;place-items:center;margin-bottom:18px}
+.evento h3{font-size:21px;color:var(--crema);margin-bottom:8px}.evento p{margin:0;color:var(--suave);font-size:15.5px}
+.llegar{display:grid;grid-template-columns:1fr 1.25fr;gap:28px}
+.tarjeta{background:var(--verde2);border:1px solid var(--linea);border-radius:18px;padding:32px}
+.datos{list-style:none;padding:0;margin:18px 0 26px;display:grid;gap:16px}.datos li{display:flex;gap:14px}.datos svg{color:var(--oro);flex:none;margin-top:3px}.datos b{display:block;color:var(--crema)}.datos span{color:var(--suave);font-size:15.5px}
+.mapa{border-radius:18px;overflow:hidden;border:1px solid var(--linea);min-height:420px}.mapa iframe{width:100%;height:100%;min-height:420px;border:0;display:block}
+footer{border-top:1px solid var(--linea);padding:36px 0;color:var(--suave);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:center}footer img{width:190px;border-radius:6px}
+.wa{position:fixed;right:20px;bottom:20px;width:58px;height:58px;border-radius:50%;background:#25D366;color:#fff;display:grid;place-items:center;box-shadow:0 10px 26px rgba(0,0,0,.35);z-index:30}
+@media(max-width:900px){
+ .menu{display:none}.lista{grid-template-columns:1fr}.panel{padding:6px 18px 18px}
+ .dos,.cumple,.llegar{grid-template-columns:1fr}.cumple{padding:32px 22px}.eventos{grid-template-columns:1fr}
+ .cifras{grid-template-columns:1fr 1fr}.cifra:nth-child(3){border-left:0}.cifra:nth-child(n+3){border-top:1px solid var(--linea)}
+ section.b{padding:64px 0}.picoteo-fotos{grid-template-columns:1fr}.picoteo-fotos img{height:180px}.foto-terraza{aspect-ratio:4/3}
+}
+@media(max-width:520px){.nav .btn{display:none}.hero p{font-size:18px}.precios{gap:10px}}
+</style>
+</head>
+<body>
+<div class="cinta">Propuesta de diseño para The Clover Irish Tavern · preparada por <a href="https://mayerdigital.website">Mayer Digital</a></div>
+
+<header><div class="wrap nav">
+  <a class="logo" href="#"><svg class="ico " width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16.17 7.83 2 22" /> <path d="M4.02 12a2.827 2.827 0 1 1 3.81-4.17A2.827 2.827 0 1 1 12 4.02a2.827 2.827 0 1 1 4.17 3.81A2.827 2.827 0 1 1 19.98 12a2.827 2.827 0 1 1-3.81 4.17A2.827 2.827 0 1 1 12 19.98a2.827 2.827 0 1 1-4.17-3.81A1 1 0 1 1 4 12" /> <path d="m7.83 7.83 8.34 8.34" /></svg><span>The Clover<small>MIRASIERRA</small></span></a>
+  <nav class="menu"><a href="#carta">Carta</a><a href="#terraza">Terraza</a><a href="#cumple">Cumpleaños</a><a href="#eventos">Eventos</a><a href="#llegar">Cómo llegar</a></nav>
+  <a class="btn peq" href="https://wa.me/34629824860?text=Hola%2C%20quer%C3%ADa%20reservar%20en%20The%20Clover"><svg class="ico " width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" /></svg>Reservar</a>
+</div></header>
+
+<section class="hero">
+  <img src="img/fachada.jpg" alt="Fachada de The Clover Irish Tavern de noche">
+  <div class="wrap">
+    <div class="sobre-t">Irish Tavern · Mirasierra · desde 2010</div>
+    <h1>The Clover</h1>
+    <p>Tu pub irlandés en Mirasierra: Guinness bien tirada, cervezas de todo el mundo, raciones de ibéricos y terraza para las tardes de buen tiempo.</p>
+    <div class="acciones">
+      <a class="btn" href="https://wa.me/34629824860?text=Hola%2C%20quer%C3%ADa%20reservar%20en%20The%20Clover"><svg class="ico " width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" /></svg>Reservar por WhatsApp</a>
+      <a class="btn sec" href="#carta"><svg class="ico " width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 11h1a3 3 0 0 1 0 6h-1" /> <path d="M9 12v6" /> <path d="M13 12v6" /> <path d="M14 7.5c-1 0-1.44.5-3 .5s-2-.5-3-.5-1.72.5-2.5.5a2.5 2.5 0 0 1 0-5c.78 0 1.57.5 2.5.5S9.44 2 11 2s2 1.5 3 1.5 1.72-.5 2.5-.5a2.5 2.5 0 0 1 0 5c-.78 0-1.5-.5-2.5-.5Z" /> <path d="M5 8v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8" /></svg>Ver la carta</a>
+    </div>
+    <div class="sellos">
+      <span class="sello"><svg class="ico " width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 11h1a3 3 0 0 1 0 6h-1" /> <path d="M9 12v6" /> <path d="M13 12v6" /> <path d="M14 7.5c-1 0-1.44.5-3 .5s-2-.5-3-.5-1.72.5-2.5.5a2.5 2.5 0 0 1 0-5c.78 0 1.57.5 2.5.5S9.44 2 11 2s2 1.5 3 1.5 1.72-.5 2.5-.5a2.5 2.5 0 0 1 0 5c-.78 0-1.5-.5-2.5-.5Z" /> <path d="M5 8v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8" /></svg>Guinness de grifo</span>
+      <span class="sello"><svg class="ico " width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4" /> <path d="M12 2v2" /> <path d="M12 20v2" /> <path d="m4.93 4.93 1.41 1.41" /> <path d="m17.66 17.66 1.41 1.41" /> <path d="M2 12h2" /> <path d="M20 12h2" /> <path d="m6.34 17.66-1.41 1.41" /> <path d="m19.07 4.93-1.41 1.41" /></svg>Terraza</span>
+      <span class="sello"><svg class="ico " width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8" /> <path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1" /> <path d="M2 21h20" /> <path d="M7 8v3" /> <path d="M12 8v3" /> <path d="M17 8v3" /> <path d="M7 4h.01" /> <path d="M12 4h.01" /> <path d="M17 4h.01" /></svg>Cumpleaños y reservados</span>
+    </div>
+  </div>
+</section>
+
+<div class="cifras"><div class="cifra"><b>2010</b><span>abiertos desde</span></div><div class="cifra"><b>8</b><span>grifos</span></div>
+<div class="cifra"><b>23</b><span>cervezas de botella</span></div><div class="cifra"><b>17,50 €</b><span>ración de ibéricos</span></div></div>
+
+<section class="b" id="carta"><div class="wrap">
+  <div class="cab"><div class="trebol-sep"><svg class="ico " width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16.17 7.83 2 22" /> <path d="M4.02 12a2.827 2.827 0 1 1 3.81-4.17A2.827 2.827 0 1 1 12 4.02a2.827 2.827 0 1 1 4.17 3.81A2.827 2.827 0 1 1 19.98 12a2.827 2.827 0 1 1-3.81 4.17A2.827 2.827 0 1 1 12 19.98a2.827 2.827 0 1 1-4.17-3.81A1 1 0 1 1 4 12" /> <path d="m7.83 7.83 8.34 8.34" /></svg></div><div class="pre">Nuestra carta</div><h2>Para beber y para picar</h2>
+  <p>De la Guinness de siempre a trapenses belgas y cervezas artesanas. Y para acompañar, ibéricos, nachos y nuestros hot dogs.</p></div>
+  <div class="tabs" role="tablist">
+    <button class="tab activo" data-t="grifos"><svg class="ico " width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 11h1a3 3 0 0 1 0 6h-1" /> <path d="M9 12v6" /> <path d="M13 12v6" /> <path d="M14 7.5c-1 0-1.44.5-3 .5s-2-.5-3-.5-1.72.5-2.5.5a2.5 2.5 0 0 1 0-5c.78 0 1.57.5 2.5.5S9.44 2 11 2s2 1.5 3 1.5 1.72-.5 2.5-.5a2.5 2.5 0 0 1 0 5c-.78 0-1.5-.5-2.5-.5Z" /> <path d="M5 8v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8" /></svg>De grifo</button>
+    <button class="tab" data-t="botellas"><svg class="ico " width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 22h8" /> <path d="M7 10h10" /> <path d="M12 15v7" /> <path d="M12 15a5 5 0 0 0 5-5c0-2-.5-4-2-8H9c-1.5 4-2 6-2 8a5 5 0 0 0 5 5Z" /></svg>Botellas</button>
+    <button class="tab" data-t="picoteo"><svg class="ico " width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" /> <path d="M7 2v20" /> <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7" /></svg>Picoteo</button>
+    <button class="tab" data-t="copas"><svg class="ico " width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 22h8" /> <path d="M12 11v11" /> <path d="m19 3-7 8-7-8Z" /></svg>Cócteles y copas</button>
+  </div>
+  <div class="panel activo" id="grifos"><ul class="lista"><li class="item"><div><h4>Krombacher Pils</h4><p>Rubia pils alemana, notas maltosas y suave amargor</p><small>4,8° · 24 IBU</small></div><div class="precios"><span><em>0,3 L</em>3,5 €</span><span><em>0,5 L</em>4,5 €</span></div></li><li class="item"><div><h4>Guinness Stout</h4><p>Negra irlandesa, notas torrefactas, suave y cremosa en boca</p><small>4,3° · 32 IBU</small></div><div class="precios"><span><em>0,3 L</em>4,5 €</span><span><em>0,5 L</em>6 €</span></div></li><li class="item"><div><h4>Dougall&#x27;s Tres Mares</h4><p>Amber ale española, notas a toffee y galleta, final de suave amargor</p><small>5,2° · 32 IBU</small></div><div class="precios"><span><em>0,3 L</em>4,5 €</span><span><em>0,5 L</em>6 €</span></div></li><li class="item"><div><h4>Te Deum Roja</h4><p>Amber de abadía belga, notas a caramelo, suave amargor</p><small>5,9° · 20 IBU</small></div><div class="precios"><span><em>0,3 L</em>4,5 €</span><span><em>0,5 L</em>6 €</span></div></li><li class="item"><div><h4>Dougall&#x27;s IPA 9</h4><p>Rubia India pale ale española, aromática y tropical</p><small>6,5° · 60 IBU</small></div><div class="precios"><span><em>0,3 L</em>4,5 €</span><span><em>0,5 L</em>6 €</span></div></li><li class="item"><div><h4>Paulaner Hefe-Weizen</h4><p>Trigo turbia alemana, notas suaves a levadura y plátano</p><small>5,5° · 12 IBU</small></div><div class="precios"><span><em>0,3 L</em>4 €</span><span><em>0,5 L</em>5,5 €</span></div></li><li class="item"><div><h4>Chouffe Blond</h4><p>Rubia ale belga, notas afrutadas, a especias y lúpulo</p><small>8° · 20 IBU</small></div><div class="precios"><span><em>0,3 L</em>4,5 €</span><span><em>0,5 L</em>6 €</span></div></li><li class="item"><div><h4>Kopparberg Fresa-Lima</h4><p>Sidra de manzana sueca con zumo de fresas y lima</p><small>4,5°</small></div><div class="precios"><span><em>0,3 L</em>4 €</span><span><em>0,5 L</em>5,5 €</span></div></li></ul>
+    <p class="nota">¡Y ahora también Mahou bien fresquita!</p></div>
+  <div class="panel" id="botellas"><div class="filtros"><button class="f activo" data-f="todas">Todas</button><button class="f" data-f="Alemania">Alemania</button><button class="f" data-f="Bélgica">Bélgica</button><button class="f" data-f="Reino Unido">Reino Unido</button><button class="f" data-f="Otras">Otras</button><button class="f" data-f="Sin alcohol">Sin alcohol</button></div><ul class="lista"><li class="item" data-c="Alemania"><div><h4>Krombacher Pils</h4><p>Alemana tipo pilsner, suave sabor y amargor contenido</p><small>33 cl · 4,8°</small></div><div class="precio">4 €</div></li><li class="item" data-c="Alemania"><div><h4>Krombacher Radler</h4><p>Alemana con zumo de limón, muy refrescante</p><small>33 cl · 2,5°</small></div><div class="precio">4 €</div></li><li class="item" data-c="Alemania"><div><h4>Schneider Original TAP 7</h4><p>Trigo tostada, receta de 1872, leves notas a plátano y clavo</p><small>50 cl · 5,4°</small></div><div class="precio">6 €</div></li><li class="item" data-c="Alemania"><div><h4>Schneider Hopfenweisse TAP 5</h4><p>Weizenbock frutal y cítrica, final amargo lupulizado</p><small>50 cl · 8,2°</small></div><div class="precio">6 €</div></li><li class="item" data-c="Alemania"><div><h4>Schneider Aventinus TAP 6</h4><p>Trigo doppelbock rubí oscuro, notas a ciruelas y pasas</p><small>50 cl · 8,4°</small></div><div class="precio">6 €</div></li><li class="item" data-c="Alemania"><div><h4>Schneider Eisbock</h4><p>Concentrado de Aventinus precongelada, notas a plátano y clavo</p><small>33 cl · 12°</small></div><div class="precio">5 €</div></li><li class="item" data-c="Bélgica"><div><h4>Blanche de Namur</h4><p>Trigo belga, notas a cáscara de naranja amarga y cilantro</p><small>33 cl · 4,5°</small></div><div class="precio">5 €</div></li><li class="item" data-c="Bélgica"><div><h4>Tripel Karmeliet</h4><p>Rubia pajiza de cebada, trigo y avena, cítrica y dulzona</p><small>33 cl · 8,4°</small></div><div class="precio">5 €</div></li><li class="item" data-c="Bélgica"><div><h4>Kwak</h4><p>Ambarina, toques frutales, ligeramente dulce y final especiado</p><small>33 cl · 9°</small></div><div class="precio">5 €</div></li><li class="item" data-c="Bélgica"><div><h4>Rochefort 8</h4><p>Trapense tostada, notas a malta caramelo y frutas</p><small>33 cl · 9,2°</small></div><div class="precio">5,5 €</div></li><li class="item" data-c="Bélgica"><div><h4>Delirium Tremens</h4><p>Ámbar oscuro, maltosa con toques frutales y final especiado</p><small>33 cl · 8,5°</small></div><div class="precio">5,5 €</div></li><li class="item" data-c="Bélgica"><div><h4>Kasteel Donker</h4><p>Tostada quádruple, dulce, caramelizada y confitada</p><small>33 cl · 11°</small></div><div class="precio">5 €</div></li><li class="item" data-c="Bélgica"><div><h4>Hoegaarden Fruto Prohibido</h4><p>Trigo con notas a naranja y cilantro, de fácil trago</p><small>33 cl · 8,5°</small></div><div class="precio">5,5 €</div></li><li class="item" data-c="Bélgica"><div><h4>Cherry Chouffe</h4><p>Rubí con sabor a cerezas, fresa y almendras</p><small>33 cl · 8°</small></div><div class="precio">5,5 €</div></li><li class="item" data-c="Bélgica"><div><h4>St Louis Framboise</h4><p>Lambic rubí con frambuesas, refrescante y agridulce</p><small>25 cl · 2,8°</small></div><div class="precio">4 €</div></li><li class="item" data-c="Bélgica"><div><h4>Mongozo Coco</h4><p>Lambic ambarina con sabor a coco, vainilla y banana</p><small>33 cl · 3,6°</small></div><div class="precio">5,5 €</div></li><li class="item" data-c="Bélgica"><div><h4>Caulier sin gluten</h4><p>Rubia ale belga sin gluten, maltosa y ligeramente amarga</p><small>33 cl · 6,8°</small></div><div class="precio">4 €</div></li><li class="item" data-c="Bélgica"><div><h4>Westvleteren 12</h4><p>Trapense de gran cuerpo, considerada una de las mejores del mundo</p><small>33 cl · 10,2°</small></div><div class="precio">18 €</div></li><li class="item" data-c="Reino Unido"><div><h4>Samuel Smith Imperial Stout</h4><p>Stout inglesa cremosa, notas torrefactas, galleta y vainilla</p><small>35,5 cl · 7°</small></div><div class="precio">6 €</div></li><li class="item" data-c="Otras"><div><h4>Heineken</h4><p>Lager holandesa de sabor suave y ligero amargor</p><small>33 cl · 4,8°</small></div><div class="precio">4 €</div></li><li class="item" data-c="Otras"><div><h4>Coronita</h4><p>Mexicana dorada, con su rodajita de lima</p><small>35,5 cl · 4,6°</small></div><div class="precio">4 €</div></li><li class="item" data-c="Sin alcohol"><div><h4>Krombacher 0,0</h4><p>Pils alemana sin alcohol</p><small>33 cl · 0,0°</small></div><div class="precio">4 €</div></li><li class="item" data-c="Sin alcohol"><div><h4>Schneider sin alcohol</h4><p>Trigo alemana sin alcohol</p><small>50 cl · 0,5°</small></div><div class="precio">5 €</div></li></ul></div>
+  <div class="panel" id="picoteo">
+    <div class="picoteo-fotos"><img src="img/jamon.jpg" alt="Ración de jamón y lomo ibérico" loading="lazy"><img src="img/nachos.jpg" alt="Nachos Clover" loading="lazy"></div>
+    <ul class="lista"><li class="item"><div><h4>Jamón ibérico</h4><p>Ración de 200 g</p></div><div class="precio">17,50 €</div></li><li class="item"><div><h4>Mixta ibérica</h4><p>Jamón ibérico (100 g) + lomo ibérico (100 g)</p></div><div class="precio">17,50 €</div></li><li class="item"><div><h4>Queso curado de oveja</h4><p>Ración de 250 g</p></div><div class="precio">12 €</div></li><li class="item"><div><h4>Nachos Clover</h4><p>Queso cheddar, pico de gallo, guacamole, crema agria y jalapeños</p></div><div class="precio">12 € · ½ 7 €</div></li><li class="item"><div><h4>Hot Clover</h4><p>Frankfurt ahumada de 15 cm sobre guacamole, BBQ, mostaza dulce, cebolla crujiente y queso gratinado</p></div><div class="precio">5 €</div></li><li class="item"><div><h4>Hot Dog</h4><p>Frankfurt ahumada de 15 cm, cebolla crujiente, ketchup y mostaza</p></div><div class="precio">4 €</div></li></ul></div>
+  <div class="panel" id="copas"><ul class="lista"><li class="item"><div><h4>Mojito</h4><p>El clásico cubano</p></div><div class="precio">7 €</div></li><li class="item"><div><h4>Copas</h4><p>Larios, Brugal, DYC…</p></div><div class="precio">desde 8 €</div></li><li class="item"><div><h4>Frikilatas Caleya 44 cl</h4><p>IPAs, DIPAs, TIPAs, West Coast y sour smoothies. ¡Pregunta en barra!</p></div><div class="precio">7 €</div></li></ul></div>
+</div></section>
+
+<section class="b" id="terraza" style="padding-top:0"><div class="wrap dos">
+  <div class="foto-terraza"><img src="img/terraza.jpg" alt="Terraza de The Clover con mesas altas de madera" loading="lazy"></div>
+  <div class="texto">
+    <div class="sobre-t">Al aire libre</div>
+    <h2>Nuestra terraza en Mirasierra</h2>
+    <p>Mesas altas de madera, rodeadas de verde y a la sombra del toldo. El sitio perfecto para una pinta al salir del trabajo o para alargar la tarde con amigos.</p>
+    <ul class="checks"><li><svg class="ico " width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16.17 7.83 2 22" /> <path d="M4.02 12a2.827 2.827 0 1 1 3.81-4.17A2.827 2.827 0 1 1 12 4.02a2.827 2.827 0 1 1 4.17 3.81A2.827 2.827 0 1 1 19.98 12a2.827 2.827 0 1 1-3.81 4.17A2.827 2.827 0 1 1 12 19.98a2.827 2.827 0 1 1-4.17-3.81A1 1 0 1 1 4 12" /> <path d="m7.83 7.83 8.34 8.34" /></svg>Mesas altas de madera</li><li><svg class="ico " width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16.17 7.83 2 22" /> <path d="M4.02 12a2.827 2.827 0 1 1 3.81-4.17A2.827 2.827 0 1 1 12 4.02a2.827 2.827 0 1 1 4.17 3.81A2.827 2.827 0 1 1 19.98 12a2.827 2.827 0 1 1-3.81 4.17A2.827 2.827 0 1 1 12 19.98a2.827 2.827 0 1 1-4.17-3.81A1 1 0 1 1 4 12" /> <path d="m7.83 7.83 8.34 8.34" /></svg>Rodeada de verde, con toldo</li><li><svg class="ico " width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16.17 7.83 2 22" /> <path d="M4.02 12a2.827 2.827 0 1 1 3.81-4.17A2.827 2.827 0 1 1 12 4.02a2.827 2.827 0 1 1 4.17 3.81A2.827 2.827 0 1 1 19.98 12a2.827 2.827 0 1 1-3.81 4.17A2.827 2.827 0 1 1 12 19.98a2.827 2.827 0 1 1-4.17-3.81A1 1 0 1 1 4 12" /> <path d="m7.83 7.83 8.34 8.34" /></svg>Parking cercano</li></ul>
+    <a class="btn" href="https://wa.me/34629824860?text=Hola%2C%20quer%C3%ADa%20reservar%20en%20The%20Clover"><svg class="ico " width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" /></svg>Reservar mesa</a>
+  </div>
+</div></section>
+
+<section class="b" id="cumple" style="padding-top:0"><div class="wrap"><div class="cumple">
+  <div><div class="sobre-t">Celebraciones</div><h2 style="margin:10px 0 14px">Celebra tu cumple con nosotros</h2>
+  <p>Cumpleaños, despedidas o la quedada de cada año: os reservamos zona, preparamos el picoteo y os hacemos un precio especial.</p>
+  <div class="acciones" style="margin-top:24px"><a class="btn" href="https://wa.me/34629824860?text=Hola%2C%20quer%C3%ADa%20informaci%C3%B3n%20para%20celebrar%20un%20cumplea%C3%B1os"><svg class="ico " width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" /></svg>Pedir información</a>
+  <a class="btn sec" href="tel:+34629824860"><svg class="ico " width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>629 824 860</a></div></div>
+  <div class="tags"><span><svg class="ico " width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.8 11.3 2 22l10.7-3.79" /> <path d="M4 3h.01" /> <path d="M22 8h.01" /> <path d="M15 2h.01" /> <path d="M22 20h.01" /> <path d="m22 2-2.24.75a2.9 2.9 0 0 0-1.96 3.12c.1.86-.57 1.63-1.45 1.63h-.38c-.86 0-1.6.6-1.76 1.44L14 10" /> <path d="m22 13-.82-.33c-.86-.34-1.82.2-1.98 1.11c-.11.7-.72 1.22-1.43 1.22H17" /> <path d="m11 2 .33.82c.34.86-.2 1.82-1.11 1.98C9.52 4.9 9 5.52 9 6.23V7" /> <path d="M11 13c1.93 1.93 2.83 4.17 2 5-.83.83-3.07-.07-5-2-1.93-1.93-2.83-4.17-2-5 .83-.83 3.07.07 5 2Z" /></svg>Reservados</span><span><svg class="ico " width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" /> <path d="M7 2v20" /> <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7" /></svg>Picoteo</span><span><svg class="ico " width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg>Precio especial</span></div>
+</div></div></section>
+
+<section class="b" id="eventos" style="padding-top:0"><div class="wrap">
+  <div class="cab"><div class="pre">Siempre pasa algo</div><h2>Eventos en The Clover</h2></div>
+  <div class="eventos">
+    <div class="evento"><div class="i"><svg class="ico " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16.17 7.83 2 22" /> <path d="M4.02 12a2.827 2.827 0 1 1 3.81-4.17A2.827 2.827 0 1 1 12 4.02a2.827 2.827 0 1 1 4.17 3.81A2.827 2.827 0 1 1 19.98 12a2.827 2.827 0 1 1-3.81 4.17A2.827 2.827 0 1 1 12 19.98a2.827 2.827 0 1 1-4.17-3.81A1 1 0 1 1 4 12" /> <path d="m7.83 7.83 8.34 8.34" /></svg></div><h3>San Patricio</h3><p>El espíritu irlandés se viste de gala: por cada 2 pintas de Guinness, te llevas un regalo (camisetas, gorros o pulseras).</p></div>
+    <div class="evento"><div class="i"><svg class="ico " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 11h1a3 3 0 0 1 0 6h-1" /> <path d="M9 12v6" /> <path d="M13 12v6" /> <path d="M14 7.5c-1 0-1.44.5-3 .5s-2-.5-3-.5-1.72.5-2.5.5a2.5 2.5 0 0 1 0-5c.78 0 1.57.5 2.5.5S9.44 2 11 2s2 1.5 3 1.5 1.72-.5 2.5-.5a2.5 2.5 0 0 1 0 5c-.78 0-1.5-.5-2.5-.5Z" /> <path d="M5 8v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8" /></svg></div><h3>Catas de cerveza</h3><p>Un viaje por cinco cervezas seleccionadas, su historia, su elaboración y sus maridajes. Plazas limitadas: reserva por WhatsApp.</p></div>
+    <div class="evento"><div class="i"><svg class="ico " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.8 11.3 2 22l10.7-3.79" /> <path d="M4 3h.01" /> <path d="M22 8h.01" /> <path d="M15 2h.01" /> <path d="M22 20h.01" /> <path d="m22 2-2.24.75a2.9 2.9 0 0 0-1.96 3.12c.1.86-.57 1.63-1.45 1.63h-.38c-.86 0-1.6.6-1.76 1.44L14 10" /> <path d="m22 13-.82-.33c-.86-.34-1.82.2-1.98 1.11c-.11.7-.72 1.22-1.43 1.22H17" /> <path d="m11 2 .33.82c.34.86-.2 1.82-1.11 1.98C9.52 4.9 9 5.52 9 6.23V7" /> <path d="M11 13c1.93 1.93 2.83 4.17 2 5-.83.83-3.07-.07-5-2-1.93-1.93-2.83-4.17-2-5 .83-.83 3.07.07 5 2Z" /></svg></div><h3>Aniversarios y fiestas</h3><p>En junio de 2025 celebramos nuestro XV aniversario. ¡Síguenos para no perderte la próxima!</p></div>
+  </div>
+</div></section>
+
+<section class="b" id="llegar" style="padding-top:0"><div class="wrap">
+  <div class="cab"><div class="pre">Te esperamos</div><h2>Cómo llegar</h2></div>
+  <div class="llegar">
+    <div class="tarjeta">
+      <ul class="datos">
+        <li><svg class="ico " width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /> <circle cx="12" cy="10" r="3" /></svg><div><b>C. del Valle de Pinares Llanos, 8</b><span>Fuencarral-El Pardo · 28035 Madrid</span></div></li>
+        <li><svg class="ico " width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11" /></svg><div><b>Metro Lacoma</b><span>Línea 7</span></div></li>
+        <li><svg class="ico " width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6v6" /> <path d="M15 6v6" /> <path d="M2 12h19.6" /> <path d="M18 18h3s.5-1.7.8-2.8c.1-.4.2-.8.2-1.2 0-.4-.1-.8-.2-1.2l-1.4-5C20.1 6.8 19.1 6 18 6H4a2 2 0 0 0-2 2v10h3" /> <circle cx="7" cy="18" r="2" /> <path d="M9 18h5" /> <circle cx="16" cy="18" r="2" /></svg><div><b>Autobuses</b><span>64, 134 y N21</span></div></li>
+        <li><svg class="ico " width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2" /> <circle cx="7" cy="17" r="2" /> <path d="M9 17h6" /> <circle cx="17" cy="17" r="2" /></svg><div><b>Parking cercano</b><span>En la zona</span></div></li>
+        <li><svg class="ico " width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg><div><b><a href="tel:+34629824860" style="text-decoration:none">629 824 860</a></b><span>Llamadas y WhatsApp</span></div></li>
+      </ul>
+      <div class="acciones"><a class="btn" href="https://maps.app.goo.gl/KL8JyrDXa428b7aq5"><svg class="ico " width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /> <circle cx="12" cy="10" r="3" /></svg>Abrir en Google Maps</a></div>
+    </div>
+    <div class="mapa"><iframe title="Mapa de The Clover Irish Tavern" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d536.4317682069739!2d-3.7189543415997734!3d40.48596414590252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42298dd5ffa87b%3A0x71476dd405ced74e!2sThe%20Clover%20Irish%20Tavern!5e0!3m2!1ses!2ses!4v1741762041066!5m2!1ses!2ses"></iframe></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <img src="img/logo-banner.jpg" alt="The Clover Mirasierra">
+  <span>¿Quieres trabajar con nosotros? Déjanos tu CV en el local.</span>
+  <span>Propuesta de diseño · <a href="https://mayerdigital.website">Mayer Digital</a></span>
+</div></footer>
+<a class="wa" href="https://wa.me/34629824860?text=Hola%2C%20quer%C3%ADa%20reservar%20en%20The%20Clover" aria-label="Escribir por WhatsApp"><svg class="ico " width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" /></svg></a>
+
+<script>
+document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => {
+  document.querySelectorAll('.tab').forEach(x => x.classList.toggle('activo', x === t));
+  document.querySelectorAll('.panel').forEach(p => p.classList.toggle('activo', p.id === t.dataset.t));
+}));
+document.querySelectorAll('.f').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.f').forEach(x => x.classList.toggle('activo', x === b));
+  document.querySelectorAll('#botellas .item').forEach(i => i.hidden = b.dataset.f !== 'todas' && i.dataset.c !== b.dataset.f);
+}));
+</script>
+</body>
+</html>
