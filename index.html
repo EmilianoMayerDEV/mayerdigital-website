@@ -299,7 +299,7 @@
         <div class="teaser-copy">
           <h3 style="margin:0 0 10px;font-size:1.25rem">Tus clientes reservan solos, a cualquier hora.</h3>
           <p>El bot muestra los huecos libres, confirma la cita y envía recordatorios. Tú lo ves todo en una agenda por profesional, con clientes, cobros y estadísticas.</p>
-          <a class="btn" href="turnos.html">Ver cómo funciona →</a>
+          <a class="btn" href="turnos.html" id="turnos-link">Ver cómo funciona →</a>
         </div>
         <ul>
           <li>Bot de WhatsApp 24/7</li>
@@ -339,5 +339,15 @@
     <a href="mailto:contacto@mayerdigital.website">contacto@mayerdigital.website</a>
   </div>
 </footer>
+<script>
+  (function () {
+    var ref = new URLSearchParams(location.search).get('ref');
+    if (ref && /^[A-Z0-9]{4,12}$/i.test(ref)) {
+      try { localStorage.setItem('md_ref', ref.toUpperCase()); } catch (e) {}
+      var l = document.getElementById('turnos-link');
+      if (l) l.href = 'turnos.html?ref=' + encodeURIComponent(ref.toUpperCase());
+    }
+  })();
+</script>
 </body>
 </html>
