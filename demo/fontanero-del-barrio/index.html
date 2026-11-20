@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>El Fontanero del Barrio · Fontanero 24 horas en Latina, Madrid</title>
+<meta name="description" content="Fontanero 24 horas en C. del Ánsar, 47, Madrid. 5,0 estrellas en Google con 1 reseñas.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{overflow-x:hidden}
+img{display:block;max-width:100%;object-fit:cover}
+iframe{display:block;width:100%;border:0}
+a{color:inherit}
+.cinta{font:500 12px/1.4 system-ui,sans-serif;text-align:center;padding:8px 16px;background:#111;color:#ddd;position:relative;z-index:5}
+.cinta a{color:#fff}
+.estrellas{display:inline-flex;gap:2px}.estrellas svg{width:15px;height:15px}
+.dato{display:flex;gap:10px;align-items:flex-start;margin-bottom:12px}.dato svg{width:20px;height:20px;flex:none;margin-top:3px}
+.mapa{height:320px}
+.srv{list-style:none}.srv-linea{display:flex;align-items:baseline;gap:8px}.srv-linea i{flex:1;border-bottom:1px dotted currentColor;opacity:.4}
+table{border-collapse:collapse;width:100%}th{text-align:left;font-weight:inherit}
+.flotante{position:fixed;right:18px;bottom:18px;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;z-index:20;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.flotante svg{width:28px;height:28px}
+.pie{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;padding:22px 20px;font-size:13px}
+.creditos{font-size:11px;opacity:.7;width:100%}
+
+:root{--azul:#1f4fa0;--azul2:#14336b;--azulejo:#e9f0fb;--blanco:#fffdf8;--tinta:#13203a;--gris:#5e6b80;--rojo:#d63b2f;--ocre:#c8a24a}
+body{font:16px/1.6 'Nunito',system-ui,sans-serif;color:var(--tinta);background:var(--blanco)}
+.placa{display:inline-block;background:var(--azul);color:#fff;padding:16px;border-radius:10px;box-shadow:0 18px 40px rgba(20,51,107,.3);transform:rotate(-1.2deg)}
+.placa .borde{border:3px solid #fff;outline:2px dashed rgba(255,255,255,.55);outline-offset:-10px;border-radius:6px;padding:22px 30px;text-align:center;
+  background:radial-gradient(circle at 12px 12px,var(--ocre) 3px,transparent 4px),radial-gradient(circle at calc(100% - 12px) 12px,var(--ocre) 3px,transparent 4px),
+  radial-gradient(circle at 12px calc(100% - 12px),var(--ocre) 3px,transparent 4px),radial-gradient(circle at calc(100% - 12px) calc(100% - 12px),var(--ocre) 3px,transparent 4px)}
+.placa small{display:block;font:700 13px 'Cinzel',serif;letter-spacing:.2em}
+.placa b{display:block;font:700 clamp(36px,6vw,74px)/1 'Cinzel',serif;letter-spacing:.02em;margin:6px 0}
+.placa .barrio{display:inline-block;font:700 12px 'Nunito';letter-spacing:.24em;text-transform:uppercase;border-top:1px solid rgba(255,255,255,.6);padding-top:8px;margin-top:6px}
+.hero{max-width:1180px;margin:auto;padding:70px 5vw 60px;display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+.hero p{font-size:19px;color:#34425a;max-width:30em;margin:30px 0 24px}
+.h24{display:inline-flex;align-items:center;gap:10px;background:var(--rojo);color:#fff;font:800 15px 'Nunito';padding:8px 14px;border-radius:999px;text-transform:uppercase;letter-spacing:.06em}
+.h24 i{width:10px;height:10px;border-radius:50%;background:#fff;animation:late 1.4s infinite}
+@keyframes late{50%{opacity:.25}}
+@media (prefers-reduced-motion:reduce){.h24 i{animation:none}}
+.tel{display:block;font:800 clamp(34px,4.6vw,54px)/1 'Nunito';color:var(--azul2);text-decoration:none;margin:18px 0}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font:800 16px 'Nunito';padding:15px 24px;background:#25d366;color:#fff;border-radius:12px;border:0;cursor:pointer}
+.fotos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fotos img{width:100%;border-radius:14px;aspect-ratio:3/4}
+.fotos img:first-child{margin-top:40px}
+.panel{background:var(--azul2);color:#fff}
+.panel .in{max-width:1180px;margin:auto;padding:80px 5vw}
+h2{font:700 clamp(30px,4.4vw,52px)/1.05 'Cinzel',serif;margin-bottom:12px}
+.panel h2{color:#fff}
+.intro{color:var(--gris);max-width:36em;margin-bottom:30px}.panel .intro{color:#c5d3f0}
+.botones{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:22px}
+.botones label{cursor:pointer}
+.botones input{position:absolute;opacity:0}
+.botones span{display:block;padding:20px 18px;border-radius:14px;background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.2);font:800 18px 'Nunito';transition:.15s}
+.botones input:checked+span{background:#fff;color:var(--azul2);border-color:#fff}
+.botones input:focus-visible+span{outline:3px solid var(--ocre);outline-offset:2px}
+section.s{max-width:1180px;margin:auto;padding:80px 5vw}
+.trabajos{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:start}
+.srv li{padding:13px 0;border-bottom:1px solid #e4e8ef}.srv-linea{font-weight:800}.srv-linea b{color:var(--azul);white-space:nowrap}.srv small{color:var(--gris)}
+.galeria{display:grid;grid-template-columns:1fr 1fr;gap:10px}.galeria img{width:100%;aspect-ratio:1;border-radius:12px}
+.galeria figure{margin:0;position:relative}.galeria figcaption{position:absolute;left:8px;bottom:8px;background:var(--blanco);font:800 12px 'Nunito';padding:4px 9px;border-radius:6px}
+.cierre{text-align:center;padding:80px 5vw;background:var(--azulejo)}
+.dato{justify-content:center}.dato svg{color:var(--azul)}
+.flotante{background:#25d366;color:#fff}
+.pie{background:var(--azul2);color:#aebfe2}
+@media(max-width:900px){.hero,.trabajos{grid-template-columns:1fr}.botones{grid-template-columns:1fr 1fr}}
+
+</style>
+</head>
+<body>
+<div class="cinta">Propuesta de diseño para El Fontanero del Barrio · servicios y precios de ejemplo · preparada por <a href="https://mayerdigital.website">Mayer Digital</a></div>
+
+<header class="hero">
+  <div><div class="placa"><div class="borde"><small>Calle del Ánsar · Latina</small><b>El Fontanero<br>del Barrio</b><span class="barrio">Fontanería · 24 horas</span></div></div>
+    <p>Fugas, atascos, grifos, termos y reformas de cocina y baño. Somos de aquí: vamos a tu casa a cualquier hora, también de noche y en festivo.</p>
+    <span class="h24"><i></i>Disponibles 24 h · 7 días</span>
+    <a class="tel" href="tel:+34627308836">627 30 88 36</a>
+    <a class="btn" href="https://wa.me/34627308836" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>Escríbeme por WhatsApp</a></div>
+  <div class="fotos"><img src="img/3.jpg" alt="Grifo nuevo instalado sobre fregadero" class="" fetchpriority="high"><img src="img/2.jpg" alt="Cocina reformada con fontanería nueva" class="" fetchpriority="high"></div>
+</header>
+
+<div class="panel"><div class="in"><h2>¿Qué te pasa?</h2><p class="intro">Pulsa tu problema y mándamelo. Si puedes, añade una foto en el chat y te digo el precio al momento.</p>
+  <form id="f"><div class="botones"><label><input type="radio" name="urg" value="Gotea o hay una fuga"><span>Gotea o hay una fuga</span></label><label><input type="radio" name="urg" value="Atasco"><span>Atasco</span></label><label><input type="radio" name="urg" value="Sin agua caliente"><span>Sin agua caliente</span></label><label><input type="radio" name="urg" value="La cisterna no para"><span>La cisterna no para</span></label><label><input type="radio" name="urg" value="Grifo roto"><span>Grifo roto</span></label><label><input type="radio" name="urg" value="Humedad en el techo"><span>Humedad en el techo</span></label></div>
+    <button class="btn" type="submit"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>Enviar aviso por WhatsApp</button></form></div></div>
+
+<section class="s trabajos"><div><h2>Trabajos y precios</h2><p class="intro">Orientativos: el precio exacto te lo digo antes de empezar.</p><ul class="srv"><li><div class="srv-linea"><span>Urgencia 24 h</span><i></i><b>desde 60 €</b></div><small>Salida a domicilio a cualquier hora</small></li><li><div class="srv-linea"><span>Desatasco</span><i></i><b>desde 60 €</b></div><small>Fregadero, ducha, inodoro</small></li><li><div class="srv-linea"><span>Cambio de grifo</span><i></i><b>desde 45 €</b></div><small>Con mano de obra</small></li><li><div class="srv-linea"><span>Termo o calentador</span><i></i><b>desde 90 €</b></div><small>Reparación o cambio</small></li><li><div class="srv-linea"><span>Reforma de cocina o baño</span><i></i><b>a presupuesto</b></div><small>Fontanería completa</small></li><li><div class="srv-linea"><span>Tejados y bajantes</span><i></i><b>a presupuesto</b></div><small>Filtraciones y canalones</small></li></ul></div>
+  <div class="galeria"><figure><img src="img/1.jpg" alt="Reparación de tejado con teja nueva" class="" loading="lazy"><figcaption>Tejados</figcaption></figure>
+    <figure><img src="img/4.jpg" alt="Piscina limpia y en funcionamiento" class="" loading="lazy"><figcaption>Piscinas</figcaption></figure>
+    <figure><img src="img/2.jpg" alt="Cocina reformada" class="" loading="lazy"><figcaption>Cocinas</figcaption></figure>
+    <figure><img src="img/3.jpg" alt="Grifo de cocina instalado" class="" loading="lazy"><figcaption>Grifería</figcaption></figure></div></section>
+
+<div class="cierre"><h2>Tu fontanero, a la vuelta de la esquina</h2><p class="intro" style="margin:0 auto 20px">Latina, Carabanchel y alrededores.</p>
+  <p class="dato"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span>C. del Ánsar, 47<br>Latina, Madrid</span></p><p class="dato"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+34627308836">627 30 88 36</a></p><a class="btn" style="margin-top:12px" href="https://wa.me/34627308836" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>Pedir presupuesto</a></div>
+<footer class="pie"><span>© El Fontanero del Barrio · C. del Ánsar, 47</span><span>Propuesta de diseño · <a href="https://mayerdigital.website">Mayer Digital</a></span>
+<span class="creditos">Fotos de la ficha de Google Maps del negocio: El Fontanero del Barrio.</span></footer>
+<a class="flotante" href="https://wa.me/34627308836?text=Hola%2C%20quer%C3%ADa%20informaci%C3%B3n%20de%20El%20Fontanero%20del%20Barrio" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3 1 2.5c.1.2 1.7 2.6 4.1 3.6 1.5.7 2.1.7 2.9.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.4-.2z"/></svg></a><script>
+document.getElementById('f').addEventListener('submit', function (ev) {
+  ev.preventDefault();
+  var s = document.querySelector('input[name=urg]:checked');
+  var t = 'Hola, necesito un fontanero.' + (s ? ' Problema: ' + s.value.toLowerCase() + '.' : '') + ' Te mando una foto.';
+  window.open('https://wa.me/34627308836?text=' + encodeURIComponent(t), '_blank');
+});
+</script>
+</body>
+</html>
