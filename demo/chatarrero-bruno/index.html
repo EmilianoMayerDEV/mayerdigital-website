@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chatarrero a domicilio Bruno · Recogida de chatarra a domicilio en 28021, Madrid</title>
+<meta name="description" content="Recogida de chatarra a domicilio en A-42, 28021, Madrid. 5,0 estrellas en Google con 2 reseñas.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{overflow-x:hidden}
+img{display:block;max-width:100%;object-fit:cover}
+iframe{display:block;width:100%;border:0}
+a{color:inherit}
+.cinta{font:500 12px/1.4 system-ui,sans-serif;text-align:center;padding:8px 16px;background:#111;color:#ddd;position:relative;z-index:5}
+.cinta a{color:#fff}
+.estrellas{display:inline-flex;gap:2px}.estrellas svg{width:15px;height:15px}
+.dato{display:flex;gap:10px;align-items:flex-start;margin-bottom:12px}.dato svg{width:20px;height:20px;flex:none;margin-top:3px}
+.mapa{height:320px}
+.srv{list-style:none}.srv-linea{display:flex;align-items:baseline;gap:8px}.srv-linea i{flex:1;border-bottom:1px dotted currentColor;opacity:.4}
+table{border-collapse:collapse;width:100%}th{text-align:left;font-weight:inherit}
+.flotante{position:fixed;right:18px;bottom:18px;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;z-index:20;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.flotante svg{width:28px;height:28px}
+.pie{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;padding:22px 20px;font-size:13px}
+.creditos{font-size:11px;opacity:.7;width:100%}
+
+:root{--azul:#0b3a9e;--azul2:#072a74;--amarillo:#ffd400;--blanco:#ffffff;--chapa:#eef1f5;--tinta:#0f1b33;--gris:#5b6576;--naranja:#ff7a00}
+body{font:16px/1.6 'Nunito Sans',system-ui,sans-serif;color:var(--tinta);background:var(--chapa)}
+.rot{font-family:'Oswald','Arial Narrow',sans-serif;text-transform:uppercase}
+/* lateral de la furgoneta */
+.furgo{background:var(--blanco);position:relative;overflow:hidden;border-bottom:10px solid var(--azul)}
+.furgo::before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 58%,rgba(11,58,158,.06) 58% 70%,transparent 70%)}
+.furgo .in{position:relative;max-width:1200px;margin:auto;padding:56px 5vw 64px;display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+.etiq{display:inline-block;font:600 15px 'Oswald';letter-spacing:.14em;color:var(--azul);border:2px solid var(--azul);padding:4px 12px;transform:skewX(-8deg)}
+h1{font:700 clamp(46px,7vw,92px)/.92 'Oswald',sans-serif;text-transform:uppercase;color:var(--azul2);margin:16px 0 10px}
+h1 i{font-style:italic;color:var(--azul)}
+.bruno{font:700 italic clamp(40px,5.6vw,72px)/1 'Oswald';color:var(--naranja);display:block}
+.lema{display:inline-block;background:var(--azul);color:#fff;font:700 clamp(17px,2vw,22px)/1.2 'Oswald';text-transform:uppercase;padding:10px 16px;margin:14px 0 6px;transform:skewX(-8deg)}
+.lema span{display:inline-block;transform:skewX(8deg)}
+.franja{display:inline-block;background:var(--amarillo);color:var(--tinta);font:700 16px 'Oswald';text-transform:uppercase;padding:6px 14px;transform:skewX(-8deg);margin-bottom:24px}
+.telgrande{display:block;font:700 clamp(40px,6vw,74px)/1 'Oswald';color:var(--tinta);text-decoration:none;letter-spacing:.02em;margin:6px 0 18px}
+.telgrande small{display:block;font:600 14px 'Nunito Sans';color:var(--gris);letter-spacing:.08em;text-transform:uppercase}
+.btn{display:inline-flex;align-items:center;gap:10px;font:700 17px 'Oswald';text-transform:uppercase;text-decoration:none;padding:14px 24px;background:#25d366;color:#fff;border-radius:6px}
+.btn svg{width:20px;height:20px}
+.btn.azul{background:var(--azul)}
+.foto{position:relative}
+.foto img{width:100%;aspect-ratio:16/10;border-radius:14px;box-shadow:0 26px 50px rgba(7,42,116,.28)}
+.foto .h24{position:absolute;left:-18px;bottom:-18px;background:var(--amarillo);font:700 28px/1 'Oswald';text-transform:uppercase;padding:16px 20px;transform:rotate(-4deg);box-shadow:0 10px 24px rgba(0,0,0,.18)}
+.foto .h24 small{display:block;font:700 13px 'Nunito Sans';letter-spacing:.06em}
+.estrellas{color:#f5a400}
+/* cómo funciona */
+section.s{max-width:1200px;margin:auto;padding:90px 5vw}
+h2{font:700 clamp(36px,5vw,62px)/.95 'Oswald';text-transform:uppercase;color:var(--azul2);margin-bottom:12px}
+.intro{color:var(--gris);max-width:36em;margin-bottom:36px}
+.pasos{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:p}
+.paso{background:#fff;border-radius:14px;padding:26px 22px;position:relative;border-top:6px solid var(--azul)}
+.paso::before{counter-increment:p;content:counter(p);position:absolute;top:-24px;right:18px;font:700 64px/1 'Oswald';color:var(--amarillo);-webkit-text-stroke:2px var(--azul)}
+.paso b{display:block;font:700 22px 'Oswald';text-transform:uppercase;margin-bottom:6px}
+.paso p{color:var(--gris);font-size:15px}
+/* lo que tienes */
+.tengo{background:var(--azul);color:#fff}
+.tengo .in{max-width:1200px;margin:auto;padding:90px 5vw}
+.tengo h2{color:#fff}.tengo .intro{color:#c9d6f5}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.chips label{cursor:pointer}
+.chips input{position:absolute;opacity:0}
+.chips span{display:inline-block;padding:12px 18px;border:2px solid rgba(255,255,255,.4);border-radius:999px;font-weight:700;transition:.15s}
+.chips input:checked+span{background:var(--amarillo);border-color:var(--amarillo);color:var(--tinta)}
+.chips input:focus-visible+span{outline:3px solid #fff;outline-offset:2px}
+.zona{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:end;max-width:760px}
+.zona label{display:block;font-weight:700;margin-bottom:6px}
+.zona input{width:100%;padding:14px;border-radius:8px;border:0;font:16px 'Nunito Sans'}
+.consejo{margin-top:16px;color:#c9d6f5;font-size:14px}
+/* pie de furgo */
+.cierre{max-width:1200px;margin:auto;padding:80px 5vw;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.cierre img{width:100%;aspect-ratio:3/2;border-radius:14px}
+.lista{list-style:none;padding:0;margin:0}
+.lista li{padding:12px 0;border-bottom:1px solid #d8dde6;display:flex;gap:12px;font-weight:600}
+.lista li::before{content:"";width:12px;height:12px;background:var(--amarillo);border:2px solid var(--azul);flex:none;margin-top:6px;transform:rotate(45deg)}
+.flotante{background:#25d366;color:#fff}
+.pie{background:var(--azul2);color:#aebde3}
+@media(max-width:900px){.furgo .in,.cierre{grid-template-columns:1fr}.pasos{grid-template-columns:1fr 1fr;row-gap:34px}.zona{grid-template-columns:1fr}.foto .h24{left:10px}}
+
+</style>
+</head>
+<body>
+<div class="cinta">Propuesta de diseño para Chatarrero a domicilio Bruno · servicios y precios de ejemplo · preparada por <a href="https://mayerdigital.website">Mayer Digital</a></div>
+
+<header class="furgo"><div class="in">
+  <div><span class="etiq">Chatarrero a domicilio</span>
+    <h1>Te quitamos la <i>chatarra</i> de casa</h1><span class="bruno">«Bruno»</span>
+    <div class="lema"><span>Pagamos el mejor precio del mercado de reciclaje</span></div><br>
+    <div class="franja">Reciclaje de chatarra</div>
+    <a class="telgrande" href="tel:+34643077502"><small>Llama o escribe</small>643 07 75 02</a>
+    <a class="btn" href="https://wa.me/34643077502" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>Mándame una foto por WhatsApp</a>
+    <p style="margin-top:16px;color:var(--gris)"><span class="estrellas">★★★★★</span> <b>5,0</b> en Google</p></div>
+  <div class="foto"><img src="img/3.jpg" alt="Bruno junto a su furgoneta de recogida de chatarra" class="" fetchpriority="high"><div class="h24">Todos los días<small>24 horas · llama cuando quieras</small></div></div>
+</div></header>
+
+<section class="s"><h2>Así de fácil</h2><p class="intro">Tú no cargas nada. Nosotros vamos, lo sacamos y te pagamos lo que vale.</p>
+  <div class="pasos">
+    <div class="paso"><b>Foto</b><p>Mándanos por WhatsApp una foto de lo que tienes.</p></div>
+    <div class="paso"><b>Precio</b><p>Te decimos lo que te pagamos por ello.</p></div>
+    <div class="paso"><b>Vamos</b><p>Quedamos a la hora que te venga bien y lo cargamos nosotros.</p></div>
+    <div class="paso"><b>Cobras</b><p>Te pagamos en el momento y te dejamos el sitio libre.</p></div>
+  </div></section>
+
+<div class="tengo"><div class="in"><h2>¿Qué tienes?</h2><p class="intro">Marca lo que quieres quitarte y te escribimos con precio. Recogemos todo tipo de chatarra, electrodomésticos, hierros, metales y motores.</p>
+  <form id="f"><div class="chips"><label><input type="checkbox" name="cosa" value="Lavadora"><span>Lavadora</span></label><label><input type="checkbox" name="cosa" value="Frigorífico"><span>Frigorífico</span></label><label><input type="checkbox" name="cosa" value="Termo o calentador"><span>Termo o calentador</span></label><label><input type="checkbox" name="cosa" value="Radiadores"><span>Radiadores</span></label><label><input type="checkbox" name="cosa" value="Somier o cama de hierro"><span>Somier o cama de hierro</span></label><label><input type="checkbox" name="cosa" value="Bicicletas"><span>Bicicletas</span></label><label><input type="checkbox" name="cosa" value="Cobre y cables"><span>Cobre y cables</span></label><label><input type="checkbox" name="cosa" value="Aluminio y perfiles"><span>Aluminio y perfiles</span></label><label><input type="checkbox" name="cosa" value="Motores"><span>Motores</span></label><label><input type="checkbox" name="cosa" value="Restos de obra metálicos"><span>Restos de obra metálicos</span></label><label><input type="checkbox" name="cosa" value="Baterías"><span>Baterías</span></label><label><input type="checkbox" name="cosa" value="Vaciado de trastero o nave"><span>Vaciado de trastero o nave</span></label></div>
+    <div class="zona"><div><label for="donde">¿Dónde lo recogemos? (barrio o calle)</label><input id="donde" placeholder="Carabanchel, calle…"></div>
+      <button class="btn" type="submit" style="border:0;cursor:pointer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>Pedir recogida</button></div>
+    <p class="consejo">Consejo: añade una foto en el chat de WhatsApp y te damos el precio más rápido.</p></form>
+</div></div>
+
+<div class="cierre"><img src="img/2.jpg" alt="Montaña de chatarra lista para reciclar" class="" loading="lazy">
+  <div><h2>Lo que recogemos</h2><ul class="lista"><li>Todo tipo de chatarra</li><li>Electrodomésticos</li><li>Hierros y metales</li><li>Motores</li><li>Vaciado de trasteros, naves y obras</li></ul>
+  <a class="btn azul" style="margin-top:24px" href="tel:+34643077502">Llamar al 643 07 75 02</a></div>
+</div>
+<footer class="pie"><span>© Chatarrero a domicilio Bruno · A-42, 28021</span><span>Propuesta de diseño · <a href="https://mayerdigital.website">Mayer Digital</a></span>
+<span class="creditos">Fotos de la ficha de Google Maps del negocio: Chatarreroadomiciliobruno.</span></footer>
+<a class="flotante" href="https://wa.me/34643077502?text=Hola%2C%20quer%C3%ADa%20informaci%C3%B3n%20de%20Chatarrero%20a%20domicilio%20Bruno" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3 1 2.5c.1.2 1.7 2.6 4.1 3.6 1.5.7 2.1.7 2.9.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.4-.2z"/></svg></a><script>
+document.getElementById('f').addEventListener('submit', function (ev) {
+  ev.preventDefault();
+  var c = [].slice.call(document.querySelectorAll('input[name=cosa]:checked')).map(function (x) { return x.value.toLowerCase(); });
+  var t = 'Hola Bruno, quiero que me recojáis chatarra.';
+  if (c.length) t += '\nTengo: ' + c.join(', ') + '.';
+  var w = document.getElementById('donde').value.trim(); if (w) t += '\nEstá en: ' + w + '.';
+  t += '\nAhora te mando una foto.';
+  window.open('https://wa.me/34643077502?text=' + encodeURIComponent(t), '_blank');
+});
+</script>
+</body>
+</html>

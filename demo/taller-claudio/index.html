@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taller Claudio · Mecánica en general en 28919 Leganés, Madrid</title>
+<meta name="description" content="Mecánica en general en C. Puerto de Almenara, 27, Madrid. 4,5 estrellas en Google con 46 reseñas.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{overflow-x:hidden}
+img{display:block;max-width:100%;object-fit:cover}
+iframe{display:block;width:100%;border:0}
+a{color:inherit}
+.cinta{font:500 12px/1.4 system-ui,sans-serif;text-align:center;padding:8px 16px;background:#111;color:#ddd;position:relative;z-index:5}
+.cinta a{color:#fff}
+.estrellas{display:inline-flex;gap:2px}.estrellas svg{width:15px;height:15px}
+.dato{display:flex;gap:10px;align-items:flex-start;margin-bottom:12px}.dato svg{width:20px;height:20px;flex:none;margin-top:3px}
+.mapa{height:320px}
+.srv{list-style:none}.srv-linea{display:flex;align-items:baseline;gap:8px}.srv-linea i{flex:1;border-bottom:1px dotted currentColor;opacity:.4}
+table{border-collapse:collapse;width:100%}th{text-align:left;font-weight:inherit}
+.flotante{position:fixed;right:18px;bottom:18px;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;z-index:20;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.flotante svg{width:28px;height:28px}
+.pie{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;padding:22px 20px;font-size:13px}
+.creditos{font-size:11px;opacity:.7;width:100%}
+
+:root{--lima:#c4e83a;--lima2:#a9d11c;--negro:#111311;--blanco:#fbfcf6;--azul:#0f3d91;--gris:#5c625a}
+body{font:16px/1.6 'Archivo',system-ui,sans-serif;color:var(--negro);background:var(--blanco)}
+.lona{background:var(--lima);position:relative;overflow:hidden}
+.lona::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(0,0,0,.06) 1px,transparent 1.5px);background-size:6px 6px}
+.ojal{position:absolute;width:18px;height:18px;border-radius:50%;background:#d9dcd2;border:4px solid #8f9585;top:16px}
+.lona .in{position:relative;max-width:1200px;margin:auto;padding:70px 5vw 60px;display:grid;grid-template-columns:1.2fr .8fr;gap:44px;align-items:center}
+.nombre{font:900 clamp(64px,10vw,140px)/.82 'Archivo',sans-serif;letter-spacing:-.04em;text-transform:uppercase;font-stretch:75%}
+.nombre span{display:block;font-size:.42em;letter-spacing:.02em}
+.pegatina{display:inline-block;background:var(--negro);color:var(--lima);font:800 18px 'Archivo';text-transform:uppercase;padding:8px 14px;transform:rotate(-2deg);margin:20px 0 18px}
+.lona p{font-size:19px;max-width:30em;margin-bottom:24px}
+.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font:800 16px 'Archivo';text-transform:uppercase;padding:15px 24px;background:var(--negro);color:var(--lima)}
+.btn.claro{background:var(--blanco);color:var(--negro);margin-left:8px}
+.nota{display:inline-flex;gap:6px;align-items:center;color:var(--negro);text-decoration:none;margin-top:18px;font-weight:700}.nota .estrellas{color:#1a1a1a}
+.tel{font:900 clamp(30px,4vw,46px)/1 'Archivo';font-stretch:75%;text-decoration:none;color:var(--negro);display:block;margin-top:10px}
+.cartel img{width:100%;aspect-ratio:4/3;border:8px solid var(--negro);transform:rotate(2deg)}
+.cartel small{display:block;margin-top:14px;font-weight:700;text-align:right}
+/* tira de servicios */
+.tira{background:var(--negro);color:var(--lima);overflow:hidden;white-space:nowrap;padding:16px 0}
+.tira div{display:inline-block;animation:corre 38s linear infinite;font:800 22px 'Archivo';text-transform:uppercase;letter-spacing:.02em}
+.tira span{margin:0 22px}.tira i{font-style:normal;color:#fff}
+@keyframes corre{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.tira div{animation:none}}
+section.s{max-width:1200px;margin:auto;padding:90px 5vw}
+h2{font:900 clamp(40px,6vw,76px)/.9 'Archivo';font-stretch:75%;text-transform:uppercase;letter-spacing:-.02em;margin-bottom:12px}
+h2 mark{background:var(--lima);padding:0 .12em}
+.intro{color:var(--gris);max-width:36em;margin-bottom:36px}
+.servicios{columns:3;column-gap:30px}
+.servicios li{list-style:none;break-inside:avoid;font:800 clamp(20px,2.2vw,26px)/1.15 'Archivo';font-stretch:80%;text-transform:uppercase;padding:14px 0;border-bottom:3px solid var(--negro)}
+.servicios li::before{content:"→ ";color:var(--lima2)}
+.galeria{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:12px;margin-top:50px}
+.galeria img{width:100%;height:100%;aspect-ratio:4/3}
+.galeria figure{margin:0;position:relative}
+.galeria figcaption{position:absolute;left:10px;bottom:10px;background:var(--lima);font:800 13px 'Archivo';text-transform:uppercase;padding:4px 10px}
+.precios{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.precio{border:3px solid var(--negro);padding:20px;background:#fff;box-shadow:8px 8px 0 var(--lima)}
+.precio b{display:block;font:900 32px/1 'Archivo';font-stretch:75%}
+.precio span{font-weight:600;color:var(--gris)}
+.sabado{background:var(--negro);color:#fff}
+.sabado .in{max-width:1200px;margin:auto;padding:70px 5vw;display:grid;grid-template-columns:1fr 1fr;gap:5vw;align-items:start}
+.sabado h2{color:var(--lima)}
+.hor th,.hor td{padding:10px 0;border-bottom:1px solid #2c302a}.hor td{text-align:right;font-weight:800}.hor .cerrado td{color:#ff6b5b}
+.dato svg{color:var(--lima)}.dato a{color:#fff}
+.flotante{background:#25d366;color:#fff}
+.mapa{height:340px}
+.pie{background:#000;color:#8a8f86}
+@media(max-width:900px){.lona .in,.sabado .in{grid-template-columns:1fr}.servicios{columns:1}.precios{grid-template-columns:1fr 1fr}.galeria{grid-template-columns:1fr 1fr}.btn.claro{margin:10px 0 0}}
+@media(max-width:520px){.precios{grid-template-columns:1fr}}
+
+</style>
+</head>
+<body>
+<div class="cinta">Propuesta de diseño para Taller Claudio · servicios y precios de ejemplo · preparada por <a href="https://mayerdigital.website">Mayer Digital</a></div>
+
+<header class="lona"><span class="ojal" style="left:16px"></span><span class="ojal" style="right:16px"></span>
+  <div class="in"><div>
+    <div class="nombre"><span>Taller</span>Claudio</div>
+    <div class="pegatina">Todo en mantenimiento de coches</div>
+    <p>Mecánica en general, neumáticos, frenos y pre-ITV en la calle Puerto de Almenara, Leganés. Y abrimos los sábados por la mañana.</p>
+    <a class="btn" href="https://wa.me/34643902884?text=Hola%2C%20quer%C3%ADa%20informaci%C3%B3n%20de%20Taller%20Claudio" target="_blank" rel="noopener">Pide cita por WhatsApp</a><a class="btn claro" href="#precios">Ver precios</a>
+    <a class="tel" href="tel:+34643902884">643 90 28 84</a><a class="nota" href="https://maps.google.com/?cid=6042766553224850376&amp;g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank" rel="noopener"><span class="estrellas"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></span><b>4,5</b> <span>· 46 reseñas en Google</span></a></div>
+    <div class="cartel"><img src="img/1.jpg" alt="Rótulo verde de Taller Claudio con su lista de servicios" class="" fetchpriority="high"><small>Nuestro cartel, en grande</small></div>
+  </div></header>
+<div class="tira" aria-hidden="true"><div><span>Mecánica en general</span><i>★</i><span>Venta y reparación de neumáticos</span><i>★</i><span>Todo en mantenimiento de coches</span><i>★</i><span>Pastillas y frenos</span><i>★</i><span>Cambio de aceite</span><i>★</i><span>Filtros</span><i>★</i><span>Amortiguadores</span><i>★</i><span>Cambio de baterías</span><i>★</i><span>Embragues</span><i>★</i><span>Distribución</span><i>★</i><span>Pre-ITV</span><i>★</i><span>Mecánica en general</span><i>★</i><span>Venta y reparación de neumáticos</span><i>★</i><span>Todo en mantenimiento de coches</span><i>★</i><span>Pastillas y frenos</span><i>★</i><span>Cambio de aceite</span><i>★</i><span>Filtros</span><i>★</i><span>Amortiguadores</span><i>★</i><span>Cambio de baterías</span><i>★</i><span>Embragues</span><i>★</i><span>Distribución</span><i>★</i><span>Pre-ITV</span><i>★</i></div></div>
+
+<section class="s"><h2>Lo que <mark>hacemos</mark></h2><p class="intro">Lo mismo que pone nuestra lona, sin letra pequeña.</p>
+  <ul class="servicios" style="padding:0"><li>Mecánica en general</li><li>Venta y reparación de neumáticos</li><li>Todo en mantenimiento de coches</li><li>Pastillas y frenos</li><li>Cambio de aceite</li><li>Filtros</li><li>Amortiguadores</li><li>Cambio de baterías</li><li>Embragues</li><li>Distribución</li><li>Pre-ITV</li></ul>
+  <div class="galeria">
+    <figure><img src="img/7.jpg" alt="Renault Mégane con el motor al descubierto en el taller" class="" loading="lazy"><figcaption>En el taller</figcaption></figure>
+    <figure><img src="img/3.jpg" alt="Motor de un Renault en reparación" class="" loading="lazy"><figcaption>Mecánica</figcaption></figure>
+    <figure><img src="img/4.jpg" alt="Coche blanco con el capó abierto" class="" loading="lazy"><figcaption>Revisión</figcaption></figure>
+  </div></section>
+
+<section class="s" id="precios" style="padding-top:0"><h2>Precios <mark>claros</mark></h2><p class="intro">Orientativos: te damos el precio exacto antes de empezar.</p>
+  <div class="precios"><div class="precio"><b>desde 55 €</b><span>Cambio de aceite y filtro</span></div><div class="precio"><b>desde 60 €</b><span>Pastillas de freno (eje)</span></div><div class="precio"><b>desde 85 €</b><span>Batería montada</span></div><div class="precio"><b>desde 15 €</b><span>Neumático montado</span></div><div class="precio"><b>desde 140 €</b><span>Amortiguadores (eje)</span></div><div class="precio"><b>a presupuesto</b><span>Embrague / distribución</span></div></div></section>
+
+<div class="sabado"><div class="in"><div><h2>Sábados abierto</h2><p style="color:#c8ccc4;margin-bottom:24px">De lunes a viernes mañana y tarde, y el sábado de 8 a 14 para que no pierdas un día de trabajo.</p><table class="hor"><tbody><tr class=""><th>Lunes</th><td>8:00–14:00, 16:00–20:00</td></tr><tr class=""><th>Martes</th><td>8:00–14:00, 16:00–20:00</td></tr><tr class=""><th>Miércoles</th><td>8:00–14:00, 16:00–20:00</td></tr><tr class=""><th>Jueves</th><td>8:00–14:00, 16:00–20:00</td></tr><tr class=""><th>Viernes</th><td>8:00–14:00, 16:00–20:00</td></tr><tr class=""><th>Sábado</th><td>8:00–14:00</td></tr><tr class="cerrado"><th>Domingo</th><td>Cerrado</td></tr></tbody></table></div>
+  <div><h2>Dónde</h2><p class="dato"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span>C. Puerto de Almenara, 27<br>28919 Leganés, Madrid</span></p><p class="dato"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+34643902884">643 90 28 84</a></p></div></div></div>
+<iframe class="mapa" src="https://www.google.com/maps?q=TALLER%20CLAUDIO%2C%20C.%20Puerto%20de%20Almenara%2C%2027%2C%2028919%20Legan%C3%A9s%2C%20Madrid&amp;output=embed" loading="lazy" title="Mapa de Taller Claudio" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<footer class="pie"><span>© Taller Claudio · C. Puerto de Almenara, 27</span><span>Propuesta de diseño · <a href="https://mayerdigital.website">Mayer Digital</a></span>
+<span class="creditos">Fotos de la ficha de Google Maps del negocio: ORLEY RAMIREZ, TALLER CLAUDIO, Toribio Jurado Alvarez, claudio paqui.</span></footer>
+<a class="flotante" href="https://wa.me/34643902884?text=Hola%2C%20quer%C3%ADa%20informaci%C3%B3n%20de%20Taller%20Claudio" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3 1 2.5c.1.2 1.7 2.6 4.1 3.6 1.5.7 2.1.7 2.9.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.4-.2z"/></svg></a>
+</body>
+</html>

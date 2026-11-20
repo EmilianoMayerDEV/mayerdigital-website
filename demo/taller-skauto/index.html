@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Taller Skauto · Mecánica y electricidad del automóvil en 28915 Leganés, Madrid</title>
-<meta name="description" content="Mecánica y electricidad del automóvil en Av. Rey Juan Carlos I, 25, Madrid. 4,7 estrellas en Google con 32 reseñas.">
+<title>Taller Skauto · Mecánica, electricidad y diagnosis en 28915 Leganés, Madrid</title>
+<meta name="description" content="Mecánica, electricidad y diagnosis en Av. Rey Juan Carlos I, 25, Madrid. 4,7 estrellas en Google con 32 reseñas.">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -27,46 +27,106 @@ table{border-collapse:collapse;width:100%}th{text-align:left;font-weight:inherit
 .pie{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;padding:22px 20px;font-size:13px}
 .creditos{font-size:11px;opacity:.7;width:100%}
 
-body{font:16px/1.6 'Space Grotesk',sans-serif;color:#e8e8e8;background:#0c0c0d}
-.hero{display:grid;grid-template-columns:1fr 1.1fr;min-height:86vh}
-.hero .txt{padding:70px 6vw;display:flex;flex-direction:column;justify-content:center;border-left:8px solid #e01e2b}
-.escudo{width:74px;height:84px;background:#e01e2b;clip-path:polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%);display:grid;place-items:center;font:700 30px 'Space Grotesk';color:#0c0c0d;margin-bottom:26px}
-h1{font:700 clamp(46px,7vw,92px)/.92 'Space Grotesk';letter-spacing:-.03em}
-h1 span{color:#e01e2b}
-.hero p{color:#a9a9b0;max-width:440px;margin:20px 0 28px}
-.hero>img{width:100%;height:100%;filter:saturate(.85) contrast(1.05)}
-.btn{display:inline-block;background:#e01e2b;color:#fff;text-decoration:none;font-weight:700;padding:14px 26px;border-radius:2px}
-.nota{display:inline-flex;gap:6px;align-items:center;color:#f5c542;text-decoration:none;margin-top:20px}.nota span:last-child,.nota b{color:#fff}
-section{padding:80px 6vw;max-width:1200px;margin:auto}
-h2{font:700 clamp(32px,4.4vw,54px)/1 'Space Grotesk';letter-spacing:-.02em;margin-bottom:28px}
-.motor{display:grid;grid-template-columns:repeat(4,1fr);gap:3px}.motor img{width:100%;aspect-ratio:3/4}
-.datos{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#2a2a2e;margin-top:3px}
-.datos div{background:#141416;padding:28px}.datos b{display:block;font:700 22px 'Space Grotesk';color:#e01e2b;margin-bottom:6px}
-.datos p{color:#a9a9b0;font-size:15px}
-.dos{display:grid;grid-template-columns:1.1fr 1fr;gap:5vw}
-.srv li{padding:14px 0;border-bottom:1px solid #26262a}.srv-linea{font-weight:600}.srv-linea b{color:#e01e2b;white-space:nowrap}.srv small{color:#85858c}
-.hor th,.hor td{padding:8px 0;border-bottom:1px solid #26262a}.hor td{text-align:right}.hor .cerrado td{color:#e01e2b}
-.dato svg{color:#e01e2b}
+:root{--papel:#f6f6f3;--negro:#0d0f10;--rojo:#d4202c;--verde:#27a04a;--gris:#62686d;--linea:#dcdcd6;--pantalla:#0b1410;--fosforo:#7dff9a}
+body{font:16px/1.6 'Manrope',system-ui,sans-serif;color:var(--negro);background:var(--papel)}
+.mono{font-family:'IBM Plex Mono',ui-monospace,monospace}
+.franjas{height:12px;background:linear-gradient(var(--negro) 0 58%,var(--rojo) 58% 100%)}
+.cab{max-width:1220px;margin:auto;padding:20px 5vw;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.marca{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--negro)}
+.escudo{width:46px;height:52px;background:var(--negro);clip-path:polygon(50% 0,100% 16%,100% 62%,50% 100%,0 62%,0 16%);display:grid;place-items:center;color:#fff;font:800 22px 'Manrope'}
+.escudo span{color:var(--rojo)}
+.marca b{font:800 22px/1 'Manrope';letter-spacing:.02em;text-transform:uppercase}
+.marca small{display:block;font:500 11px 'IBM Plex Mono';color:var(--gris);letter-spacing:.06em;margin-top:3px}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font:700 15px 'Manrope';padding:14px 22px;border-radius:10px;background:var(--rojo);color:#fff}
+.btn.neg{background:var(--negro)}
+.hero{max-width:1220px;margin:auto;padding:40px 5vw 70px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+h1{font:800 clamp(42px,5.6vw,76px)/1 'Manrope';letter-spacing:-.035em}
+h1 em{font-style:normal;color:var(--rojo)}
+.hero p{font-size:18px;color:#3a3f43;margin:20px 0 26px;max-width:30em}
+.nota{display:inline-flex;gap:6px;align-items:center;color:#e0a100;text-decoration:none;margin-top:18px}.nota b,.nota span:last-child{color:var(--negro)}
+/* pantalla de diagnosis */
+.equipo{background:#2a2e31;border-radius:22px;padding:14px;box-shadow:0 30px 60px rgba(13,15,16,.3)}
+.pantalla{background:var(--pantalla);border-radius:12px;padding:20px 22px;font:500 14px/1.7 'IBM Plex Mono';color:#cfe9d6;min-height:330px;position:relative;overflow:hidden}
+.pantalla::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(transparent 0 2px,rgba(0,0,0,.18) 2px 3px);pointer-events:none}
+.pantalla .t{color:var(--fosforo);display:flex;justify-content:space-between;border-bottom:1px solid #1d3326;padding-bottom:8px;margin-bottom:10px}
+.lin{display:grid;grid-template-columns:62px 1fr auto;gap:10px;opacity:0;animation:aparece .4s ease forwards}
+.lin b{color:#ffb4a8;font-weight:600}
+.lin .ok{color:var(--fosforo)}
+.lin:nth-child(2){animation-delay:.4s}.lin:nth-child(3){animation-delay:1s}.lin:nth-child(4){animation-delay:1.6s}.lin:nth-child(5){animation-delay:2.2s}.fin{animation-delay:2.9s!important}
+.fin{display:block;margin-top:14px;color:var(--fosforo);font-weight:600}
+@keyframes aparece{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.lin{animation:none;opacity:1}}
+.equipo .pie-eq{display:flex;justify-content:space-between;color:#9aa2a7;font:500 11px 'IBM Plex Mono';padding:10px 6px 2px}
+/* fachada */
+.fachada{max-width:1220px;margin:auto;padding:0 5vw}
+.fachada figure{margin:0;position:relative;border-radius:22px;overflow:hidden}
+.fachada img{width:100%;aspect-ratio:21/8}
+.fachada figcaption{position:absolute;right:20px;bottom:20px;background:var(--papel);border-radius:12px;padding:12px 16px;font-weight:700}
+.fachada figcaption span{display:block;font:500 12px 'IBM Plex Mono';color:var(--gris)}
+section.s{max-width:1220px;margin:auto;padding:90px 5vw}
+h2{font:800 clamp(34px,4.4vw,56px)/1.02 'Manrope';letter-spacing:-.03em;margin-bottom:12px}
+h2 em{font-style:normal;color:var(--rojo)}
+.intro{color:var(--gris);max-width:36em;margin-bottom:36px}
+/* informe */
+.informe{background:#fff;border:1px solid var(--linea);border-radius:22px;overflow:hidden}
+.fila{display:grid;grid-template-columns:110px 1fr 1.2fr 220px;gap:24px;align-items:center;padding:18px 24px;border-bottom:1px solid var(--linea)}
+.fila:last-child{border-bottom:0}
+.fila .cod{font:600 20px 'IBM Plex Mono';color:var(--rojo)}
+.fila b{font-size:18px}
+.fila p{color:var(--gris);font-size:15px}
+.fila img{width:100%;aspect-ratio:16/10;border-radius:10px}
+.fila .est{font:600 12px 'IBM Plex Mono';color:var(--verde);display:block;margin-top:4px}
+.encab{background:var(--negro);color:#c9cdd0;font:600 12px 'IBM Plex Mono';text-transform:uppercase;letter-spacing:.08em}
+.encab .cod{color:#c9cdd0;font-size:12px}
+/* proceso */
+.proceso{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.paso{background:var(--negro);color:#fff;border-radius:18px;padding:26px 22px}
+.paso span{font:600 13px 'IBM Plex Mono';color:var(--fosforo)}
+.paso b{display:block;font:800 22px 'Manrope';margin:10px 0 6px}
+.paso p{color:#b3b8bc;font-size:15px}
+.dos{display:grid;grid-template-columns:1.15fr 1fr;gap:5vw}
+.srv li{padding:13px 0;border-bottom:1px solid var(--linea)}.srv-linea{font-weight:700}.srv-linea b{color:var(--rojo);white-space:nowrap}.srv small{color:var(--gris)}
+.hor{font-family:'IBM Plex Mono'}.hor th,.hor td{padding:10px 0;border-bottom:1px solid var(--linea)}.hor td{text-align:right;font-weight:600}.hor .cerrado td{color:var(--rojo)}
+.dato svg{color:var(--rojo)}
 .flotante{background:#25d366;color:#fff}
-.pie{color:#666;border-top:1px solid #26262a}
-@media(max-width:760px){.hero,.dos{grid-template-columns:1fr}.hero>img{height:300px}.motor{grid-template-columns:1fr 1fr}.datos{grid-template-columns:1fr}}
+.mapa{height:340px}
+.pie{background:var(--negro);color:#8b9196}
+@media(max-width:900px){.hero,.dos{grid-template-columns:1fr}.fila{grid-template-columns:1fr;gap:8px}.encab{display:none}.proceso{grid-template-columns:1fr 1fr}.fachada img{aspect-ratio:4/3}.cab .btn{display:none}}
 
 </style>
 </head>
 <body>
 <div class="cinta">Propuesta de diseño para Taller Skauto · servicios y precios de ejemplo · preparada por <a href="https://mayerdigital.website">Mayer Digital</a></div>
 
-<header class="hero"><div class="txt"><div class="escudo">S</div>
-  <h1>Lo que otros no <span>encuentran</span>, lo buscamos.</h1>
-  <p>Mecánica y electricidad del automóvil en la Avenida Rey Juan Carlos I, Leganés. Averías raras, testigos encendidos y motores que no van finos.</p>
-  <div><a class="btn" href="https://wa.me/34689486415?text=Hola%2C%20quer%C3%ADa%20informaci%C3%B3n%20de%20Taller%20Skauto" target="_blank" rel="noopener">Pedir cita por WhatsApp</a></div><a class="nota" href="https://maps.google.com/?cid=4280097898094056365&amp;g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank" rel="noopener"><span class="estrellas"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></span><b>4,7</b> <span>· 32 reseñas en Google</span></a></div>
-  <img src="img/1.jpg" alt="Fachada de Taller Skauto con coches dentro" class="" fetchpriority="high"></header>
-<div class="motor"><img src="img/8.jpg" alt="Motor desmontado sobre el suelo del taller" class="" loading="lazy"><img src="img/7.jpg" alt="Cableado del motor al descubierto" class="" loading="lazy"><img src="img/5.jpg" alt="Frontal desmontado para reparar el motor" class="" loading="lazy"><img src="img/4.jpg" alt="Salpicadero desmontado para revisar la electricidad" class="" loading="lazy"></div>
-<div class="datos"><div><b>Diagnosis</b><p>Conectamos la máquina y te enseñamos qué marca la avería.</p></div>
-<div><b>Presupuesto claro</b><p>Antes de desmontar nada, sabes lo que vas a pagar.</p></div>
-<div><b>WhatsApp</b><p>Te mandamos fotos de la pieza que cambiamos.</p></div></div>
-<section class="dos"><div><h2>Precios de ejemplo</h2><ul class="srv"><li><div class="srv-linea"><span>Diagnosis electrónica</span><i></i><b>desde 35 €</b></div><small>Lectura y borrado de averías</small></li><li><div class="srv-linea"><span>Reparación de motor</span><i></i><b>a presupuesto</b></div><small>Juntas, culata, inyectores</small></li><li><div class="srv-linea"><span>Electricidad</span><i></i><b>a presupuesto</b></div><small>Cableados, luces y centralitas</small></li><li><div class="srv-linea"><span>Climatización</span><i></i><b>desde 59 €</b></div><small>Calefacción y aire acondicionado</small></li><li><div class="srv-linea"><span>Mantenimiento</span><i></i><b>desde 69 €</b></div><small>Aceite, filtros y revisión</small></li><li><div class="srv-linea"><span>Faros</span><i></i><b>desde 40 €</b></div><small>Pulido y protección</small></li></ul></div>
-<div><h2>Horario</h2><table class="hor"><tbody><tr class=""><th>Lunes</th><td>9:00–19:00</td></tr><tr class=""><th>Martes</th><td>9:00–19:00</td></tr><tr class=""><th>Miércoles</th><td>9:00–19:00</td></tr><tr class=""><th>Jueves</th><td>9:00–19:00</td></tr><tr class=""><th>Viernes</th><td>9:00–19:00</td></tr><tr class="cerrado"><th>Sábado</th><td>Cerrado</td></tr><tr class="cerrado"><th>Domingo</th><td>Cerrado</td></tr></tbody></table><div style="margin-top:26px"><p class="dato"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Av. Rey Juan Carlos I, 25<br>28915 Leganés, Madrid</span></p><p class="dato"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+34689486415">689 48 64 15</a></p></div></div></section>
+<div class="franjas"></div>
+<header class="cab"><a class="marca" href="#"><span class="escudo">S<span>.</span></span><span><b>Taller Skauto</b><small>MECÁNICA · ELECTRICIDAD · DIAGNOSIS</small></span></a>
+  <a class="btn" href="https://wa.me/34689486415?text=Hola%2C%20quer%C3%ADa%20informaci%C3%B3n%20de%20Taller%20Skauto" target="_blank" rel="noopener">Cita por WhatsApp</a></header>
+
+<section class="hero">
+  <div><h1>Lo que otros no encuentran, <em>lo buscamos.</em></h1>
+    <p>Averías raras, testigos que no se apagan y motores que no van finos. En la Avenida Rey Juan Carlos I, Leganés, de 9 a 19 sin cerrar.</p>
+    <a class="btn" href="https://wa.me/34689486415?text=Hola%2C%20quer%C3%ADa%20informaci%C3%B3n%20de%20Taller%20Skauto" target="_blank" rel="noopener">Cuéntanos tu avería</a> <a class="btn neg" href="#averias">Ver averías</a><br><a class="nota" href="https://maps.google.com/?cid=4280097898094056365&amp;g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank" rel="noopener"><span class="estrellas"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></span><b>4,7</b> <span>· 32 reseñas en Google</span></a></div>
+  <div class="equipo" aria-label="Pantalla de diagnosis de ejemplo"><div class="pantalla">
+    <div class="t"><span>SKAUTO · DIAGNOSIS</span><span>ESCANEO</span></div>
+    <div class="lin"><b>P0301</b><span>El motor tiembla o tironea</span><span class="ok">OK</span></div><div class="lin"><b>P0171</b><span>Gasta más y pierde fuerza</span><span class="ok">OK</span></div><div class="lin"><b>P0420</b><span>Testigo motor encendido</span><span class="ok">OK</span></div><div class="lin"><b>U0100</b><span>Se apaga o no arranca</span><span class="ok">OK</span></div><span class="lin fin">&gt; Avería localizada. Presupuesto enviado por WhatsApp ✓</span></div>
+    <div class="pie-eq"><span>Av. Rey Juan Carlos I, 25</span><span>4,7 ★ · 32 reseñas</span></div></div>
+</section>
+
+<div class="fachada"><figure><img src="img/1.jpg" alt="Fachada de Taller Skauto con coches dentro" class="" fetchpriority="high"><figcaption>Taller Skauto<span>Av. Rey Juan Carlos I, 25 · Leganés</span></figcaption></figure></div>
+
+<section class="s" id="averias"><h2>Averías que <em>resolvemos</em></h2><p class="intro">Conectamos la máquina, leemos el código y te explicamos qué significa en cristiano antes de tocar nada.</p>
+  <div class="informe"><div class="fila encab"><span class="cod">Código</span><span>Lo que notas</span><span>Lo que suele ser</span><span>En el taller</span></div><div class="fila"><span class="cod">P0301</span><div><b>El motor tiembla o tironea</b><span class="est">● localizado y reparado</span></div><p>Fallo de encendido en un cilindro: bujía, bobina o inyector.</p><img src="img/8.jpg" alt="El motor tiembla o tironea" class="" loading="lazy"></div><div class="fila"><span class="cod">P0171</span><div><b>Gasta más y pierde fuerza</b><span class="est">● localizado y reparado</span></div><p>Mezcla pobre: toma de aire, caudalímetro o sonda.</p><img src="img/7.jpg" alt="Gasta más y pierde fuerza" class="" loading="lazy"></div><div class="fila"><span class="cod">P0420</span><div><b>Testigo motor encendido</b><span class="est">● localizado y reparado</span></div><p>Catalizador por debajo de su rendimiento.</p><img src="img/5.jpg" alt="Testigo motor encendido" class="" loading="lazy"></div><div class="fila"><span class="cod">U0100</span><div><b>Se apaga o no arranca</b><span class="est">● localizado y reparado</span></div><p>La centralita no comunica: cableado, conectores o la propia centralita.</p><img src="img/4.jpg" alt="Se apaga o no arranca" class="" loading="lazy"></div></div></section>
+
+<section class="s" style="padding-top:0"><h2>Cómo <em>trabajamos</em></h2><p class="intro">Sin sorpresas en la factura.</p>
+  <div class="proceso">
+    <div class="paso"><span>01 · CONECTAR</span><b>Diagnosis</b><p>Leemos todas las centralitas del coche.</p></div>
+    <div class="paso"><span>02 · EXPLICAR</span><b>Te lo contamos</b><p>Qué falla, por qué y cuánto cuesta.</p></div>
+    <div class="paso"><span>03 · REPARAR</span><b>Con tu permiso</b><p>Solo empezamos cuando nos das el «adelante».</p></div>
+    <div class="paso"><span>04 · COMPROBAR</span><b>Fotos por WhatsApp</b><p>Te enseñamos la pieza cambiada y borramos los códigos.</p></div>
+  </div></section>
+
+<section class="s dos" style="padding-top:0"><div><h2>Precios de <em>ejemplo</em></h2><ul class="srv"><li><div class="srv-linea"><span>Diagnosis electrónica</span><i></i><b>desde 35 €</b></div><small>Lectura completa y explicación de la avería</small></li><li><div class="srv-linea"><span>Mantenimiento</span><i></i><b>desde 69 €</b></div><small>Aceite, filtros y revisión</small></li><li><div class="srv-linea"><span>Climatización</span><i></i><b>desde 59 €</b></div><small>Carga de gas y revisión de fugas</small></li><li><div class="srv-linea"><span>Electricidad</span><i></i><b>a presupuesto</b></div><small>Cableados, luces y centralitas</small></li><li><div class="srv-linea"><span>Reparación de motor</span><i></i><b>a presupuesto</b></div><small>Juntas, culata, inyectores</small></li><li><div class="srv-linea"><span>Faros</span><i></i><b>desde 40 €</b></div><small>Pulido y protección</small></li></ul></div>
+  <div><h2>Horario</h2><table class="hor"><tbody><tr class=""><th>Lunes</th><td>9:00–19:00</td></tr><tr class=""><th>Martes</th><td>9:00–19:00</td></tr><tr class=""><th>Miércoles</th><td>9:00–19:00</td></tr><tr class=""><th>Jueves</th><td>9:00–19:00</td></tr><tr class=""><th>Viernes</th><td>9:00–19:00</td></tr><tr class="cerrado"><th>Sábado</th><td>Cerrado</td></tr><tr class="cerrado"><th>Domingo</th><td>Cerrado</td></tr></tbody></table><div style="margin-top:26px"><p class="dato"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Av. Rey Juan Carlos I, 25<br>28915 Leganés, Madrid</span></p><p class="dato"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+34689486415">689 48 64 15</a></p></div></div></section>
 <iframe class="mapa" src="https://www.google.com/maps?q=TALLER%20SKAUTO%2C%20Av.%20Rey%20Juan%20Carlos%20I%2C%2025%2C%2028915%20Legan%C3%A9s%2C%20Madrid&amp;output=embed" loading="lazy" title="Mapa de Taller Skauto" referrerpolicy="no-referrer-when-downgrade"></iframe>
 <footer class="pie"><span>© Taller Skauto · Av. Rey Juan Carlos I, 25</span><span>Propuesta de diseño · <a href="https://mayerdigital.website">Mayer Digital</a></span>
 <span class="creditos">Fotos de la ficha de Google Maps del negocio: Jorge Pérez carrillo, TALLER SKAUTO.</span></footer>
