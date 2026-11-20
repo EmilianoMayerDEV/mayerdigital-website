@@ -7,7 +7,7 @@
 <meta name="description" content="Taller mecánico en C. Polonia, 10, Madrid. 4,6 estrellas en Google con 55 reseñas.">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -27,45 +27,130 @@ table{border-collapse:collapse;width:100%}th{text-align:left;font-weight:inherit
 .pie{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;padding:22px 20px;font-size:13px}
 .creditos{font-size:11px;opacity:.7;width:100%}
 
-body{font:16px/1.6 'Outfit',sans-serif;color:#1d1d22;background:#f2f2f4}
-.hero{position:relative;height:70vh;min-height:440px;color:#fff}
-.hero>img{width:100%;height:100%}
-.hero .c{position:absolute;inset:0;background:linear-gradient(0deg,rgba(150,15,25,.95) 15%,rgba(150,15,25,.2) 70%);display:flex;flex-direction:column;justify-content:flex-end;padding:40px 6vw}
-.hero h1{font:800 clamp(48px,8vw,100px)/.9 'Outfit';letter-spacing:-.02em}
-.hero p{font-size:19px;margin-top:10px;color:#ffe1e3}
-.reloj{max-width:1000px;margin:-40px auto 0;position:relative;background:#fff;border-radius:22px;padding:28px 32px;display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;box-shadow:0 20px 40px rgba(0,0,0,.12)}
-.reloj .h{font:800 42px/1 'Outfit';color:#c8102e}
-.reloj p{color:#555}.reloj b{color:#1d1d22}
-.btn{display:inline-block;background:#c8102e;color:#fff;text-decoration:none;font-weight:700;padding:15px 26px;border-radius:14px}
-.nota{display:inline-flex;gap:6px;align-items:center;color:#f5a623;text-decoration:none}.nota span:last-child,.nota b{color:#1d1d22}
-section{padding:70px 6vw;max-width:1000px;margin:auto}
-h2{font:800 clamp(30px,4vw,44px)/1.05 'Outfit';margin-bottom:22px}
-.dos{display:grid;grid-template-columns:1fr 1fr;gap:28px}
-.tarj{background:#fff;border-radius:22px;padding:30px}
-.srv li{padding:12px 0;border-bottom:1px solid #eee}.srv-linea{font-weight:600}.srv-linea b{color:#c8102e;white-space:nowrap}.srv small{color:#777}
-.hor th,.hor td{padding:7px 0;border-bottom:1px solid #eee}.hor td{text-align:right;font-weight:600}.hor .cerrado td{color:#c8102e}
-.dato svg{color:#c8102e}
-.liqui{display:grid;grid-template-columns:1fr 1.3fr;gap:28px;align-items:center}.liqui img{width:100%;aspect-ratio:3/4;border-radius:22px}
+:root{--rojo:#c8102e;--rojo2:#e5283f;--blanco:#fbfaf7;--tinta:#1a1716;--gris:#6f6a66;--tablero:#e9e4dc;--agujero:#cfc7bb}
+body{font:16px/1.6 'Bricolage Grotesque',system-ui,sans-serif;color:var(--tinta);background:var(--blanco)}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace}
+/* toldo ondulado */
+.toldo{height:64px;background:repeating-linear-gradient(90deg,var(--rojo) 0 48px,#fff 48px 96px);position:relative}
+.toldo::after{content:"";position:absolute;left:0;right:0;bottom:-24px;height:24px;
+  background:radial-gradient(circle at 24px 0,var(--rojo) 23px,transparent 24px) 0 0/96px 24px repeat-x,
+             radial-gradient(circle at 72px 0,#fff 23px,transparent 24px) 0 0/96px 24px repeat-x;filter:drop-shadow(0 4px 3px rgba(0,0,0,.12))}
+.hero{max-width:1200px;margin:auto;padding:80px 5vw 50px;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.rotulo{font:400 clamp(72px,11vw,150px)/.86 'Anton',Impact,sans-serif;color:var(--rojo);letter-spacing:.01em}
+.rotulo small{display:block;font:500 clamp(16px,1.8vw,22px)/1.3 'Bricolage Grotesque';color:var(--tinta);letter-spacing:.32em;text-transform:uppercase;margin-top:14px}
+.hero p{font-size:19px;color:#3b3532;max-width:30em;margin:22px 0 26px}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;padding:15px 26px;border-radius:999px;background:var(--rojo);color:#fff}
+.btn.lin{background:transparent;color:var(--tinta);box-shadow:inset 0 0 0 2px var(--tinta);margin-left:8px}
+.nota{display:inline-flex;gap:6px;align-items:center;color:#e0a100;text-decoration:none;margin-top:18px}.nota b,.nota span:last-child{color:var(--tinta)}
+/* reloj */
+.reloj{background:var(--tinta);color:#fff;border-radius:28px;padding:clamp(20px,4vw,30px);min-width:0;box-shadow:0 30px 60px rgba(26,23,22,.25)}
+.estado{display:inline-flex;align-items:center;gap:10px;font:700 14px 'JetBrains Mono';text-transform:uppercase;letter-spacing:.08em;background:#2a2523;border-radius:999px;padding:8px 14px}
+.estado i{width:10px;height:10px;border-radius:50%;background:#5fd068;box-shadow:0 0 0 6px rgba(95,208,104,.18)}
+.estado.cerrado i{background:#ff5a5f;box-shadow:0 0 0 6px rgba(255,90,95,.18)}
+.horas{font:700 clamp(34px,8.6vw,70px)/1 'JetBrains Mono';white-space:nowrap;margin:22px 0 6px;letter-spacing:-.04em}
+.horas span{color:var(--rojo2)}
+.reloj p{color:#bdb5b0;margin:0}
+.barra{margin-top:22px;height:14px;border-radius:7px;background:#2a2523;position:relative;overflow:hidden}
+.barra b{position:absolute;top:0;bottom:0;left:37.5%;width:41.67%;background:var(--rojo2);border-radius:7px}
+.barra u{position:absolute;top:-4px;bottom:-4px;width:3px;background:#fff;border-radius:2px;text-decoration:none}
+.ejes{position:relative;height:18px;font:12px 'JetBrains Mono';color:#8d8480;margin-top:6px}.ejes span{position:absolute;transform:translateX(-50%)}.ejes span:first-child{transform:none}.ejes span:last-child{transform:translateX(-100%)}
+/* elevadores */
+.elev{max-width:1200px;margin:0 auto;padding:0 5vw}
+.elev figure{margin:0;position:relative;border-radius:28px;overflow:hidden}
+.elev img{width:100%;aspect-ratio:21/9;object-position:center 55%}
+.elev figcaption{position:absolute;left:24px;bottom:24px;background:var(--blanco);padding:12px 18px;border-radius:14px;font-weight:700}
+.elev figcaption span{display:block;font:500 13px 'JetBrains Mono';color:var(--gris)}
+section.s{max-width:1200px;margin:auto;padding:96px 5vw}
+h2{font:400 clamp(44px,6vw,76px)/.95 'Anton',Impact,sans-serif;text-transform:uppercase;margin-bottom:12px}
+h2 em{font-style:normal;color:var(--rojo)}
+.intro{color:var(--gris);max-width:36em;margin-bottom:40px}
+/* jornada */
+.jornada{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.jornada::before{content:"";position:absolute;left:0;right:0;top:27px;height:3px;background:repeating-linear-gradient(90deg,var(--tinta) 0 10px,transparent 10px 18px)}
+.paso{position:relative;padding-right:24px}
+.paso .h{display:inline-block;font:700 18px 'JetBrains Mono';background:var(--blanco);border:3px solid var(--tinta);border-radius:999px;padding:12px 16px;position:relative}
+.paso:first-child .h,.paso:last-child .h{background:var(--rojo);border-color:var(--rojo);color:#fff}
+.paso b{display:block;font:400 26px/1.05 'Anton';text-transform:uppercase;margin:18px 0 6px}
+.paso p{color:var(--gris);font-size:15px}
+/* tablero perforado */
+.tablero{background-color:var(--tablero);background-image:radial-gradient(var(--agujero) 3px,transparent 3.5px);background-size:28px 28px;border-radius:28px;padding:44px clamp(18px,4vw,48px)}
+.piezas{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.pieza{background:var(--blanco);border-radius:18px;padding:30px 22px 22px;position:relative;box-shadow:0 10px 0 rgba(26,23,22,.08)}
+.pieza::before{content:"";position:absolute;top:-10px;left:50%;width:22px;height:22px;margin-left:-11px;border-radius:50%;background:var(--tablero);border:5px solid #b9b0a3}
+.pieza .p{font:700 26px 'JetBrains Mono';color:var(--rojo);letter-spacing:-.03em}
+.pieza b{display:block;font-size:19px;margin:6px 0 4px}
+.pieza small{color:var(--gris)}
+.aviso{margin-top:22px;font:13px 'JetBrains Mono';color:var(--gris)}
+/* liqui moly */
+.aceite{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+.aceite img{width:100%;aspect-ratio:3/4;border-radius:28px}
+.tels{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0}
+.tels a{font:700 22px 'JetBrains Mono';text-decoration:none;border:2px solid var(--tinta);border-radius:14px;padding:12px 18px;color:var(--tinta)}
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:5vw}
+.hor{font-family:'JetBrains Mono'}.hor th,.hor td{padding:10px 0;border-bottom:1px solid #e3ddd4}.hor td{text-align:right;font-weight:700}.hor .cerrado td{color:var(--rojo)}
+.dato svg{color:var(--rojo)}
 .flotante{background:#25d366;color:#fff}
-.pie{color:#777}
-@media(max-width:760px){.reloj{grid-template-columns:1fr;margin:-30px 16px 0;text-align:center}.dos,.liqui{grid-template-columns:1fr}}
+.mapa{height:360px}
+.pie{background:var(--tinta);color:#a59d98}
+@media(max-width:900px){.hero,.aceite,.dos{grid-template-columns:1fr}.jornada{grid-template-columns:1fr 1fr;row-gap:36px}.jornada::before{display:none}
+ .piezas{grid-template-columns:1fr 1fr}.elev img{aspect-ratio:4/3}.btn.lin{margin:10px 0 0}}
+@media(max-width:520px){.piezas{grid-template-columns:1fr}}
 
 </style>
 </head>
 <body>
 <div class="cinta">Propuesta de diseño para AMJ-Motor · servicios y precios de ejemplo · preparada por <a href="https://mayerdigital.website">Mayer Digital</a></div>
 
-<header class="hero"><img src="img/2.jpg" alt="AMJ-Motor con dos coches en los elevadores" class="" fetchpriority="high">
-  <div class="c"><h1>AMJ-Motor</h1><p>Taller mecánico en la calle Polonia, Leganés.</p></div></header>
-<div class="reloj"><div class="h">9:00–19:00</div><p><b>De lunes a viernes, sin cerrar a mediodía.</b><br>Déjalo por la mañana y recógelo al salir de trabajar.</p>
-  <div><a class="btn" href="https://wa.me/34636380917?text=Hola%2C%20quer%C3%ADa%20informaci%C3%B3n%20de%20AMJ-Motor" target="_blank" rel="noopener">Pedir cita por WhatsApp</a></div></div>
-<section style="text-align:center;padding-bottom:0"><a class="nota" href="https://maps.google.com/?cid=2463892060547853941&amp;g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank" rel="noopener"><span class="estrellas"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></span><b>4,6</b> <span>· 55 reseñas en Google</span></a></section>
-<section class="dos"><div class="tarj"><h2>Precios de ejemplo</h2><ul class="srv"><li><div class="srv-linea"><span>Cambio de aceite</span><i></i><b>desde 55 €</b></div><small>Aceite Liqui Moly y filtro</small></li><li><div class="srv-linea"><span>Frenos</span><i></i><b>desde 69 €</b></div><small>Pastillas y discos</small></li><li><div class="srv-linea"><span>Embrague</span><i></i><b>a presupuesto</b></div><small>Kit completo</small></li><li><div class="srv-linea"><span>Diagnosis</span><i></i><b>desde 30 €</b></div><small>Testigos encendidos y averías</small></li><li><div class="srv-linea"><span>Revisión pre-ITV</span><i></i><b>desde 30 €</b></div><small>Para que pases a la primera</small></li></ul></div>
-<div class="tarj"><h2>Horario</h2><table class="hor"><tbody><tr class=""><th>Lunes</th><td>9:00–19:00</td></tr><tr class=""><th>Martes</th><td>9:00–19:00</td></tr><tr class=""><th>Miércoles</th><td>9:00–19:00</td></tr><tr class=""><th>Jueves</th><td>9:00–19:00</td></tr><tr class=""><th>Viernes</th><td>9:00–19:00</td></tr><tr class="cerrado"><th>Sábado</th><td>Cerrado</td></tr><tr class="cerrado"><th>Domingo</th><td>Cerrado</td></tr></tbody></table><div style="margin-top:24px"><p class="dato"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span>C. Polonia, 10<br>Loc 2y3, Madrid</span></p><p class="dato"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+34636380917">636 38 09 17</a></p></div></div></section>
-<section class="liqui"><img src="img/1.jpg" alt="Estanterías de aceite Liqui Moly y horario del taller" class="" loading="lazy"><div><h2>Aceite de calidad, mano de obra honrada</h2><p>Trabajamos con aceites Liqui Moly. Escríbenos por WhatsApp con la marca y el modelo y te damos precio sin compromiso.</p><p style="margin-top:20px"><a class="btn" href="https://wa.me/34636380917?text=Hola%2C%20quer%C3%ADa%20informaci%C3%B3n%20de%20AMJ-Motor" target="_blank" rel="noopener">Pedir cita por WhatsApp</a></p></div></section>
+<div class="toldo"></div>
+<header class="hero">
+  <div><div class="rotulo">AMJ-MOTOR<small>Taller mecánico · Leganés</small></div>
+    <p>En la calle Polonia 10. Abrimos de 9 a 19 del tirón: déjanos el coche de camino al trabajo y recógelo a la vuelta.</p>
+    <a class="btn" href="https://wa.me/34636380917?text=Hola%2C%20quer%C3%ADa%20informaci%C3%B3n%20de%20AMJ-Motor" target="_blank" rel="noopener">Pide cita por WhatsApp</a><a class="btn lin" href="#precios">Ver precios</a><br><a class="nota" href="https://maps.google.com/?cid=2463892060547853941&amp;g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank" rel="noopener"><span class="estrellas"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></span><b>4,6</b> <span>· 55 reseñas en Google</span></a></div>
+  <div class="reloj" aria-live="polite">
+    <span class="estado" id="estado"><i></i><span id="estado-txt">Lunes a viernes</span></span>
+    <div class="horas">9:00<span>→</span>19:00</div>
+    <p>de lunes a viernes, sin cerrar a mediodía</p>
+    <div class="barra"><b></b><u id="ahora" hidden></u></div>
+    <div class="ejes"><span style="left:0">0 h</span><span style="left:37.5%">9</span><span style="left:58.33%">14</span><span style="left:79.17%">19</span><span style="left:100%">24 h</span></div>
+  </div>
+</header>
+
+<div class="elev"><figure><img src="img/2.jpg" alt="Fachada de AMJ-Motor con dos elevadores y coches subidos" class="" fetchpriority="high">
+  <figcaption>Dos elevadores trabajando a la vez<span>C. Polonia 10, locales 2 y 3</span></figcaption></figure></div>
+
+<section class="s"><h2>Tu día <em>con nosotros</em></h2><p class="intro">Sin pedir el día libre ni andar con prisas a mediodía.</p>
+  <div class="jornada">
+    <div class="paso"><span class="h">9:00</span><b>Lo dejas</b><p>De camino al trabajo. Nos cuentas qué le pasa.</p></div>
+    <div class="paso"><span class="h">11:30</span><b>Lo miramos</b><p>Diagnóstico y te mandamos el presupuesto por WhatsApp.</p></div>
+    <div class="paso"><span class="h">13:00</span><b>Tú decides</b><p>Nada se toca sin tu «adelante».</p></div>
+    <div class="paso"><span class="h">19:00</span><b>Lo recoges</b><p>A la vuelta del trabajo, listo.</p></div>
+  </div></section>
+
+<section class="s" id="precios" style="padding-top:0"><h2>Lo que <em>hacemos</em></h2><p class="intro">Precios orientativos. Te damos el definitivo antes de empezar.</p>
+  <div class="tablero"><div class="piezas"><div class="pieza"><span class="p">desde 55 €</span><b>Cambio de aceite</b><small>Liqui Moly y filtro, con revisión de niveles</small></div><div class="pieza"><span class="p">desde 69 €</span><b>Frenos</b><small>Pastillas y discos por eje</small></div><div class="pieza"><span class="p">a presupuesto</span><b>Embrague</b><small>Kit completo, presupuesto cerrado</small></div><div class="pieza"><span class="p">desde 30 €</span><b>Diagnosis</b><small>Testigos encendidos y averías</small></div><div class="pieza"><span class="p">desde 30 €</span><b>Pre-ITV</b><small>Para que pases a la primera</small></div><div class="pieza"><span class="p">a presupuesto</span><b>Distribución</b><small>Correa, tensores y bomba de agua</small></div></div><p class="aviso">* Precios de ejemplo: los pone el taller.</p></div></section>
+
+<section class="s aceite" style="padding-top:0"><img src="img/1.jpg" alt="Pared del taller con aceites Liqui Moly y el cartel del horario" class="" loading="lazy">
+  <div><h2>Aceite <em>de verdad</em></h2><p class="intro" style="margin-bottom:0">Trabajamos con Liqui Moly. Escríbenos la marca, el modelo y los kilómetros de tu coche y te decimos el precio sin compromiso.</p>
+    <div class="tels"><a href="tel:+34636380917">636 38 09 17</a><a href="tel:+34643599586">643 59 95 86</a></div>
+    <a class="btn" href="https://wa.me/34636380917?text=Hola%2C%20quer%C3%ADa%20informaci%C3%B3n%20de%20AMJ-Motor" target="_blank" rel="noopener">Escríbenos por WhatsApp</a></div></section>
+
+<section class="s dos" style="padding-top:0"><div><h2>Horario</h2><table class="hor"><tbody><tr class=""><th>Lunes</th><td>9:00–19:00</td></tr><tr class=""><th>Martes</th><td>9:00–19:00</td></tr><tr class=""><th>Miércoles</th><td>9:00–19:00</td></tr><tr class=""><th>Jueves</th><td>9:00–19:00</td></tr><tr class=""><th>Viernes</th><td>9:00–19:00</td></tr><tr class="cerrado"><th>Sábado</th><td>Cerrado</td></tr><tr class="cerrado"><th>Domingo</th><td>Cerrado</td></tr></tbody></table></div>
+  <div><h2>Dónde</h2><p class="dato"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span>C. Polonia, 10<br>Loc 2y3, Madrid</span></p><p class="dato"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+34636380917">636 38 09 17</a></p></div></section>
 <iframe class="mapa" src="https://www.google.com/maps?q=AMJ-MOTOR%2C%20C.%20Polonia%2C%2010%2C%20Loc%202y3%2C%2028916%20Legan%C3%A9s%2C%20Madrid&amp;output=embed" loading="lazy" title="Mapa de AMJ-Motor" referrerpolicy="no-referrer-when-downgrade"></iframe>
 <footer class="pie"><span>© AMJ-Motor · C. Polonia, 10</span><span>Propuesta de diseño · <a href="https://mayerdigital.website">Mayer Digital</a></span>
 <span class="creditos">Fotos de la ficha de Google Maps del negocio: Alejandro Berrocal.</span></footer>
-<a class="flotante" href="https://wa.me/34636380917?text=Hola%2C%20quer%C3%ADa%20informaci%C3%B3n%20de%20AMJ-Motor" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3 1 2.5c.1.2 1.7 2.6 4.1 3.6 1.5.7 2.1.7 2.9.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.4-.2z"/></svg></a>
+<a class="flotante" href="https://wa.me/34636380917?text=Hola%2C%20quer%C3%ADa%20informaci%C3%B3n%20de%20AMJ-Motor" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3 1 2.5c.1.2 1.7 2.6 4.1 3.6 1.5.7 2.1.7 2.9.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.4-.2z"/></svg></a><script>
+(function () {
+  var p = new Intl.DateTimeFormat('es-ES', {timeZone: 'Europe/Madrid', weekday: 'short', hour: 'numeric', minute: 'numeric', hourCycle: 'h23'}).formatToParts(new Date());
+  var get = function (t) { var x = p.filter(function (q) { return q.type === t; })[0]; return x ? x.value : ''; };
+  var h = +get('hour') + (+get('minute')) / 60, dia = get('weekday').toLowerCase();
+  var laborable = ['lun', 'mar', 'mié', 'jue', 'vie'].some(function (d) { return dia.indexOf(d) === 0; });
+  var abierto = laborable && h >= 9 && h < 19;
+  var est = document.getElementById('estado');
+  document.getElementById('estado-txt').textContent = abierto ? 'Abierto ahora' : (laborable && h < 9 ? 'Abrimos a las 9:00' : 'Cerrado ahora');
+  if (!abierto) est.classList.add('cerrado');
+  var u = document.getElementById('ahora'); u.hidden = false; u.style.left = (h / 24 * 100) + '%';
+})();
+</script>
 </body>
 </html>
