@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="description" content="Demo de web para restaurante preparada por Mayer Digital.">
+<title>Fuego Lento · Asador y taberna</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Manrope:wght@400;500;600;700&family=Caveat:wght@500&display=swap">
+<style>
+/* Asador ficticio: carbón, brasa y crema. La foto manda; la tipografía es la de una carta impresa. Un solo tema oscuro, a propósito. */
+:root{--carbon:#14110f;--carbon2:#1d1916;--carbon3:#2a2420;--brasa:#e2622b;--brasa2:#f08a4b;--oro:#c9a36a;--crema:#f3ebe0;--gris:#a89c90;--linea:rgba(243,235,224,.14);
+  --serif:'Gloock',Georgia,serif;--sans:'Manrope',system-ui,sans-serif;color-scheme:dark}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--carbon);color:var(--crema);font:400 16px/1.7 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding:0 max(20px,env(safe-area-inset-left,0px))}
+.demo{background:var(--brasa);color:var(--carbon);font:600 13px var(--sans);text-align:center;padding:7px 16px}
+.demo a{font-weight:700}
+/* cabecera */
+header{position:sticky;top:0;z-index:20;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+header.solida{background:rgba(20,17,15,.92);backdrop-filter:blur(10px);border-color:var(--linea)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;height:74px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:400 26px/1 var(--serif);letter-spacing:.01em}
+.logo svg{width:26px;height:26px;color:var(--brasa)}
+.menu{display:flex;gap:30px;list-style:none;font-weight:500;font-size:15px}
+.menu a{text-decoration:none;opacity:.85}.menu a:hover{opacity:1;color:var(--brasa2)}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font:700 15px var(--sans);padding:14px 24px;border-radius:999px;background:var(--brasa);color:#1a0d06;border:0;cursor:pointer;transition:transform .2s,background .2s}
+.btn:hover{background:var(--brasa2);transform:translateY(-1px)}
+.btn.borde{background:transparent;color:var(--crema);box-shadow:inset 0 0 0 1.5px rgba(243,235,224,.5)}
+.btn.borde:hover{box-shadow:inset 0 0 0 1.5px var(--crema)}
+/* hero */
+.hero{position:relative;min-height:calc(100vh - 74px);min-height:calc(100svh - 74px);display:flex;align-items:flex-end;margin-top:-74px;padding-top:74px}
+.hero>img{position:absolute;inset:0;z-index:-2}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(20,17,15,.55) 0%,rgba(20,17,15,.15) 40%,rgba(20,17,15,.92) 100%)}
+.hero .wrap{width:100%;padding-bottom:72px}
+.antetitulo{font:500 22px var(--sans);font-family:'Caveat',cursive;color:var(--oro);font-size:30px}
+h1{font:400 clamp(54px,9vw,128px)/.92 var(--serif);letter-spacing:-.02em;max-width:10ch;margin:6px 0 22px}
+h1 em{font-style:normal;color:var(--brasa)}
+.hero p{font-size:19px;max-width:34em;color:#e7dccd;margin-bottom:30px}
+.acciones{display:flex;flex-wrap:wrap;gap:12px}
+.datos{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--linea);margin-top:56px}
+.datos div{padding:20px 0;font-size:15px;color:var(--gris)}
+.datos div+div{padding-left:24px;border-left:1px solid var(--linea)}
+.datos b{display:block;color:var(--crema);font:400 22px var(--serif)}
+/* secciones */
+section{padding:120px 0}
+.etiqueta{font:700 12px var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--brasa)}
+h2{font:400 clamp(40px,5.4vw,72px)/1 var(--serif);letter-spacing:-.015em;margin:14px 0 20px}
+h2 em{font-style:normal;color:var(--oro)}
+.lead{font-size:18px;color:#d9cdbd;max-width:34em}
+/* brasa */
+.brasa{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.fotos-brasa{position:relative;padding:0 0 80px 0}
+.fotos-brasa .a{aspect-ratio:4/5;border-radius:4px;overflow:hidden}
+.fotos-brasa .b{position:absolute;right:-28px;bottom:0;width:46%;aspect-ratio:3/4;border-radius:4px;overflow:hidden;border:8px solid var(--carbon)}
+.firma{font:500 34px 'Caveat',cursive;color:var(--oro);margin-top:26px}
+.cifras{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px;padding-top:30px;border-top:1px solid var(--linea)}
+.cifras b{display:block;font:400 44px/1 var(--serif);color:var(--brasa)}
+.cifras span{font-size:14px;color:var(--gris)}
+/* carta */
+.carta{background:var(--carbon2)}
+.carta-cab{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:40px}
+.pestanas{display:flex;flex-wrap:wrap;gap:8px}
+.pestanas button{font:600 15px var(--sans);color:var(--crema);background:transparent;border:1px solid var(--linea);padding:10px 18px;border-radius:999px;cursor:pointer;transition:.2s}
+.pestanas button[aria-selected=true]{background:var(--crema);color:var(--carbon);border-color:var(--crema)}
+.panel{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+.panel[hidden]{display:none}
+.panel figure{aspect-ratio:4/5;border-radius:4px;overflow:hidden;position:sticky;top:100px}
+.platos{list-style:none}
+.platos li{padding:22px 0;border-bottom:1px dashed var(--linea)}
+.platos li:first-child{padding-top:0}
+.linea-plato{display:flex;align-items:baseline;gap:12px;font:400 23px/1.25 var(--serif)}
+.linea-plato::after{content:"";order:2;flex:1;border-bottom:1px dotted rgba(243,235,224,.3);transform:translateY(-6px)}
+.linea-plato .precio{order:3;color:var(--brasa2);font:400 22px var(--serif);white-space:nowrap}
+.platos p{color:var(--gris);font-size:15px;margin-top:4px;max-width:32em}
+.sello{display:inline-block;font:700 11px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--oro);border:1px solid var(--oro);border-radius:999px;padding:2px 8px;margin-left:6px;vertical-align:middle}
+.nota-carta{margin-top:26px;font-size:14px;color:var(--gris)}
+/* menú del día */
+.mdd{position:relative;overflow:hidden;padding:0}
+.mdd .in{display:grid;grid-template-columns:1.1fr .9fr;min-height:520px}
+.mdd .foto{position:relative}
+.mdd .texto{background:var(--brasa);color:#1a0d06;padding:64px 56px;display:flex;flex-direction:column;justify-content:center}
+.mdd .etiqueta{color:#1a0d06}
+.mdd h2{margin-bottom:8px}
+.mdd .precio-grande{font:400 clamp(72px,9vw,120px)/1 var(--serif);letter-spacing:-.03em}
+.mdd .precio-grande small{font:600 18px var(--sans);letter-spacing:0;margin-left:6px}
+.mdd ul{list-style:none;margin:18px 0 28px;font-weight:600}
+.mdd li{padding:6px 0;border-bottom:1px solid rgba(26,13,6,.2)}
+.mdd .btn{background:var(--carbon);color:var(--crema);align-self:flex-start}
+/* galería */
+.galeria{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:12px;margin-top:44px}
+.galeria figure{overflow:hidden;border-radius:4px}
+.galeria img{transition:transform .8s ease}
+.galeria figure:hover img{transform:scale(1.04)}
+.g1{grid-column:span 2;grid-row:span 2}.g2{grid-row:span 2}.g5{grid-column:span 2}
+/* reseñas */
+.resenas{background:var(--carbon2)}
+.nota-google{display:flex;align-items:center;gap:14px;margin-top:6px}
+.nota-google b{font:400 54px/1 var(--serif)}
+.estrellas{color:var(--oro);letter-spacing:2px}
+.tarjetas{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+.tarjeta{border:1px solid var(--linea);border-radius:6px;padding:30px;display:flex;flex-direction:column;gap:18px}
+.tarjeta q{font:400 21px/1.4 var(--serif);quotes:"«" "»"}
+.tarjeta span{font-size:14px;color:var(--gris);margin-top:auto}
+/* reservas */
+.reserva{display:grid;grid-template-columns:1.1fr .9fr;gap:64px}
+form{background:var(--carbon2);border:1px solid var(--linea);border-radius:8px;padding:36px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+label{display:block;font-size:13px;font-weight:600;color:var(--gris);margin-bottom:6px;letter-spacing:.02em}
+input,select,textarea{width:100%;font:500 16px var(--sans);color:var(--crema);background:var(--carbon);border:1px solid var(--linea);border-radius:6px;padding:13px 14px}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--brasa);outline-offset:1px;border-color:transparent}
+.ancho{grid-column:1/-1}
+.personas{display:flex;gap:8px;flex-wrap:wrap}
+.personas input{position:absolute;opacity:0;width:1px}
+.personas span{display:grid;place-items:center;min-width:46px;height:46px;border:1px solid var(--linea);border-radius:6px;font-weight:700;cursor:pointer}
+.personas input:checked+span{background:var(--brasa);color:#1a0d06;border-color:var(--brasa)}
+.personas input:focus-visible+span{outline:2px solid var(--crema)}
+form .btn{justify-content:center}
+.ok{display:none;grid-column:1/-1;background:rgba(226,98,43,.12);border:1px solid var(--brasa);border-radius:6px;padding:14px 16px;font-size:15px}
+.ok.visible{display:block}
+.info dl{margin-top:30px}
+.info dt{font:700 12px var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--brasa);margin-top:26px}
+.info dd{font-size:17px;margin-top:6px}
+.horario{width:100%;border-collapse:collapse;margin-top:8px;font-size:15px}
+.horario td{padding:8px 0;border-bottom:1px solid var(--linea)}
+.horario td+td{text-align:right;color:#d9cdbd}
+.horario .cerrado td+td{color:var(--brasa2)}
+.horario .hoy td{color:var(--crema);font-weight:700}
+footer{border-top:1px solid var(--linea);padding:44px 0 90px;font-size:14px;color:var(--gris)}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.flotante{position:fixed;right:18px;bottom:18px;z-index:30;box-shadow:0 12px 30px rgba(0,0,0,.45);opacity:0;pointer-events:none;transform:translateY(12px);transition:opacity .3s,transform .3s}
+.flotante.visible{opacity:1;pointer-events:auto;transform:none}
+@media(max-width:960px){
+  .menu{display:none}
+  .brasa,.panel,.reserva,.mdd .in{grid-template-columns:1fr}
+  .brasa{gap:40px}.fotos-brasa .b{right:0}
+  .panel figure{position:static;aspect-ratio:16/10}
+  .mdd .foto{height:300px}.mdd .texto{padding:48px 24px}
+  .tarjetas{grid-template-columns:1fr}
+  .galeria{grid-template-columns:1fr 1fr;grid-auto-rows:160px}.g1,.g5{grid-column:span 2}.g2{grid-row:span 1}
+  section{padding:84px 0}
+}
+@media(max-width:600px){
+  .nav .btn{padding:11px 16px;font-size:14px}
+  .datos{grid-template-columns:1fr}.datos div+div{padding-left:0;border-left:0;border-top:1px solid var(--linea)}
+  .datos div{padding:14px 0}
+  form{grid-template-columns:1fr;padding:24px}
+  .cifras b{font-size:34px}
+  .hero .wrap{padding-bottom:40px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="demo">Web de muestra para restaurantes · Diseño de <a href="https://mayerdigital.website/">Mayer Digital</a></div>
+<header id="cab"><div class="wrap nav">
+  <a class="logo" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c1 3.5 5 5.6 5 10.5A5 5 0 0 1 12 18a5 5 0 0 1-5-5.5c0-2 1-3.5 2.2-4.6.2 1.6 1 2.6 2 3 0-3.4.6-6.4 1.8-8.9zM6 20h12v2H6z"/></svg>Fuego Lento</a>
+  <ul class="menu"><li><a href="#brasa">La brasa</a></li><li><a href="#carta">Carta</a></li><li><a href="#menu-dia">Menú del día</a></li><li><a href="#galeria">Galería</a></li><li><a href="#reservar">Contacto</a></li></ul>
+  <a class="btn" href="#reservar">Reservar mesa</a>
+</div></header>
+
+<section class="hero" aria-label="Portada">
+  <img src="img/hero.jpg" alt="Cena con amigos a la luz de las velas en el comedor" fetchpriority="high">
+  <div class="wrap">
+    <div class="antetitulo">Asador y taberna · Madrid</div>
+    <h1>Cocina de brasa, <em>sin prisa.</em></h1>
+    <p>Carnes maduradas, pescado del día y verduras de temporada hechas sobre leña de encina. Para compartir, alargar la sobremesa y volver.</p>
+    <div class="acciones"><a class="btn" href="#reservar">Reservar mesa</a><a class="btn borde" href="#carta">Ver la carta</a></div>
+    <div class="datos">
+      <div><b>4,8 ★ en Google</b>Más de 600 opiniones</div>
+      <div><b>Abierto hoy</b><span id="hoy">13:00–16:30 · 20:00–00:00</span></div>
+      <div><b>Calle del Ejemplo, 12</b>Madrid · Metro Antón Martín</div>
+    </div>
+  </div>
+</section>
+
+<section id="brasa"><div class="wrap brasa">
+  <div class="fotos-brasa">
+    <div class="a"><img src="img/brasa.jpg" alt="Chuletón sobre la parrilla con llamas de leña" loading="lazy"></div>
+    <div class="b"><img src="img/chef.jpg" alt="Nuestro chef con un plato recién emplatado" loading="lazy"></div>
+  </div>
+  <div>
+    <span class="etiqueta">Nuestra forma de cocinar</span>
+    <h2>Leña de encina y <em>paciencia</em></h2>
+    <p class="lead">Encendemos la parrilla dos horas antes de abrir. Sin gas y sin atajos: la brasa marca el ritmo y cada pieza sale cuando tiene que salir. Compramos cada mañana en el mercado y trabajamos con ganaderos de Ávila y Galicia.</p>
+    <div class="firma">— Marcos y Lucía, cocina y sala</div>
+    <div class="cifras">
+      <div><b>45</b><span>días de maduración de la vaca</span></div>
+      <div><b>2 h</b><span>de brasa antes de abrir</span></div>
+      <div><b>100%</b><span>producto de mercado</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="carta" id="carta"><div class="wrap">
+  <div class="carta-cab">
+    <div><span class="etiqueta">La carta</span><h2>Para <em>compartir</em> (o no)</h2></div>
+    <div class="pestanas" role="tablist" aria-label="Secciones de la carta">
+      <button role="tab" aria-selected="true" aria-controls="p-picar" id="t-picar">Para picar</button>
+      <button role="tab" aria-selected="false" aria-controls="p-brasa" id="t-brasa" tabindex="-1">De la brasa</button>
+      <button role="tab" aria-selected="false" aria-controls="p-mar" id="t-mar" tabindex="-1">Del mar</button>
+      <button role="tab" aria-selected="false" aria-controls="p-postres" id="t-postres" tabindex="-1">Postres</button>
+    </div>
+  </div>
+
+  <div class="panel" role="tabpanel" id="p-picar" aria-labelledby="t-picar">
+    <figure><img src="img/tapas.jpg" alt="Mesa con raciones para compartir y arroz" loading="lazy"></figure>
+    <ul class="platos">
+      <li><div class="linea-plato"><span>Croquetas de jamón ibérico <span class="sello">La favorita</span></span><span class="precio">9,50 €</span></div><p>Seis unidades, cremosas por dentro y con bechamel de leche fresca.</p></li>
+      <li><div class="linea-plato"><span>Jamón ibérico de bellota</span><span class="precio">22 €</span></div><p>Cortado a cuchillo, con pan de cristal y tomate rallado.</p></li>
+      <li><div class="linea-plato"><span>Pimientos de Padrón a la brasa</span><span class="precio">8 €</span></div><p>Con escamas de sal y aceite de oliva virgen extra.</p></li>
+      <li><div class="linea-plato"><span>Provoleta con miel y romero</span><span class="precio">11 €</span></div><p>Fundida en la parrilla, para mojar pan.</p></li>
+      <li><div class="linea-plato"><span>Ensalada de tomate de temporada</span><span class="precio">12 €</span></div><p>Ventresca de bonito, cebolleta y aceitunas negras.</p></li>
+    </ul>
+  </div>
+
+  <div class="panel" role="tabpanel" id="p-brasa" aria-labelledby="t-brasa" hidden>
+    <figure><img src="img/plato.jpg" alt="Plato de carne con salsa servido en mesa oscura" loading="lazy"></figure>
+    <ul class="platos">
+      <li><div class="linea-plato"><span>Chuletón de vaca madurada <span class="sello">Para 2</span></span><span class="precio">68 €/kg</span></div><p>45 días de maduración. Te lo enseñamos antes de pasarlo por la brasa.</p></li>
+      <li><div class="linea-plato"><span>Secreto ibérico</span><span class="precio">19 €</span></div><p>Con patatas a lo pobre y pimiento asado.</p></li>
+      <li><div class="linea-plato"><span>Costillas de cerdo a baja temperatura</span><span class="precio">18 €</span></div><p>12 horas en horno y terminadas en la parrilla con salsa de la casa.</p></li>
+      <li><div class="linea-plato"><span>Pollo de corral al carbón</span><span class="precio">16 €</span></div><p>Medio pollo marinado en limón, ajo y pimentón de la Vera.</p></li>
+      <li><div class="linea-plato"><span>Parrillada de verduras</span><span class="precio">14 €</span></div><p>Lo mejor del mercado esta semana, con romesco.</p></li>
+    </ul>
+  </div>
+
+  <div class="panel" role="tabpanel" id="p-mar" aria-labelledby="t-mar" hidden>
+    <figure><img src="img/pescado.jpg" alt="Pescado a la brasa con verduras y salsa" loading="lazy"></figure>
+    <ul class="platos">
+      <li><div class="linea-plato"><span>Pescado del día a la brasa</span><span class="precio">S/M</span></div><p>Lo que traigan de la lonja: te lo cantamos en mesa.</p></li>
+      <li><div class="linea-plato"><span>Pulpo a la parrilla</span><span class="precio">24 €</span></div><p>Con parmentier de patata y aceite de pimentón.</p></li>
+      <li><div class="linea-plato"><span>Salmón con verduras salteadas</span><span class="precio">19 €</span></div><p>Lomo marcado en la brasa, punto jugoso.</p></li>
+      <li><div class="linea-plato"><span>Mariscada para compartir <span class="sello">Fin de semana</span></span><span class="precio">58 €</span></div><p>Gambas, mejillones, zamburiñas y langostinos a la parrilla.</p></li>
+    </ul>
+  </div>
+
+  <div class="panel" role="tabpanel" id="p-postres" aria-labelledby="t-postres" hidden>
+    <figure><img src="img/postre.jpg" alt="Tarta de queso con chocolate y granos de café" loading="lazy"></figure>
+    <ul class="platos">
+      <li><div class="linea-plato"><span>Tarta de queso de la casa <span class="sello">La favorita</span></span><span class="precio">7 €</span></div><p>Cremosa, con un toque de café y chocolate negro.</p></li>
+      <li><div class="linea-plato"><span>Torrija caramelizada</span><span class="precio">7,50 €</span></div><p>Con helado de vainilla y canela.</p></li>
+      <li><div class="linea-plato"><span>Piña asada a la brasa</span><span class="precio">6 €</span></div><p>Con ron, lima y crema de coco.</p></li>
+      <li><div class="linea-plato"><span>Café y licores</span><span class="precio">desde 1,80 €</span></div><p>Pregunta por nuestros orujos gallegos.</p></li>
+    </ul>
+  </div>
+  <p class="nota-carta">Pan, aceite y aperitivo de bienvenida incluidos. Tenemos carta de alérgenos: pídela al camarero.</p>
+</div></section>
+
+<section class="mdd" id="menu-dia"><div class="in">
+  <div class="foto"><img src="img/sala.jpg" alt="Comedor del restaurante con luz cálida" loading="lazy"></div>
+  <div class="texto">
+    <span class="etiqueta">De lunes a viernes, a mediodía</span>
+    <h2>Menú del día</h2>
+    <div class="precio-grande">16,90 €<small>IVA incl.</small></div>
+    <ul><li>Primero y segundo a elegir entre tres</li><li>Pan, bebida y postre o café</li><li>Segundo siempre a la brasa</li></ul>
+    <a class="btn" href="#reservar">Reservar para comer</a>
+  </div>
+</div></section>
+
+<section id="galeria"><div class="wrap">
+  <span class="etiqueta">Galería</span><h2>Así se vive <em>Fuego Lento</em></h2>
+  <div class="galeria">
+    <figure class="g1"><img src="img/tapas.jpg" alt="Raciones variadas sobre la mesa" loading="lazy"></figure>
+    <figure class="g2"><img src="img/vino.jpg" alt="Sirviendo vino tinto en la copa" loading="lazy"></figure>
+    <figure><img src="img/mar.jpg" alt="Mariscos a la parrilla" loading="lazy"></figure>
+    <figure><img src="img/salmon.jpg" alt="Salmón con verduras" loading="lazy"></figure>
+    <figure class="g5"><img src="img/brindis.jpg" alt="Amigos brindando en la mesa" loading="lazy"></figure>
+    <figure><img src="img/plato.jpg" alt="Plato emplatado en la cocina" loading="lazy"></figure>
+    <figure><img src="img/postre.jpg" alt="Tarta de queso de la casa" loading="lazy"></figure>
+  </div>
+</div></section>
+
+<section class="resenas"><div class="wrap">
+  <span class="etiqueta">Opiniones en Google</span>
+  <div class="nota-google"><b>4,8</b><div><div class="estrellas" aria-label="5 estrellas">★★★★★</div><span style="color:var(--gris);font-size:14px">Más de 600 opiniones</span></div></div>
+  <div class="tarjetas">
+    <div class="tarjeta"><q>El chuletón, de los mejores que he comido en Madrid. Te lo enseñan antes de hacerlo y sale en su punto exacto.</q><span>Cliente en Google · hace 2 semanas</span></div>
+    <div class="tarjeta"><q>Fuimos a celebrar un cumpleaños y nos trataron genial. La tarta de queso merece la visita sola.</q><span>Cliente en Google · hace 1 mes</span></div>
+    <div class="tarjeta"><q>El menú del día es una pasada por 16,90. Segundo a la brasa y raciones generosas. Volveremos.</q><span>Cliente en Google · hace 1 mes</span></div>
+  </div>
+</div></section>
+
+<section id="reservar"><div class="wrap reserva">
+  <div>
+    <span class="etiqueta">Reservas</span><h2>Te guardamos <em>mesa</em></h2>
+    <p class="lead" style="margin-bottom:30px">Elige día, hora y cuántos sois. Te confirmamos por WhatsApp en unos minutos.</p>
+    <form id="form" novalidate>
+      <div><label for="fecha">Día</label><input id="fecha" type="date" required></div>
+      <div><label for="hora">Hora</label><select id="hora"><option>13:30</option><option>14:00</option><option>14:30</option><option>15:00</option><option>20:30</option><option selected>21:00</option><option>21:30</option><option>22:00</option></select></div>
+      <div class="ancho"><label>Personas</label><div class="personas">
+        <label><input type="radio" name="p" value="1"><span>1</span></label><label><input type="radio" name="p" value="2" checked><span>2</span></label><label><input type="radio" name="p" value="3"><span>3</span></label><label><input type="radio" name="p" value="4"><span>4</span></label><label><input type="radio" name="p" value="5"><span>5</span></label><label><input type="radio" name="p" value="6"><span>6</span></label><label><input type="radio" name="p" value="7+"><span>7+</span></label>
+      </div></div>
+      <div><label for="nombre">Nombre</label><input id="nombre" autocomplete="name" placeholder="Tu nombre" required></div>
+      <div><label for="tel">Teléfono</label><input id="tel" type="tel" autocomplete="tel" placeholder="600 000 000" required></div>
+      <div class="ancho"><label for="obs">¿Algo que debamos saber?</label><textarea id="obs" rows="2" placeholder="Alergias, celebración, trona…"></textarea></div>
+      <button class="btn ancho" type="submit">Pedir reserva</button>
+      <div class="ok" id="ok" role="status"></div>
+    </form>
+  </div>
+  <div class="info">
+    <span class="etiqueta">Dónde y cuándo</span>
+    <dl>
+      <dt>Dirección</dt><dd>Calle del Ejemplo, 12 · 28012 Madrid<br><span style="color:var(--gris)">Metro Antón Martín (L1) · a 3 minutos</span></dd>
+      <dt>Teléfono</dt><dd>910 000 000</dd>
+      <dt>Horario</dt><dd><table class="horario" id="horario">
+        <tr data-d="1" class="cerrado"><td>Lunes</td><td>Cerrado</td></tr>
+        <tr data-d="2"><td>Martes</td><td>13:00–16:30</td></tr>
+        <tr data-d="3"><td>Miércoles</td><td>13:00–16:30 · 20:00–00:00</td></tr>
+        <tr data-d="4"><td>Jueves</td><td>13:00–16:30 · 20:00–00:00</td></tr>
+        <tr data-d="5"><td>Viernes</td><td>13:00–16:30 · 20:00–01:00</td></tr>
+        <tr data-d="6"><td>Sábado</td><td>13:00–17:00 · 20:00–01:00</td></tr>
+        <tr data-d="0"><td>Domingo</td><td>13:00–17:00</td></tr>
+      </table></dd>
+    </dl>
+  </div>
+</div></section>
+
+<footer><div class="wrap"><span>© Fuego Lento · Restaurante ficticio creado como muestra</span><span>Fotografías: Unsplash · Diseño web: <a href="https://mayerdigital.website/">Mayer Digital</a></span></div></footer>
+<a class="btn flotante" href="#reservar" id="flot">Reservar</a>
+
+<script>
+(function(){
+  var cab=document.getElementById('cab');
+  var flot=document.getElementById('flot');
+  function s(){cab.classList.toggle('solida',window.scrollY>40);flot.classList.toggle('visible',window.scrollY>window.innerHeight*.8)}s();addEventListener('scroll',s,{passive:true});
+  // pestañas de la carta
+  var tabs=[].slice.call(document.querySelectorAll('[role=tab]'));
+  function abrir(t){tabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on});}
+  tabs.forEach(function(t,i){t.addEventListener('click',function(){abrir(t)});t.addEventListener('keydown',function(e){var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(d){var n=tabs[(i+d+tabs.length)%tabs.length];abrir(n);n.focus()}})});
+  // horario de hoy (Madrid)
+  var dia=Number(new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Madrid',weekday:'short'}).formatToParts(new Date()).find(function(p){return p.type==='weekday'}).value.replace(/Sun|Mon|Tue|Wed|Thu|Fri|Sat/,function(w){return ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(w)}));
+  var fila=document.querySelector('#horario tr[data-d="'+dia+'"]');
+  if(fila){fila.classList.add('hoy');var h=document.getElementById('hoy');h.textContent=fila.cells[1].textContent;if(fila.classList.contains('cerrado'))h.previousSibling.textContent='Hoy cerramos';}
+  // fecha mínima: hoy
+  var f=document.getElementById('fecha');var hoy=new Date();f.min=hoy.toISOString().slice(0,10);f.value=f.min;
+  // reserva (demo)
+  document.getElementById('form').addEventListener('submit',function(e){
+    e.preventDefault();var ok=document.getElementById('ok');var n=document.getElementById('nombre').value.trim();
+    if(!n||!document.getElementById('tel').value.trim()){ok.textContent='Pon tu nombre y un teléfono para poder confirmarte.';ok.classList.add('visible');return}
+    var p=document.querySelector('input[name=p]:checked').value;
+    var d=new Date(f.value+'T12:00').toLocaleDateString('es-ES',{weekday:'long',day:'numeric',month:'long'});
+    ok.textContent='¡Gracias, '+n+'! Hemos recibido tu petición para '+p+(p==='1'?' persona':' personas')+' el '+d+' a las '+document.getElementById('hora').value+'. Te confirmamos por WhatsApp en unos minutos. (En esta web de muestra no se envía nada.)';
+    ok.classList.add('visible');
+  });
+})();
+</script>
+</body>
+</html>
