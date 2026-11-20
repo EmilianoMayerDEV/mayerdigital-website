@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taller de motos El Parce · Taller de motos en Carabanchel, Madrid</title>
+<meta name="description" content="Taller de motos en C. de Alejandro Sánchez, 16, Madrid. 4,1 estrellas en Google con 121 reseñas.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{overflow-x:hidden}
+img{display:block;max-width:100%;object-fit:cover}
+iframe{display:block;width:100%;border:0}
+a{color:inherit}
+.cinta{font:500 12px/1.4 system-ui,sans-serif;text-align:center;padding:8px 16px;background:#111;color:#ddd;position:relative;z-index:5}
+.cinta a{color:#fff}
+.estrellas{display:inline-flex;gap:2px}.estrellas svg{width:15px;height:15px}
+.dato{display:flex;gap:10px;align-items:flex-start;margin-bottom:12px}.dato svg{width:20px;height:20px;flex:none;margin-top:3px}
+.mapa{height:320px}
+.srv{list-style:none}.srv-linea{display:flex;align-items:baseline;gap:8px}.srv-linea i{flex:1;border-bottom:1px dotted currentColor;opacity:.4}
+table{border-collapse:collapse;width:100%}th{text-align:left;font-weight:inherit}
+.flotante{position:fixed;right:18px;bottom:18px;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;z-index:20;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.flotante svg{width:28px;height:28px}
+.pie{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;padding:22px 20px;font-size:13px}
+.creditos{font-size:11px;opacity:.7;width:100%}
+
+:root{--asfalto:#141516;--asfalto2:#1d1f21;--verde:#6bd425;--rojo:#e23a2e;--blanco:#f4f4f1;--gris:#9aa0a6}
+body{font:16px/1.6 'Barlow',system-ui,sans-serif;color:var(--blanco);background:var(--asfalto)}
+.rayas{height:18px;background:repeating-linear-gradient(-45deg,var(--rojo) 0 18px,var(--blanco) 18px 36px)}
+.hero{position:relative;min-height:88vh;display:flex;align-items:flex-end;overflow:hidden}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-position:center 60%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(20,21,22,.96) 18%,rgba(20,21,22,.35) 60%,rgba(20,21,22,.6))}
+.hero .in{position:relative;z-index:1;max-width:1200px;margin:auto;width:100%;padding:0 5vw 60px}
+.marca{display:inline-block;font:400 15px 'Bungee',sans-serif;background:var(--verde);color:var(--asfalto);padding:6px 12px;transform:rotate(-2deg)}
+h1{font:400 clamp(54px,9vw,124px)/.88 'Bungee',sans-serif;margin:18px 0 18px;letter-spacing:-.01em}
+h1 span{color:var(--verde)}
+.hero p{font-size:19px;max-width:32em;color:#d6d8d5;margin-bottom:26px}
+.btn{display:inline-block;font:400 16px 'Bungee',sans-serif;text-decoration:none;padding:15px 24px;background:var(--verde);color:var(--asfalto)}
+.btn.borde{background:transparent;color:var(--blanco);box-shadow:inset 0 0 0 2px var(--blanco);margin-left:10px}
+.nota{display:inline-flex;gap:6px;align-items:center;color:#ffd23f;text-decoration:none;margin-top:20px}.nota b,.nota span:last-child{color:var(--blanco)}
+.horas{background:var(--verde);color:var(--asfalto)}
+.horas .in{max-width:1200px;margin:auto;padding:22px 5vw;display:flex;flex-wrap:wrap;gap:10px 40px;align-items:center;justify-content:space-between}
+.horas b{font:400 clamp(24px,3.2vw,38px)/1 'Bungee',sans-serif}
+.horas span{font-weight:600}
+section.s{max-width:1200px;margin:auto;padding:90px 5vw}
+h2{font:400 clamp(34px,5vw,60px)/.95 'Bungee',sans-serif;margin-bottom:14px}
+h2 span{color:var(--verde)}
+.sub{color:var(--gris);max-width:36em;margin-bottom:34px}
+/* dorsales: cada tipo de moto en su placa de carreras */
+.dorsales{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.dorsal{background:var(--blanco);color:var(--asfalto);border-radius:10px 10px 16px 16px;overflow:hidden;position:relative}
+.dorsal img{width:100%;aspect-ratio:3/4}
+.dorsal .num{position:absolute;top:10px;left:10px;font:400 30px/1 'Bungee',sans-serif;background:var(--asfalto);color:var(--verde);padding:6px 10px;border-radius:6px}
+.dorsal b{display:block;font:400 17px 'Bungee',sans-serif;padding:12px 14px 2px}
+.dorsal small{display:block;padding:0 14px 14px;color:#555;font-size:13px}
+.banco{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--asfalto2)}
+.banco img{width:100%;height:100%;min-height:420px}
+.banco .t{padding:60px 5vw;display:flex;flex-direction:column;justify-content:center}
+.banco ul{list-style:none;padding:0;margin:18px 0 0}
+.banco li{padding:10px 0;border-bottom:1px solid #2c2f32;display:flex;gap:12px}
+.banco li::before{content:"";width:10px;height:10px;background:var(--verde);transform:rotate(45deg);margin-top:8px;flex:none}
+.dos{display:grid;grid-template-columns:1.2fr 1fr;gap:5vw}
+.srv li{padding:13px 0;border-bottom:1px solid #2c2f32}.srv-linea{font-weight:700}.srv-linea b{color:var(--verde);white-space:nowrap}.srv small{color:var(--gris)}
+.hor th,.hor td{padding:8px 0;border-bottom:1px solid #2c2f32}.hor td{text-align:right;font-weight:700}.hor .cerrado td{color:var(--rojo)}
+.dato svg{color:var(--verde)}.dato a{color:var(--blanco)}
+.fachada{position:relative;margin-top:26px}.fachada img{width:100%;aspect-ratio:16/10;border:4px solid var(--blanco)}
+.fachada span{position:absolute;right:-8px;bottom:18px;font:400 14px 'Bungee',sans-serif;background:var(--rojo);color:#fff;padding:6px 12px;transform:rotate(-3deg)}
+.flotante{background:#25d366;color:#fff}
+.mapa{height:340px;filter:grayscale(.6) contrast(1.05)}
+.pie{background:#0c0d0e;color:#777}
+@media(max-width:900px){.dorsales{grid-template-columns:repeat(2,1fr)}.banco,.dos{grid-template-columns:1fr}.banco img{min-height:300px}.btn.borde{margin:10px 0 0}}
+
+</style>
+</head>
+<body>
+<div class="cinta">Propuesta de diseño para Taller de motos El Parce · servicios y precios de ejemplo · preparada por <a href="https://mayerdigital.website">Mayer Digital</a></div>
+
+<div class="rayas"></div>
+<header class="hero"><img src="img/7.jpg" alt="Suzuki amarilla de supermotard en la calle de noche" class="" fetchpriority="high">
+  <div class="in"><span class="marca">El Parce · taller de motos</span>
+    <h1>Tu moto,<br>en <span>buenas manos</span></h1>
+    <p>Scooters, naked, deportivas y trail. Mecánica, neumáticos y puesta a punto en la calle Alejandro Sánchez, Carabanchel.</p>
+    <a class="btn" href="https://wa.me/34651643897?text=Hola%2C%20quer%C3%ADa%20informaci%C3%B3n%20de%20Taller%20de%20motos%20El%20Parce" target="_blank" rel="noopener">Pide cita por WhatsApp</a><a class="btn borde" href="#precios">Ver precios</a><br><a class="nota" href="https://maps.google.com/?cid=644730478105192002&amp;g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank" rel="noopener"><span class="estrellas"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></span><b>4,1</b> <span>· 121 reseñas en Google</span></a></div>
+</header>
+<div class="horas"><div class="in"><b>Hasta las 20:30</b><span>de lunes a viernes, y los sábados de 10:00 a 18:00</span><b>Sábados abierto</b></div></div>
+
+<section class="s"><h2>Todas las <span>motos</span></h2><p class="sub">Da igual lo que conduzcas: si tiene dos ruedas, aquí se arregla.</p>
+<div class="dorsales">
+  <div class="dorsal"><span class="num">01</span><img src="img/3.jpg" alt="Scooters aparcados frente al taller" class="" loading="lazy"><b>Scooter</b><small>El día a día por Madrid</small></div>
+  <div class="dorsal"><span class="num">02</span><img src="img/2.jpg" alt="Moto deportiva verde" class="" loading="lazy"><b>Deportiva</b><small>Puesta a punto y escapes</small></div>
+  <div class="dorsal"><span class="num">03</span><img src="img/6.jpg" alt="Moto desmontada en el taller" class="" loading="lazy"><b>Carenadas</b><small>Motor, chasis y carenado</small></div>
+  <div class="dorsal"><span class="num">04</span><img src="img/5.jpg" alt="Mecánico trabajando en una moto naranja" class="" loading="lazy"><b>Off-road</b><small>Trail, enduro y motard</small></div>
+  <div class="dorsal"><span class="num">05</span><img src="img/8.jpg" alt="Moto en restauración junto al mecánico" class="" loading="lazy"><b>Proyectos</b><small>Restauración y preparación</small></div>
+</div></section>
+
+<div class="banco"><img src="img/4.jpg" alt="Mecánico de El Parce trabajando en un motor abierto" class="" loading="lazy">
+  <div class="t"><h2>En el <span>banco</span></h2><p class="sub" style="margin:0">Abrimos el motor cuando hace falta y te enseñamos lo que hemos encontrado antes de cambiar nada.</p>
+  <ul><li>Diagnóstico y presupuesto antes de tocar nada</li><li>Te mandamos fotos de la pieza por WhatsApp</li><li>Recambio original o de calidad, tú eliges</li></ul></div>
+</div>
+
+<section class="s dos" id="precios"><div><h2>Precios de <span>ejemplo</span></h2><ul class="srv"><li><div class="srv-linea"><span>Revisión de scooter</span><i></i><b>desde 59 €</b></div><small>Aceite, filtros, correa y rodillos</small></li><li><div class="srv-linea"><span>Cambio de aceite y filtro</span><i></i><b>desde 39 €</b></div><small>Moto de marchas o scooter</small></li><li><div class="srv-linea"><span>Neumático montado</span><i></i><b>desde 20 €</b></div><small>Por rueda, equilibrado incluido</small></li><li><div class="srv-linea"><span>Kit de arrastre</span><i></i><b>desde 90 €</b></div><small>Cadena, piñón y corona</small></li><li><div class="srv-linea"><span>Pastillas de freno</span><i></i><b>desde 30 €</b></div><small>Por pinza, mano de obra incluida</small></li><li><div class="srv-linea"><span>Pre-ITV</span><i></i><b>desde 25 €</b></div><small>Luces, frenos, ruidos y emisiones</small></li><li><div class="srv-linea"><span>Avería eléctrica o de motor</span><i></i><b>a presupuesto</b></div><small>Diagnóstico y presupuesto antes de abrir</small></li></ul></div>
+<div><h2>Horario</h2><table class="hor"><tbody><tr class=""><th>Lunes</th><td>9:00–20:30</td></tr><tr class=""><th>Martes</th><td>9:00–20:30</td></tr><tr class=""><th>Miércoles</th><td>9:00–20:30</td></tr><tr class=""><th>Jueves</th><td>9:00–20:30</td></tr><tr class=""><th>Viernes</th><td>9:00–20:30</td></tr><tr class=""><th>Sábado</th><td>10:00–18:00</td></tr><tr class="cerrado"><th>Domingo</th><td>Cerrado</td></tr></tbody></table><div style="margin-top:24px"><p class="dato"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span>C. de Alejandro Sánchez, 16<br>Carabanchel, Madrid</span></p><p class="dato"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+34651643897">651 64 38 97</a></p></div>
+  <div class="fachada"><img src="img/1.jpg" alt="Entrada del taller con la fachada de rayas rojas y blancas" class="" loading="lazy"><span>Busca las rayas</span></div></div></section>
+<div class="rayas"></div>
+<iframe class="mapa" src="https://www.google.com/maps?q=Taller%20de%20motos%20El%20Parce%2C%20C.%20de%20Alejandro%20S%C3%A1nchez%2C%2016%2C%20Carabanchel%2C%2028019%20Madrid&amp;output=embed" loading="lazy" title="Mapa de Taller de motos El Parce" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<footer class="pie"><span>© Taller de motos El Parce · C. de Alejandro Sánchez, 16</span><span>Propuesta de diseño · <a href="https://mayerdigital.website">Mayer Digital</a></span>
+<span class="creditos">Fotos de la ficha de Google Maps del negocio: Jose Sepulveda, Luis Moreno Pérez, Nicolas Perez Perez, Taller de motos El Parce.</span></footer>
+<a class="flotante" href="https://wa.me/34651643897?text=Hola%2C%20quer%C3%ADa%20informaci%C3%B3n%20de%20Taller%20de%20motos%20El%20Parce" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3 1 2.5c.1.2 1.7 2.6 4.1 3.6 1.5.7 2.1.7 2.9.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.4-.2z"/></svg></a>
+</body>
+</html>
