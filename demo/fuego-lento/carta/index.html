@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="description" content="Demo de carta digital con QR preparada por Mayer Digital.">
+<meta name="theme-color" content="#14110f">
+<title>Carta · Fuego Lento</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+/* Carta digital: pensada para leerse con una mano en la mesa. Oscuro cálido como el local, categorías fijas arriba y buscador. */
+:root{--carbon:#14110f;--carbon2:#1d1916;--carbon3:#28221e;--brasa:#e2622b;--brasa2:#f08a4b;--oro:#c9a36a;--crema:#f3ebe0;--gris:#a89c90;--linea:rgba(243,235,224,.12);
+  --serif:'Gloock',Georgia,serif;--sans:'Manrope',system-ui,sans-serif;color-scheme:dark}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--carbon);color:var(--crema);font:400 15px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+.cont{max-width:640px;margin:0 auto}
+.portada{position:relative;height:210px;overflow:hidden}
+.portada img{width:100%;height:100%;object-fit:cover;display:block}
+.portada::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,17,15,.2),rgba(20,17,15,.95))}
+.portada .t{position:absolute;left:20px;right:20px;bottom:16px;z-index:1}
+.logo{display:flex;align-items:center;gap:8px;font:400 30px/1 var(--serif)}
+.logo svg{width:24px;height:24px;color:var(--brasa)}
+.sub{font-size:13px;color:#d9cdbd;margin-top:6px;display:flex;gap:12px;flex-wrap:wrap}
+.idioma{position:absolute;top:14px;right:14px;z-index:2;display:flex;background:rgba(20,17,15,.7);border:1px solid var(--linea);border-radius:999px;padding:3px;backdrop-filter:blur(6px)}
+.idioma button{font:700 12px var(--sans);color:var(--crema);background:none;border:0;padding:6px 11px;border-radius:999px;cursor:pointer}
+.idioma button[aria-pressed=true]{background:var(--crema);color:var(--carbon)}
+.barra{position:sticky;top:0;z-index:5;background:rgba(20,17,15,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--linea);padding:12px 0 0}
+.buscar{margin:0 16px;position:relative}
+.buscar svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);width:17px;height:17px;color:var(--gris)}
+.buscar input{width:100%;font:500 15px var(--sans);color:var(--crema);background:var(--carbon3);border:1px solid transparent;border-radius:10px;padding:11px 12px 11px 38px}
+.buscar input:focus{outline:none;border-color:var(--brasa)}
+.cats{display:flex;gap:6px;overflow-x:auto;padding:12px 16px;scrollbar-width:none}
+.cats::-webkit-scrollbar{display:none}
+.cats a{flex:none;font:600 13px var(--sans);text-decoration:none;color:var(--crema);border:1px solid var(--linea);padding:7px 13px;border-radius:999px;white-space:nowrap}
+.cats a.on{background:var(--brasa);border-color:var(--brasa);color:#1a0d06}
+section{padding:22px 16px 6px;scroll-margin-top:118px}
+h2{font:400 26px/1.1 var(--serif);display:flex;align-items:baseline;justify-content:space-between;margin-bottom:4px}
+h2 small{font:500 12px var(--sans);color:var(--gris)}
+.plato{display:flex;gap:14px;padding:15px 0;border-bottom:1px dashed var(--linea)}
+.plato:last-child{border-bottom:0}
+.plato .info{flex:1;min-width:0}
+.plato .nom{display:flex;justify-content:space-between;gap:12px;font:600 16px/1.3 var(--sans)}
+.plato .pr{font:400 17px var(--serif);color:var(--brasa2);white-space:nowrap}
+.plato p{color:var(--gris);font-size:13.5px;margin-top:3px}
+.plato img{width:84px;height:84px;border-radius:10px;object-fit:cover;flex:none}
+.etq{display:inline-block;font:700 10px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--oro);border:1px solid var(--oro);border-radius:999px;padding:1px 7px;margin-left:4px;vertical-align:2px}
+.alerg{display:flex;gap:5px;margin-top:7px;flex-wrap:wrap}
+.alerg span{display:inline-flex;align-items:center;gap:4px;font:600 11px var(--sans);color:#d9cdbd;background:var(--carbon3);border-radius:6px;padding:2px 7px}
+.alerg i{width:7px;height:7px;border-radius:50%;display:inline-block}
+.vacio{display:none;padding:40px 16px;text-align:center;color:var(--gris)}
+.leyenda{margin:24px 16px 0;padding:16px;background:var(--carbon2);border-radius:12px;font-size:13px;color:var(--gris)}
+.leyenda b{color:var(--crema)}
+.pie{padding:26px 16px 100px;text-align:center;font-size:12px;color:var(--gris)}
+.pie a{color:var(--crema)}
+.llamar{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:6;display:flex;gap:8px;background:rgba(29,25,22,.96);border:1px solid var(--linea);border-radius:999px;padding:6px;box-shadow:0 12px 30px rgba(0,0,0,.5)}
+.llamar a{font:700 14px var(--sans);text-decoration:none;padding:10px 16px;border-radius:999px;color:var(--crema);white-space:nowrap}
+.llamar a.p{background:var(--brasa);color:#1a0d06}
+</style>
+</head>
+<body>
+<div class="cont">
+<header class="portada">
+  <img src="../img/sala.jpg" alt="">
+  <div class="idioma" role="group" aria-label="Idioma"><button aria-pressed="true" data-l="es">ES</button><button aria-pressed="false" data-l="en">EN</button></div>
+  <div class="t"><div class="logo"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c1 3.5 5 5.6 5 10.5A5 5 0 0 1 12 18a5 5 0 0 1-5-5.5c0-2 1-3.5 2.2-4.6.2 1.6 1 2.6 2 3 0-3.4.6-6.4 1.8-8.9zM6 20h12v2H6z"/></svg>Fuego Lento</div>
+    <div class="sub"><span data-t="sub1">Asador y taberna</span><span>★ 4,8</span><span data-t="sub2">Cocina hasta las 23:30</span></div></div>
+</header>
+<div class="barra">
+  <div class="buscar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="Buscar un plato…" aria-label="Buscar un plato"></div>
+  <nav class="cats" id="cats"></nav>
+</div>
+<main id="carta"></main>
+<p class="vacio" id="vacio" data-t="vacio">No hay platos con ese nombre.</p>
+<div class="leyenda"><b data-t="ley1">Alérgenos.</b> <span data-t="ley2">Si tienes alguna alergia o intolerancia, díselo al camarero. Precios con IVA incluido.</span></div>
+<p class="pie"><span data-t="pie">Carta de muestra</span> · <a href="https://mayerdigital.website/">Mayer Digital</a> · Fotos: Unsplash</p>
+</div>
+<div class="llamar"><a href="tel:+34910000000" data-t="camarero">Llamar</a><a class="p" href="../#reservar" data-t="reservar">Reservar mesa</a></div>
+
+<script>
+var A={g:['Gluten','#d9a441'],l:['Lácteos','#8fb8de'],h:['Huevo','#f2d16b'],p:['Pescado','#6ec1c9'],m:['Marisco','#e48a7c'],f:['Frutos secos','#b98b5e'],s:['Sulfitos','#b58ad6']};
+var AEN={g:'Gluten',l:'Dairy',h:'Egg',p:'Fish',m:'Shellfish',f:'Nuts',s:'Sulphites'};
+var C=[
+ {id:'picar',es:'Para picar',en:'To share',p:[
+  ['Croquetas de jamón ibérico','Iberian ham croquettes','Seis unidades, cremosas, con bechamel de leche fresca.','Six creamy croquettes made with fresh milk béchamel.','9,50','g,l,h','tapas.jpg','La favorita','Favourite'],
+  ['Jamón ibérico de bellota','Acorn-fed Iberian ham','Cortado a cuchillo, con pan de cristal y tomate.','Hand-carved, with crystal bread and tomato.','22','g'],
+  ['Pimientos de Padrón','Padrón peppers','A la brasa, con escamas de sal.','Char-grilled, with flaky salt.','8',''],
+  ['Provoleta con miel y romero','Provolone with honey and rosemary','Fundida en la parrilla, para mojar pan.','Melted on the grill, made for dipping.','11','l'],
+  ['Ensalada de tomate','Tomato salad','Ventresca de bonito, cebolleta y aceitunas.','Tuna belly, spring onion and olives.','12','p']]},
+ {id:'brasa',es:'De la brasa',en:'From the grill',p:[
+  ['Chuletón madurado 45 días','45-day aged rib steak','Para dos. Te lo enseñamos antes de pasarlo por la brasa.','For two. We show it to you before it hits the grill.','68 €/kg','', 'brasa.jpg','Para 2','For 2'],
+  ['Secreto ibérico','Iberian pork secreto','Con patatas a lo pobre y pimiento asado.','With poor man’s potatoes and roast pepper.','19',''],
+  ['Costillas a baja temperatura','Slow-cooked ribs','12 horas y terminadas en la parrilla.','12 hours, finished on the grill.','18','s','plato.jpg'],
+  ['Pollo de corral al carbón','Charcoal free-range chicken','Medio pollo con limón, ajo y pimentón.','Half chicken with lemon, garlic and paprika.','16',''],
+  ['Parrillada de verduras','Grilled vegetables','Lo mejor del mercado, con romesco.','Best of the market, with romesco.','14','f']]},
+ {id:'mar',es:'Del mar',en:'From the sea',p:[
+  ['Pescado del día','Catch of the day','Lo que traigan de la lonja. Pregunta al camarero.','Whatever comes from the market. Ask your waiter.','S/M','p','pescado.jpg'],
+  ['Pulpo a la parrilla','Grilled octopus','Con parmentier y aceite de pimentón.','With potato purée and paprika oil.','24','m,l'],
+  ['Salmón a la brasa','Grilled salmon','Con verduras salteadas.','With sautéed vegetables.','19','p','salmon.jpg'],
+  ['Mariscada para compartir','Seafood platter to share','Gambas, mejillones y zamburiñas a la parrilla.','Prawns, mussels and scallops from the grill.','58','m','mar.jpg','Fin de semana','Weekends']]},
+ {id:'postres',es:'Postres',en:'Desserts',p:[
+  ['Tarta de queso de la casa','House cheesecake','Cremosa, con café y chocolate negro.','Creamy, with coffee and dark chocolate.','7','l,h,g','postre.jpg','La favorita','Favourite'],
+  ['Torrija caramelizada','Caramelised torrija','Con helado de vainilla.','With vanilla ice cream.','7,50','g,l,h'],
+  ['Piña asada','Grilled pineapple','Con ron, lima y coco.','With rum, lime and coconut.','6','']]},
+ {id:'bebidas',es:'Vinos y bebidas',en:'Wine & drinks',p:[
+  ['Tinto Ribera del Duero (copa)','Ribera del Duero red (glass)','Crianza, la casa.','Crianza, house red.','4,50','s','vino.jpg'],
+  ['Blanco Rueda (copa)','Rueda white (glass)','Verdejo fresco.','Fresh Verdejo.','3,80','s'],
+  ['Caña de cerveza','Draught beer','','','2,50','g'],
+  ['Agua mineral','Mineral water','','','2','']]}
+];
+var T={es:{sub1:'Asador y taberna',sub2:'Cocina hasta las 23:30',vacio:'No hay platos con ese nombre.',ley1:'Alérgenos.',ley2:'Si tienes alguna alergia o intolerancia, díselo al camarero. Precios con IVA incluido.',pie:'Carta de muestra',camarero:'Llamar',reservar:'Reservar mesa',q:'Buscar un plato…',pl:'platos'},
+       en:{sub1:'Grill & tavern',sub2:'Kitchen open until 23:30',vacio:'No dishes match your search.',ley1:'Allergens.',ley2:'Please tell your waiter about any allergy or intolerance. VAT included.',pie:'Sample menu',camarero:'Call',reservar:'Book a table',q:'Search a dish…',pl:'dishes'}};
+var L='es';
+function eur(p){return /\d/.test(p)&&p.indexOf('€')<0?p+' €':p}
+function pintar(){
+  var en=L==='en',h='',n='';
+  C.forEach(function(c,i){
+    n+='<a href="#'+c.id+'"'+(i?'':' class="on"')+'>'+(en?c.en:c.es)+'</a>';
+    h+='<section id="'+c.id+'"><h2>'+(en?c.en:c.es)+'<small>'+c.p.length+' '+T[L].pl+'</small></h2>';
+    c.p.forEach(function(d){
+      var al=d[5]?d[5].split(',').map(function(k){return '<span><i style="background:'+A[k][1]+'"></i>'+(en?AEN[k]:A[k][0])+'</span>'}).join(''):'';
+      var etq=d[7]?'<span class="etq">'+(en?d[8]:d[7])+'</span>':'';
+      var desc=en?d[3]:d[2];
+      h+='<div class="plato" data-b="'+(d[0]+' '+d[1]).toLowerCase()+'"><div class="info"><div class="nom"><span>'+(en?d[1]:d[0])+etq+'</span><span class="pr">'+eur(d[4])+'</span></div>'+(desc?'<p>'+desc+'</p>':'')+(al?'<div class="alerg">'+al+'</div>':'')+'</div>'+(d[6]?'<img src="../img/'+d[6]+'" alt="" loading="lazy">':'')+'</div>';
+    });
+    h+='</section>';
+  });
+  document.getElementById('carta').innerHTML=h;document.getElementById('cats').innerHTML=n;
+  document.querySelectorAll('[data-t]').forEach(function(x){x.textContent=T[L][x.dataset.t]});
+  document.getElementById('q').placeholder=T[L].q;
+  filtrar();
+}
+function filtrar(){
+  var q=document.getElementById('q').value.trim().toLowerCase(),total=0;
+  document.querySelectorAll('section').forEach(function(s){var v=0;s.querySelectorAll('.plato').forEach(function(p){var ok=!q||p.dataset.b.indexOf(q)>-1;p.style.display=ok?'':'none';if(ok)v++});s.style.display=v?'':'none';total+=v});
+  document.getElementById('vacio').style.display=total?'none':'block';
+  if(typeof marcar==='function')marcar();
+}
+document.getElementById('q').addEventListener('input',filtrar);
+document.querySelectorAll('.idioma button').forEach(function(b){b.addEventListener('click',function(){L=b.dataset.l;document.documentElement.lang=L;document.querySelectorAll('.idioma button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});pintar()})});
+// categoría activa al hacer scroll
+function marcar(){
+  var vis=[].filter.call(document.querySelectorAll('section'),function(s){return s.style.display!=='none'});
+  var act=vis.length?vis[0].id:null;
+  vis.forEach(function(s){if(s.getBoundingClientRect().top<140)act=s.id});
+  var cats=document.getElementById('cats');
+  document.querySelectorAll('.cats a').forEach(function(a){var on=a.getAttribute('href')==='#'+act;if(on&&!a.classList.contains('on'))cats.scrollTo({left:a.offsetLeft-cats.clientWidth/2+a.offsetWidth/2,behavior:'smooth'});a.classList.toggle('on',on)});
+}
+addEventListener('scroll',marcar,{passive:true});
+pintar();
+</script>
+</body>
+</html>
