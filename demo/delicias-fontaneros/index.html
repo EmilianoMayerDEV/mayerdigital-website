@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Delicias Fontaneros · Fontaneros 24 horas en Arganzuela, Madrid</title>
+<meta name="description" content="Fontaneros 24 horas en Calle de las Delicias, 26, Madrid. 4,3 estrellas en Google con 6 reseñas.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{overflow-x:hidden}
+img{display:block;max-width:100%;object-fit:cover}
+iframe{display:block;width:100%;border:0}
+a{color:inherit}
+.cinta{font:500 12px/1.4 system-ui,sans-serif;text-align:center;padding:8px 16px;background:#111;color:#ddd;position:relative;z-index:5}
+.cinta a{color:#fff}
+.estrellas{display:inline-flex;gap:2px}.estrellas svg{width:15px;height:15px}
+.dato{display:flex;gap:10px;align-items:flex-start;margin-bottom:12px}.dato svg{width:20px;height:20px;flex:none;margin-top:3px}
+.mapa{height:320px}
+.srv{list-style:none}.srv-linea{display:flex;align-items:baseline;gap:8px}.srv-linea i{flex:1;border-bottom:1px dotted currentColor;opacity:.4}
+table{border-collapse:collapse;width:100%}th{text-align:left;font-weight:inherit}
+.flotante{position:fixed;right:18px;bottom:18px;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;z-index:20;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.flotante svg{width:28px;height:28px}
+.pie{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;padding:22px 20px;font-size:13px}
+.creditos{font-size:11px;opacity:.7;width:100%}
+
+:root{--navy:#13213f;--navy2:#1b2d54;--cian:#19a7ce;--cian2:#7fd3ea;--panel:#0b0e13;--ambar:#ffc53d;--papel:#f3f5f8;--tinta:#0f1a2e;--gris:#5d6b80}
+body{font:16px/1.6 'Bricolage Grotesque',system-ui,sans-serif;color:var(--tinta);background:var(--papel)}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace}
+.w{max-width:1200px;margin:0 auto;padding:0 5vw}
+/* cabecera */
+.cab{background:#fff;border-bottom:1px solid #e1e6ee}
+.cab .w{display:flex;justify-content:space-between;align-items:center;gap:16px;height:76px}
+.cab img{height:58px;width:auto;object-fit:contain}
+.cab a.tel{display:flex;align-items:center;gap:10px;text-decoration:none;font:700 22px 'JetBrains Mono';color:var(--navy);white-space:nowrap}
+.cab a.tel span{font:700 11px 'Bricolage Grotesque';background:var(--cian);color:#fff;padding:3px 8px;border-radius:999px;letter-spacing:.06em}
+/* portada */
+.hero{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 79px,rgba(255,255,255,.04) 79px 80px)}
+.hero .w{position:relative;display:grid;grid-template-columns:1fr 1.05fr;gap:50px;align-items:center;padding-top:72px;padding-bottom:84px}
+.anden{display:inline-flex;align-items:center;gap:10px;font:700 13px 'JetBrains Mono';letter-spacing:.12em;text-transform:uppercase;color:var(--cian2)}
+.anden b{background:var(--cian);color:var(--navy);border-radius:6px;padding:2px 9px}
+h1{font:800 clamp(46px,6.6vw,88px)/.95 'Bricolage Grotesque';letter-spacing:-.03em;margin:18px 0 20px}
+h1 em{font-style:normal;color:var(--cian)}
+.hero p{font-size:19px;color:#c9d3e6;max-width:30em;margin-bottom:28px}
+.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font:700 17px 'Bricolage Grotesque';padding:15px 26px;border-radius:999px;background:var(--cian);color:var(--navy)}
+.btn svg{width:20px;height:20px}
+.btn.claro{background:#fff;color:var(--navy)}
+.btn.borde{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.35)}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.nota{display:inline-flex;gap:6px;align-items:center;color:var(--ambar);text-decoration:none;margin-top:22px}.nota b,.nota span:last-child{color:#fff}
+/* panel de salidas */
+.panel{background:var(--panel);border-radius:14px;padding:18px;box-shadow:0 30px 60px rgba(0,0,0,.45),inset 0 0 0 2px #1d2430}
+.panel .tit{display:flex;justify-content:space-between;align-items:center;padding:4px 6px 14px;font:700 14px 'JetBrains Mono';letter-spacing:.14em;color:var(--ambar)}
+.panel .tit #reloj{color:#fff;font-size:20px;letter-spacing:.06em}
+.fila{display:grid;grid-template-columns:70px 1.4fr 1fr 110px;gap:6px;margin-top:6px}
+.fila span{background:#151a22;border-radius:4px;padding:10px 9px;font:600 14px 'JetBrains Mono';color:#eef2f7;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position:relative}
+.fila span::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:rgba(0,0,0,.6)}
+.fila.cab2 span{background:none;color:#7c8798;font-size:11px;padding:2px 9px}.fila.cab2 span::after{display:none}
+.fila .est{color:var(--ambar)}
+.fila .est.ya{color:#4ee08a}
+.flip{animation:flip .5s ease}
+@keyframes flip{0%{transform:rotateX(90deg)}100%{transform:none}}
+@media (prefers-reduced-motion:reduce){.flip{animation:none}}
+.panel .pie-p{display:flex;justify-content:space-between;color:#7c8798;font:500 12px 'JetBrains Mono';padding:12px 6px 2px}
+/* billetes */
+section.s{padding:100px 0}
+.etq{font:700 13px 'JetBrains Mono';letter-spacing:.14em;text-transform:uppercase;color:var(--cian)}
+h2{font:800 clamp(36px,4.6vw,58px)/1 'Bricolage Grotesque';letter-spacing:-.025em;color:var(--navy);margin:10px 0 14px}
+h2 em{font-style:normal;color:var(--cian)}
+.intro{color:var(--gris);max-width:36em;font-size:17px;margin-bottom:40px}
+.billetes{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.billete{display:grid;grid-template-columns:1fr 120px;background:#fff;border-radius:14px;box-shadow:0 1px 0 #e1e6ee,0 18px 40px -24px rgba(19,33,63,.4);position:relative;overflow:hidden}
+.billete .cuerpo{padding:24px 26px}
+.billete .ruta{font:700 12px 'JetBrains Mono';letter-spacing:.1em;color:var(--gris);text-transform:uppercase}
+.billete .ruta b{color:var(--cian)}
+.billete h3{font:800 26px/1.1 'Bricolage Grotesque';color:var(--navy);margin:10px 0 8px}
+.billete p{color:var(--gris);font-size:15.5px}
+.billete .talon{background:var(--navy);color:#fff;display:flex;flex-direction:column;justify-content:space-between;align-items:center;padding:20px 10px;text-align:center;border-left:2px dashed rgba(255,255,255,.5)}
+.billete .talon small{font:600 11px 'JetBrains Mono';letter-spacing:.1em;color:var(--cian2)}
+.billete .talon b{font:700 34px 'JetBrains Mono'}
+.billete::before,.billete::after{content:"";position:absolute;right:108px;width:24px;height:24px;border-radius:50%;background:var(--papel)}
+.billete::before{top:-12px}.billete::after{bottom:-12px}
+/* línea */
+.linea{background:var(--navy);color:#fff}
+.linea h2{color:#fff}.linea .intro{color:#b8c4da}
+.paradas{list-style:none;display:flex;justify-content:space-between;position:relative;padding-top:8px}
+.paradas::before{content:"";position:absolute;left:12px;right:12px;top:19px;height:8px;border-radius:4px;background:var(--cian)}
+.paradas li{position:relative;display:flex;flex-direction:column;align-items:center;gap:12px;flex:1;text-align:center}
+.paradas li i{width:30px;height:30px;border-radius:50%;background:#fff;border:6px solid var(--cian);z-index:1}
+.paradas li span{font:600 14px 'Bricolage Grotesque';max-width:110px}
+.paradas li.aqui i{width:42px;height:42px;margin-top:-6px;background:var(--ambar);border-color:#fff}
+.paradas li.aqui span{font-weight:800;color:var(--ambar)}
+.paradas li.aqui small{font:700 11px 'JetBrains Mono';color:var(--ambar);letter-spacing:.08em;margin-top:-8px}
+/* antes de llamar */
+.consejos{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.consejo{background:#fff;border-radius:14px;padding:24px;border-top:5px solid var(--cian)}
+.consejo b{display:block;font:800 20px/1.15 'Bricolage Grotesque';color:var(--navy);margin:10px 0 8px}
+.consejo .n{font:700 13px 'JetBrains Mono';color:var(--cian)}
+.consejo p{color:var(--gris);font-size:15px}
+.consejo p strong{color:var(--tinta)}
+/* contacto */
+.contacto .w{display:grid;grid-template-columns:1.1fr .9fr;gap:60px}
+.telgr{display:block;font:700 clamp(40px,5.4vw,64px)/1 'JetBrains Mono';color:var(--navy);text-decoration:none;margin:12px 0 22px;letter-spacing:-.02em}
+.hor th,.hor td{padding:9px 0;border-bottom:1px solid #e1e6ee}.hor td{text-align:right;font-weight:700}
+.dato svg{color:var(--cian)}
+.flotante{background:var(--cian);color:var(--navy)}
+.mapa{height:340px}
+.pie{background:var(--navy);color:#a9b6cf}
+@media(max-width:920px){
+ .hero .w,.contacto .w{grid-template-columns:1fr}
+ .billetes{grid-template-columns:1fr}
+ .consejos{grid-template-columns:1fr 1fr}
+ .paradas{flex-direction:column;gap:14px;padding-left:4px}
+ .paradas::before{left:15px;right:auto;top:10px;bottom:10px;width:8px;height:auto}
+ .paradas li{flex-direction:row;text-align:left}
+ .paradas li.aqui i{margin:0 -6px}
+ .paradas li span{max-width:none}
+ .paradas li.aqui small{margin:0}
+ section.s{padding:72px 0}
+}
+@media(max-width:560px){
+ .fila{grid-template-columns:52px 1.3fr 96px}.fila span:nth-child(3){display:none}
+ .fila span{font-size:12px;padding:9px 6px}
+ .consejos{grid-template-columns:1fr}
+ .billete{grid-template-columns:1fr 92px}.billete::before,.billete::after{right:80px}
+ .cab a.tel{font-size:17px}.cab a.tel span{display:none}.cab img{height:40px}
+ .anden{font-size:11px;letter-spacing:.06em;white-space:nowrap}.panel .pie-p span:first-child{display:none}
+}
+
+</style>
+</head>
+<body>
+<div class="cinta">Propuesta de diseño para Delicias Fontaneros · servicios y precios de ejemplo · preparada por <a href="https://mayerdigital.website">Mayer Digital</a></div>
+
+<header class="cab"><div class="w"><img src="img/1.jpg" alt="Delicias Fontaneros" class="" fetchpriority="high"><a class="tel" href="tel:+34919931693"><span>24 H</span>919 931 693</a></div></header>
+
+<section class="hero"><div class="w">
+  <div><span class="anden"><b>VÍA 1</b> Fontaneros en Delicias · 24 h</span>
+    <h1>Tu avería sale <em>ahora mismo</em></h1>
+    <p>Estamos en la calle de las Delicias. Fugas, atascos, calentadores y reformas en Arganzuela y alrededores, a cualquier hora y cualquier día.</p>
+    <div class="btns"><a class="btn" href="tel:+34919931693"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Llamar: 919 931 693</a><a class="btn borde" href="#servicios">Ver servicios</a></div>
+    <a class="nota" href="https://maps.google.com/?cid=9181078260450096731" target="_blank" rel="noopener"><span class="estrellas"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></span><b>4,3</b> <span>· 6 reseñas en Google</span></a></div>
+  <div class="panel" aria-label="Panel de avisos de ejemplo">
+    <div class="tit"><span>SALIDAS · FONTANERÍA</span><span id="reloj">--:--</span></div>
+    <div class="fila cab2"><span>Hora</span><span>Aviso</span><span>Zona</span><span>Estado</span></div>
+    <div class="fila"><span class="h">--:--</span><span>Fuga de agua</span><span>Arganzuela</span><span class="est">Llegando</span></div><div class="fila"><span class="h">--:--</span><span>Desatasco</span><span>Delicias</span><span class="est">En camino</span></div><div class="fila"><span class="h">--:--</span><span>Calentador</span><span>Legazpi</span><span class="est">En camino</span></div><div class="fila"><span class="h">--:--</span><span>Grifo y cisterna</span><span>Acacias</span><span class="est">En camino</span></div><div class="fila"><span class="h">--:--</span><span>Bajante rota</span><span>Usera</span><span class="est">En camino</span></div>
+    <div class="pie-p"><span>Calle de las Delicias, 26</span><span>Abierto 24 h · 7 días</span></div>
+  </div>
+</div></section>
+
+<section class="s" id="servicios"><div class="w">
+  <span class="etq">Servicios</span><h2>Elige tu <em>billete</em></h2>
+  <p class="intro">Todo lo que hacemos, con salida desde Delicias y llegada a tu puerta. Te decimos el precio antes de empezar.</p>
+  <div class="billetes"><div class="billete"><div class="cuerpo"><div class="ruta">Delicias <b>→</b> tu casa</div><h3>Urgencias 24 h</h3><p>Averías y emergencias de fontanería a cualquier hora, los 7 días de la semana.</p></div>
+<div class="talon"><small>BILLETE</small><b>01</b><small>VÁLIDO 24 H</small></div></div><div class="billete"><div class="cuerpo"><div class="ruta">Delicias <b>→</b> tu casa</div><h3>Instalaciones y reformas</h3><p>Instalaciones completas en viviendas, comercios e industria, y mejora de las existentes.</p></div>
+<div class="talon"><small>BILLETE</small><b>02</b><small>VÁLIDO 24 H</small></div></div><div class="billete"><div class="cuerpo"><div class="ruta">Delicias <b>→</b> tu casa</div><h3>Desatascos</h3><p>Desatasco y limpieza de tuberías con equipos profesionales para que no vuelva a pasar.</p></div>
+<div class="talon"><small>BILLETE</small><b>03</b><small>VÁLIDO 24 H</small></div></div><div class="billete"><div class="cuerpo"><div class="ruta">Delicias <b>→</b> tu casa</div><h3>Mantenimiento</h3><p>Revisiones periódicas para comunidades y negocios que evitan averías y sustos.</p></div>
+<div class="talon"><small>BILLETE</small><b>04</b><small>VÁLIDO 24 H</small></div></div></div>
+</div></section>
+
+<section class="s linea"><div class="w">
+  <span class="etq" style="color:var(--cian2)">Nuestra línea</span><h2>Paradas <em>cercanas</em></h2>
+  <p class="intro">Salimos desde Delicias, así que a estos barrios llegamos antes que nadie. ¿Estás más lejos? Llama y te lo confirmamos.</p>
+  <ul class="paradas"><li class=""><i></i><span>Atocha</span></li><li class=""><i></i><span>Méndez Álvaro</span></li><li class="aqui"><i></i><span>Delicias</span><small>ESTAMOS AQUÍ</small></li><li class=""><i></i><span>Legazpi</span></li><li class=""><i></i><span>Usera</span></li><li class=""><i></i><span>Acacias</span></li><li class=""><i></i><span>Embajadores</span></li><li class=""><i></i><span>Palos de la Frontera</span></li></ul>
+</div></section>
+
+<section class="s"><div class="w">
+  <span class="etq">Antes de llamar a cualquier fontanero</span><h2>Cuatro cosas que <em>debes pedir</em></h2>
+  <p class="intro">Para que nadie te cobre de más ni te deje la avería a medias, con nosotros o con quien sea.</p>
+  <div class="consejos">
+    <div class="consejo"><span class="n">01</span><b>Precio antes de empezar</b><p>Que te digan cuánto cuesta antes de tocar nada. <strong>Nosotros te lo damos al momento.</strong></p></div>
+    <div class="consejo"><span class="n">02</span><b>Opiniones reales</b><p>Mira las reseñas en Google de quien vas a llamar. <strong>Las nuestras están a la vista.</strong></p></div>
+    <div class="consejo"><span class="n">03</span><b>Factura del trabajo</b><p>Con lo que se ha hecho y el material. <strong>Siempre con factura.</strong></p></div>
+    <div class="consejo"><span class="n">04</span><b>Alguien cerca</b><p>El que está en tu barrio llega antes y vuelve si hace falta. <strong>Estamos en Delicias.</strong></p></div>
+  </div>
+</div></section>
+
+<section class="s contacto" style="padding-top:0"><div class="w">
+  <div><span class="etq">Contacto</span><h2>Llámanos a <em>cualquier hora</em></h2>
+    <a class="telgr" href="tel:+34919931693">919 931 693</a>
+    <p class="dato"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Calle de las Delicias, 26<br>Arganzuela, Madrid</span></p><p class="dato"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+34919931693">919 931 693</a></p></div>
+  <div><h2 style="font-size:32px">Horario</h2><table class="hor"><tbody><tr class=""><th>Lunes</th><td>Abierto 24 horas</td></tr><tr class=""><th>Martes</th><td>Abierto 24 horas</td></tr><tr class=""><th>Miércoles</th><td>Abierto 24 horas</td></tr><tr class=""><th>Jueves</th><td>Abierto 24 horas</td></tr><tr class=""><th>Viernes</th><td>Abierto 24 horas</td></tr><tr class=""><th>Sábado</th><td>Abierto 24 horas</td></tr><tr class=""><th>Domingo</th><td>Abierto 24 horas</td></tr></tbody></table></div>
+</div></section>
+<iframe class="mapa" src="https://www.google.com/maps?q=Delicias%20Fontaneros%2C%20Calle%20de%20las%20Delicias%2C%2026%2C%20Arganzuela%2C%2028045%20Madrid&amp;output=embed" loading="lazy" title="Mapa de Delicias Fontaneros" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<footer class="pie"><span>© Delicias Fontaneros · Calle de las Delicias, 26</span><span>Propuesta de diseño · <a href="https://mayerdigital.website">Mayer Digital</a></span>
+<span class="creditos">Fotos de la ficha de Google Maps del negocio: Delicias Fontaneros.</span></footer>
+<a class="flotante" href="tel:+34919931693" aria-label="Llamar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></a><script>
+(function(){
+  function hm(dt){return new Intl.DateTimeFormat('es-ES',{timeZone:'Europe/Madrid',hour:'2-digit',minute:'2-digit'}).format(dt)}
+  var r=document.getElementById('reloj'),hs=document.querySelectorAll('.fila .h'),est=document.querySelectorAll('.fila .est');
+  function pinta(){var a=Date.now();r.textContent=hm(new Date(a));hs.forEach(function(h,i){h.textContent=hm(new Date(a+i*17*60000))})}
+  pinta();setInterval(pinta,30000);
+  var i=0;setInterval(function(){var x=est[i%est.length];x.classList.remove('flip');void x.offsetWidth;
+    var ya=x.textContent==='Llegando';x.textContent=ya?'Resuelto':(x.textContent==='Resuelto'?'En camino':'Llegando');
+    x.classList.toggle('ya',x.textContent==='Resuelto');x.classList.add('flip');i++},1800);
+})();
+</script>
+</body>
+</html>
